@@ -7,6 +7,7 @@ import { GameHUD } from '../../components/GameHUD'
 import { ModuleGameOver } from '../../components/ModuleGameOver'
 import { useProgressStore } from '../../stores/progressStore'
 import { useSettingsStore } from '../../stores/settingsStore'
+import { fetchAIGrammar as fetchAIExercise } from '../../lib/aiExercise'
 
 const STATIC_EXERCISES = grammarData as GrammarExercise[]
 const XP_PER_CORRECT = 20
@@ -24,15 +25,6 @@ const TOPIC_COLORS: Record<string, string> = {
   subjuntivo:   'bg-pink-100 text-pink-700',
 }
 
-async function fetchAIExercise(): Promise<GrammarExercise> {
-  const res = await fetch('/api/generate-exercise', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ type: 'grammar' }),
-  })
-  if (!res.ok) throw new Error(await res.text())
-  return res.json()
-}
 
 export function GrammarPage() {
   const { t, i18n } = useTranslation()

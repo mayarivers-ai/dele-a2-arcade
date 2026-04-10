@@ -1,10 +1,36 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 import { generateText, Output } from 'ai'
 import { z } from 'zod'
+import { createClient } from '@supabase/supabase-js'
 
 // Uses AI Gateway — model string routed via gateway.vercel.sh
 // Auth: AI_GATEWAY_API_KEY env var (or OIDC on Vercel deployments)
 const MODEL = 'anthropic/claude-haiku-4.5'
+
+// ── Auth ───────────────────────────────────────────────────────────────────
+
+async function verifyTester(req: VercelRequest): Promise<{ ok: boolean; error?: string }> {
+  const testerEmails = process.env.TESTER_EMAILS ?? ''
+  if (!testerEmails) return { ok: false, error: 'Tester access not configured' }
+
+  const authHeader = req.headers.authorization ?? ''
+  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null
+  if (!token) return { ok: false, error: 'No session token. Please log in.' }
+
+  const supabase = createClient(
+    process.env.SUPABASE_URL ?? '',
+    process.env.SUPABASE_ANON_KEY ?? '',
+  )
+  const { data: { user }, error } = await supabase.auth.getUser(token)
+  if (error || !user?.email) return { ok: false, error: 'Invalid session. Please log in again.' }
+
+  const allowed = testerEmails.split(',').map(e => e.trim().toLowerCase())
+  if (!allowed.includes(user.email.toLowerCase())) {
+    return { ok: false, error: 'Access restricted to testers.' }
+  }
+
+  return { ok: true }
+}
 
 // ── Schemas ────────────────────────────────────────────────────────────────
 
@@ -139,10 +165,13 @@ Requirements:
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
 
   if (req.method === 'OPTIONS') return res.status(200).end()
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+
+  const auth = await verifyTester(req)
+  if (!auth.ok) return res.status(401).json({ error: auth.error })
 
   const { type } = req.body ?? {}
   if (type !== 'reading' && type !== 'grammar') {

@@ -7,20 +7,11 @@ import { GameHUD } from '../../components/GameHUD'
 import { ModuleGameOver } from '../../components/ModuleGameOver'
 import { useProgressStore } from '../../stores/progressStore'
 import { useSettingsStore } from '../../stores/settingsStore'
+import { fetchAIReading as fetchAIExercise } from '../../lib/aiExercise'
 
 const STATIC_EXERCISES = readingData as ReadingExercise[]
 const FREE_LIMIT = 5
 const XP_PER_CORRECT = 15
-
-async function fetchAIExercise(): Promise<ReadingExercise> {
-  const res = await fetch('/api/generate-exercise', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ type: 'reading' }),
-  })
-  if (!res.ok) throw new Error(await res.text())
-  return res.json()
-}
 
 export function ReadingPage() {
   const { t, i18n } = useTranslation()
