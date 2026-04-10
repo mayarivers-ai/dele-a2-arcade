@@ -3,10 +3,12 @@ import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { LanguageToggle } from './LanguageToggle'
 import { useUserStore } from '../stores/userStore'
+import { useSettingsStore } from '../stores/settingsStore'
 
 export function Header() {
   const { t } = useTranslation()
   const { user, logout } = useUserStore()
+  const { testerMode, setTesterMode } = useSettingsStore()
   const location = useLocation()
   const isArcade = location.pathname === '/arcade'
   const [practiceOpen, setPracticeOpen] = useState(false)
@@ -88,6 +90,17 @@ export function Header() {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => setTesterMode(!testerMode)}
+            title={testerMode ? 'Desactivar modo tester' : 'Activar modo tester (IA directa)'}
+            className={`rounded-full px-2.5 py-1 text-xs font-bold transition-colors ${
+              testerMode
+                ? 'bg-purple-100 text-purple-700 hover:bg-purple-200'
+                : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
+            }`}
+          >
+            🧪
+          </button>
           <LanguageToggle />
           {user ? (
             <div className="flex items-center gap-2">

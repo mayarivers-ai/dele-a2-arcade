@@ -6,6 +6,7 @@ import { PaywallModal } from '../../components/PaywallModal'
 import { GameHUD } from '../../components/GameHUD'
 import { ModuleGameOver } from '../../components/ModuleGameOver'
 import { useProgressStore } from '../../stores/progressStore'
+import { useSettingsStore } from '../../stores/settingsStore'
 
 const STATIC_EXERCISES = grammarData as GrammarExercise[]
 const XP_PER_CORRECT = 20
@@ -36,6 +37,7 @@ async function fetchAIExercise(): Promise<GrammarExercise> {
 export function GrammarPage() {
   const { t, i18n } = useTranslation()
   const { moduleHearts, addLifetimeXP, loseModuleLife, resetModuleLives } = useProgressStore()
+  const { testerMode } = useSettingsStore()
 
   const [exercises, setExercises] = useState<GrammarExercise[]>(STATIC_EXERCISES)
   const [currentIdx, setCurrentIdx] = useState(0)
@@ -132,6 +134,30 @@ export function GrammarPage() {
           <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-700">
             ✨ IA
           </span>
+        )}
+        {testerMode && !isAIExercise && (
+          <button
+            onClick={async () => {
+              setIsGenerating(true)
+              setAiError(null)
+              try {
+                const aiEx = await fetchAIExercise()
+                setExercises((prev) => [...prev, aiEx])
+                setCurrentIdx(STATIC_EXERCISES.length)
+                setSelectedIdx(null)
+                setChecked(false)
+                setSentenceAnim(null)
+              } catch {
+                setAiError(t('grammar.ai_error'))
+              } finally {
+                setIsGenerating(false)
+              }
+            }}
+            disabled={isGenerating}
+            className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-bold text-purple-700 hover:bg-purple-200 disabled:opacity-50"
+          >
+            {isGenerating ? '...' : '⚡ IA'}
+          </button>
         )}
       </div>
 
