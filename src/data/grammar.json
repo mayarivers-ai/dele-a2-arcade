@@ -1,0 +1,82 @@
+[
+  {
+    "id": "g1",
+    "type": "multiple_choice",
+    "topic": "ser_estar",
+    "instruction_es": "Elige la forma correcta de SER o ESTAR.",
+    "instruction_ru": "Выбери правильную форму глагола SER или ESTAR.",
+    "sentence": "Mi hermana ____ médica en un hospital de Barcelona.",
+    "options": [
+      { "text": "es", "correct": true },
+      { "text": "está", "correct": false },
+      { "text": "fue", "correct": false },
+      { "text": "estuvo", "correct": false }
+    ],
+    "explanation_es": "Usamos SER para profesiones y características permanentes. 'Mi hermana ES médica' porque la profesión es una cualidad definitoria.",
+    "explanation_ru": "Используем SER для профессий и постоянных характеристик. 'Моя сестра — врач' (ES), так как профессия — это определяющее качество."
+  },
+  {
+    "id": "g2",
+    "type": "multiple_choice",
+    "topic": "ser_estar",
+    "instruction_es": "Elige la forma correcta de SER o ESTAR.",
+    "instruction_ru": "Выбери правильную форму глагола SER или ESTAR.",
+    "sentence": "¡Qué rico ____ este pastel! ¿Lo has hecho tú?",
+    "options": [
+      { "text": "es", "correct": false },
+      { "text": "está", "correct": true },
+      { "text": "son", "correct": false },
+      { "text": "están", "correct": false }
+    ],
+    "explanation_es": "Usamos ESTAR para estados o condiciones que experimentamos en el momento. El sabor de algo que estamos comiendo es una experiencia temporal.",
+    "explanation_ru": "Используем ESTAR для состояний или условий, которые мы переживаем в данный момент. Вкус того, что мы едим, — это временное ощущение."
+  },
+  {
+    "id": "g3",
+    "type": "fill_blank",
+    "topic": "indefinido",
+    "instruction_es": "Escribe la forma correcta del verbo en Pretérito Indefinido.",
+    "instruction_ru": "Напиши правильную форму глагола в Pretérito Indefinido.",
+    "sentence": "El año pasado, nosotros ____ (ir) a México de vacaciones.",
+    "options": [
+      { "text": "fuimos", "correct": true },
+      { "text": "íbamos", "correct": false },
+      { "text": "vamos", "correct": false },
+      { "text": "iremos", "correct": false }
+    ],
+    "explanation_es": "Con 'el año pasado' usamos el Indefinido para una acción completada. IR es irregular: yo fui, tú fuiste, él fue, nosotros FUIMOS, vosotros fuisteis, ellos fueron.",
+    "explanation_ru": "С 'в прошлом году' используем Indefinido для завершённого действия. Глагол IR неправильный: yo fui, tú fuiste, él fue, nosotros FUIMOS, vosotros fuisteis, ellos fueron."
+  },
+  {
+    "id": "g4",
+    "type": "multiple_choice",
+    "topic": "por_para",
+    "instruction_es": "Elige POR o PARA según corresponda.",
+    "instruction_ru": "Выбери POR или PARA в зависимости от контекста.",
+    "sentence": "Compré flores ____ mi madre. Es su cumpleaños.",
+    "options": [
+      { "text": "por", "correct": false },
+      { "text": "para", "correct": true },
+      { "text": "de", "correct": false },
+      { "text": "a", "correct": false }
+    ],
+    "explanation_es": "PARA se usa para indicar el destinatario (la persona que recibe algo). 'Compré flores PARA mi madre' = las flores son para ella.",
+    "explanation_ru": "PARA используется для указания получателя (человека, который что-то получает). 'Купил цветы ДЛЯ мамы' = цветы предназначены ей."
+  },
+  {
+    "id": "g5",
+    "type": "multiple_choice",
+    "topic": "imperfecto",
+    "instruction_es": "Elige la forma verbal correcta para describir una acción habitual en el pasado.",
+    "instruction_ru": "Выбери правильную глагольную форму для описания привычного действия в прошлом.",
+    "sentence": "Cuando era niño, ____ (jugar) al fútbol todos los sábados.",
+    "options": [
+      { "text": "jugué", "correct": false },
+      { "text": "jugaba", "correct": true },
+      { "text": "jugaré", "correct": false },
+      { "text": "juego", "correct": false }
+    ],
+    "explanation_es": "El Imperfecto se usa para acciones habituales o repetidas en el pasado. 'Todos los sábados' indica repetición → JUGABA.",
+    "explanation_ru": "Imperfecto используется для привычных или повторяющихся действий в прошлом. 'Каждую субботу' указывает на повторение → JUGABA."
+  }
+]

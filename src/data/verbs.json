@@ -1,0 +1,964 @@
+[
+  {
+    "infinitive": "hablar",
+    "translation_ru": "говорить",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "hablo", "tú": "hablas", "usted": "habla", "nosotros": "hablamos", "vosotros": "habláis", "ustedes": "hablan" },
+      "indefinido": { "yo": "hablé", "tú": "hablaste", "usted": "habló", "nosotros": "hablamos", "vosotros": "hablasteis", "ustedes": "hablaron" },
+      "imperfecto": { "yo": "hablaba", "tú": "hablabas", "usted": "hablaba", "nosotros": "hablábamos", "vosotros": "hablabais", "ustedes": "hablaban" },
+      "futuro": { "yo": "hablaré", "tú": "hablarás", "usted": "hablará", "nosotros": "hablaremos", "vosotros": "hablaréis", "ustedes": "hablarán" },
+      "imperativo_afirmativo": { "tú": "habla", "usted": "hable", "nosotros": "hablemos", "vosotros": "hablad", "ustedes": "hablen" }
+    }
+  },
+  {
+    "infinitive": "comer",
+    "translation_ru": "есть / кушать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "como", "tú": "comes", "usted": "come", "nosotros": "comemos", "vosotros": "coméis", "ustedes": "comen" },
+      "indefinido": { "yo": "comí", "tú": "comiste", "usted": "comió", "nosotros": "comimos", "vosotros": "comisteis", "ustedes": "comieron" },
+      "imperfecto": { "yo": "comía", "tú": "comías", "usted": "comía", "nosotros": "comíamos", "vosotros": "comíais", "ustedes": "comían" },
+      "futuro": { "yo": "comeré", "tú": "comerás", "usted": "comerá", "nosotros": "comeremos", "vosotros": "comeréis", "ustedes": "comerán" },
+      "imperativo_afirmativo": { "tú": "come", "usted": "coma", "nosotros": "comamos", "vosotros": "comed", "ustedes": "coman" }
+    }
+  },
+  {
+    "infinitive": "vivir",
+    "translation_ru": "жить",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "vivo", "tú": "vives", "usted": "vive", "nosotros": "vivimos", "vosotros": "vivís", "ustedes": "viven" },
+      "indefinido": { "yo": "viví", "tú": "viviste", "usted": "vivió", "nosotros": "vivimos", "vosotros": "vivisteis", "ustedes": "vivieron" },
+      "imperfecto": { "yo": "vivía", "tú": "vivías", "usted": "vivía", "nosotros": "vivíamos", "vosotros": "vivíais", "ustedes": "vivían" },
+      "futuro": { "yo": "viviré", "tú": "vivirás", "usted": "vivirá", "nosotros": "viviremos", "vosotros": "viviréis", "ustedes": "vivirán" },
+      "imperativo_afirmativo": { "tú": "vive", "usted": "viva", "nosotros": "vivamos", "vosotros": "vivid", "ustedes": "vivan" }
+    }
+  },
+  {
+    "infinitive": "trabajar",
+    "translation_ru": "работать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "trabajo", "tú": "trabajas", "usted": "trabaja", "nosotros": "trabajamos", "vosotros": "trabajáis", "ustedes": "trabajan" },
+      "indefinido": { "yo": "trabajé", "tú": "trabajaste", "usted": "trabajó", "nosotros": "trabajamos", "vosotros": "trabajasteis", "ustedes": "trabajaron" },
+      "imperfecto": { "yo": "trabajaba", "tú": "trabajabas", "usted": "trabajaba", "nosotros": "trabajábamos", "vosotros": "trabajabais", "ustedes": "trabajaban" },
+      "futuro": { "yo": "trabajaré", "tú": "trabajarás", "usted": "trabajará", "nosotros": "trabajaremos", "vosotros": "trabajaréis", "ustedes": "trabajarán" },
+      "imperativo_afirmativo": { "tú": "trabaja", "usted": "trabaje", "nosotros": "trabajemos", "vosotros": "trabajad", "ustedes": "trabajen" }
+    }
+  },
+  {
+    "infinitive": "estudiar",
+    "translation_ru": "учиться / изучать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "estudio", "tú": "estudias", "usted": "estudia", "nosotros": "estudiamos", "vosotros": "estudiáis", "ustedes": "estudian" },
+      "indefinido": { "yo": "estudié", "tú": "estudiaste", "usted": "estudió", "nosotros": "estudiamos", "vosotros": "estudiasteis", "ustedes": "estudiaron" },
+      "imperfecto": { "yo": "estudiaba", "tú": "estudiabas", "usted": "estudiaba", "nosotros": "estudiábamos", "vosotros": "estudiabais", "ustedes": "estudiaban" },
+      "futuro": { "yo": "estudiaré", "tú": "estudiarás", "usted": "estudiará", "nosotros": "estudiaremos", "vosotros": "estudiaréis", "ustedes": "estudiarán" },
+      "imperativo_afirmativo": { "tú": "estudia", "usted": "estudie", "nosotros": "estudiemos", "vosotros": "estudiad", "ustedes": "estudien" }
+    }
+  },
+  {
+    "infinitive": "escuchar",
+    "translation_ru": "слушать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "escucho", "tú": "escuchas", "usted": "escucha", "nosotros": "escuchamos", "vosotros": "escucháis", "ustedes": "escuchan" },
+      "indefinido": { "yo": "escuché", "tú": "escuchaste", "usted": "escuchó", "nosotros": "escuchamos", "vosotros": "escuchasteis", "ustedes": "escucharon" },
+      "imperfecto": { "yo": "escuchaba", "tú": "escuchabas", "usted": "escuchaba", "nosotros": "escuchábamos", "vosotros": "escuchabais", "ustedes": "escuchaban" },
+      "futuro": { "yo": "escucharé", "tú": "escucharás", "usted": "escuchará", "nosotros": "escucharemos", "vosotros": "escucharéis", "ustedes": "escucharán" },
+      "imperativo_afirmativo": { "tú": "escucha", "usted": "escuche", "nosotros": "escuchemos", "vosotros": "escuchad", "ustedes": "escuchen" }
+    }
+  },
+  {
+    "infinitive": "llamar",
+    "translation_ru": "звонить / называть",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "llamo", "tú": "llamas", "usted": "llama", "nosotros": "llamamos", "vosotros": "llamáis", "ustedes": "llaman" },
+      "indefinido": { "yo": "llamé", "tú": "llamaste", "usted": "llamó", "nosotros": "llamamos", "vosotros": "llamasteis", "ustedes": "llamaron" },
+      "imperfecto": { "yo": "llamaba", "tú": "llamabas", "usted": "llamaba", "nosotros": "llamábamos", "vosotros": "llamabais", "ustedes": "llamaban" },
+      "futuro": { "yo": "llamaré", "tú": "llamarás", "usted": "llamará", "nosotros": "llamaremos", "vosotros": "llamaréis", "ustedes": "llamarán" },
+      "imperativo_afirmativo": { "tú": "llama", "usted": "llame", "nosotros": "llamemos", "vosotros": "llamad", "ustedes": "llamen" }
+    }
+  },
+  {
+    "infinitive": "mirar",
+    "translation_ru": "смотреть",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "miro", "tú": "miras", "usted": "mira", "nosotros": "miramos", "vosotros": "miráis", "ustedes": "miran" },
+      "indefinido": { "yo": "miré", "tú": "miraste", "usted": "miró", "nosotros": "miramos", "vosotros": "mirasteis", "ustedes": "miraron" },
+      "imperfecto": { "yo": "miraba", "tú": "mirabas", "usted": "miraba", "nosotros": "mirábamos", "vosotros": "mirabais", "ustedes": "miraban" },
+      "futuro": { "yo": "miraré", "tú": "mirarás", "usted": "mirará", "nosotros": "miraremos", "vosotros": "miraréis", "ustedes": "mirarán" },
+      "imperativo_afirmativo": { "tú": "mira", "usted": "mire", "nosotros": "miremos", "vosotros": "mirad", "ustedes": "miren" }
+    }
+  },
+  {
+    "infinitive": "comprar",
+    "translation_ru": "покупать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "compro", "tú": "compras", "usted": "compra", "nosotros": "compramos", "vosotros": "compráis", "ustedes": "compran" },
+      "indefinido": { "yo": "compré", "tú": "compraste", "usted": "compró", "nosotros": "compramos", "vosotros": "comprasteis", "ustedes": "compraron" },
+      "imperfecto": { "yo": "compraba", "tú": "comprabas", "usted": "compraba", "nosotros": "comprábamos", "vosotros": "comprabais", "ustedes": "compraban" },
+      "futuro": { "yo": "compraré", "tú": "comprarás", "usted": "comprará", "nosotros": "compraremos", "vosotros": "compraréis", "ustedes": "comprarán" },
+      "imperativo_afirmativo": { "tú": "compra", "usted": "compre", "nosotros": "compremos", "vosotros": "comprad", "ustedes": "compren" }
+    }
+  },
+  {
+    "infinitive": "caminar",
+    "translation_ru": "ходить / гулять",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "camino", "tú": "caminas", "usted": "camina", "nosotros": "caminamos", "vosotros": "camináis", "ustedes": "caminan" },
+      "indefinido": { "yo": "caminé", "tú": "caminaste", "usted": "caminó", "nosotros": "caminamos", "vosotros": "caminasteis", "ustedes": "caminaron" },
+      "imperfecto": { "yo": "caminaba", "tú": "caminabas", "usted": "caminaba", "nosotros": "caminábamos", "vosotros": "caminabais", "ustedes": "caminaban" },
+      "futuro": { "yo": "caminaré", "tú": "caminarás", "usted": "caminará", "nosotros": "caminaremos", "vosotros": "caminaréis", "ustedes": "caminarán" },
+      "imperativo_afirmativo": { "tú": "camina", "usted": "camine", "nosotros": "caminemos", "vosotros": "caminad", "ustedes": "caminen" }
+    }
+  },
+  {
+    "infinitive": "necesitar",
+    "translation_ru": "нуждаться / нужно",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "necesito", "tú": "necesitas", "usted": "necesita", "nosotros": "necesitamos", "vosotros": "necesitáis", "ustedes": "necesitan" },
+      "indefinido": { "yo": "necesité", "tú": "necesitaste", "usted": "necesitó", "nosotros": "necesitamos", "vosotros": "necesitasteis", "ustedes": "necesitaron" },
+      "imperfecto": { "yo": "necesitaba", "tú": "necesitabas", "usted": "necesitaba", "nosotros": "necesitábamos", "vosotros": "necesitabais", "ustedes": "necesitaban" },
+      "futuro": { "yo": "necesitaré", "tú": "necesitarás", "usted": "necesitará", "nosotros": "necesitaremos", "vosotros": "necesitaréis", "ustedes": "necesitarán" },
+      "imperativo_afirmativo": { "tú": "necesita", "usted": "necesite", "nosotros": "necesitemos", "vosotros": "necesitad", "ustedes": "necesiten" }
+    }
+  },
+  {
+    "infinitive": "usar",
+    "translation_ru": "использовать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "uso", "tú": "usas", "usted": "usa", "nosotros": "usamos", "vosotros": "usáis", "ustedes": "usan" },
+      "indefinido": { "yo": "usé", "tú": "usaste", "usted": "usó", "nosotros": "usamos", "vosotros": "usasteis", "ustedes": "usaron" },
+      "imperfecto": { "yo": "usaba", "tú": "usabas", "usted": "usaba", "nosotros": "usábamos", "vosotros": "usabais", "ustedes": "usaban" },
+      "futuro": { "yo": "usaré", "tú": "usarás", "usted": "usará", "nosotros": "usaremos", "vosotros": "usaréis", "ustedes": "usarán" },
+      "imperativo_afirmativo": { "tú": "usa", "usted": "use", "nosotros": "usemos", "vosotros": "usad", "ustedes": "usen" }
+    }
+  },
+  {
+    "infinitive": "llevar",
+    "translation_ru": "носить / везти",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "llevo", "tú": "llevas", "usted": "lleva", "nosotros": "llevamos", "vosotros": "lleváis", "ustedes": "llevan" },
+      "indefinido": { "yo": "llevé", "tú": "llevaste", "usted": "llevó", "nosotros": "llevamos", "vosotros": "llevasteis", "ustedes": "llevaron" },
+      "imperfecto": { "yo": "llevaba", "tú": "llevabas", "usted": "llevaba", "nosotros": "llevábamos", "vosotros": "llevabais", "ustedes": "llevaban" },
+      "futuro": { "yo": "llevaré", "tú": "llevarás", "usted": "llevará", "nosotros": "llevaremos", "vosotros": "llevaréis", "ustedes": "llevarán" },
+      "imperativo_afirmativo": { "tú": "lleva", "usted": "lleve", "nosotros": "llevemos", "vosotros": "llevad", "ustedes": "lleven" }
+    }
+  },
+  {
+    "infinitive": "entrar",
+    "translation_ru": "входить",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "entro", "tú": "entras", "usted": "entra", "nosotros": "entramos", "vosotros": "entráis", "ustedes": "entran" },
+      "indefinido": { "yo": "entré", "tú": "entraste", "usted": "entró", "nosotros": "entramos", "vosotros": "entrasteis", "ustedes": "entraron" },
+      "imperfecto": { "yo": "entraba", "tú": "entrabas", "usted": "entraba", "nosotros": "entrábamos", "vosotros": "entrabais", "ustedes": "entraban" },
+      "futuro": { "yo": "entraré", "tú": "entrarás", "usted": "entrará", "nosotros": "entraremos", "vosotros": "entraréis", "ustedes": "entrarán" },
+      "imperativo_afirmativo": { "tú": "entra", "usted": "entre", "nosotros": "entremos", "vosotros": "entrad", "ustedes": "entren" }
+    }
+  },
+  {
+    "infinitive": "esperar",
+    "translation_ru": "ждать / надеяться",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "espero", "tú": "esperas", "usted": "espera", "nosotros": "esperamos", "vosotros": "esperáis", "ustedes": "esperan" },
+      "indefinido": { "yo": "esperé", "tú": "esperaste", "usted": "esperó", "nosotros": "esperamos", "vosotros": "esperasteis", "ustedes": "esperaron" },
+      "imperfecto": { "yo": "esperaba", "tú": "esperabas", "usted": "esperaba", "nosotros": "esperábamos", "vosotros": "esperabais", "ustedes": "esperaban" },
+      "futuro": { "yo": "esperaré", "tú": "esperarás", "usted": "esperará", "nosotros": "esperaremos", "vosotros": "esperaréis", "ustedes": "esperarán" },
+      "imperativo_afirmativo": { "tú": "espera", "usted": "espere", "nosotros": "esperemos", "vosotros": "esperad", "ustedes": "esperen" }
+    }
+  },
+  {
+    "infinitive": "terminar",
+    "translation_ru": "заканчивать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "termino", "tú": "terminas", "usted": "termina", "nosotros": "terminamos", "vosotros": "termináis", "ustedes": "terminan" },
+      "indefinido": { "yo": "terminé", "tú": "terminaste", "usted": "terminó", "nosotros": "terminamos", "vosotros": "terminasteis", "ustedes": "terminaron" },
+      "imperfecto": { "yo": "terminaba", "tú": "terminabas", "usted": "terminaba", "nosotros": "terminábamos", "vosotros": "terminabais", "ustedes": "terminaban" },
+      "futuro": { "yo": "terminaré", "tú": "terminarás", "usted": "terminará", "nosotros": "terminaremos", "vosotros": "terminaréis", "ustedes": "terminarán" },
+      "imperativo_afirmativo": { "tú": "termina", "usted": "termine", "nosotros": "terminemos", "vosotros": "terminad", "ustedes": "terminen" }
+    }
+  },
+  {
+    "infinitive": "preparar",
+    "translation_ru": "готовить / подготавливать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "preparo", "tú": "preparas", "usted": "prepara", "nosotros": "preparamos", "vosotros": "preparáis", "ustedes": "preparan" },
+      "indefinido": { "yo": "preparé", "tú": "preparaste", "usted": "preparó", "nosotros": "preparamos", "vosotros": "preparasteis", "ustedes": "prepararon" },
+      "imperfecto": { "yo": "preparaba", "tú": "preparabas", "usted": "preparaba", "nosotros": "preparábamos", "vosotros": "preparabais", "ustedes": "preparaban" },
+      "futuro": { "yo": "prepararé", "tú": "prepararás", "usted": "preparará", "nosotros": "prepararemos", "vosotros": "prepararéis", "ustedes": "prepararán" },
+      "imperativo_afirmativo": { "tú": "prepara", "usted": "prepare", "nosotros": "preparemos", "vosotros": "preparad", "ustedes": "preparen" }
+    }
+  },
+  {
+    "infinitive": "ayudar",
+    "translation_ru": "помогать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "ayudo", "tú": "ayudas", "usted": "ayuda", "nosotros": "ayudamos", "vosotros": "ayudáis", "ustedes": "ayudan" },
+      "indefinido": { "yo": "ayudé", "tú": "ayudaste", "usted": "ayudó", "nosotros": "ayudamos", "vosotros": "ayudasteis", "ustedes": "ayudaron" },
+      "imperfecto": { "yo": "ayudaba", "tú": "ayudabas", "usted": "ayudaba", "nosotros": "ayudábamos", "vosotros": "ayudabais", "ustedes": "ayudaban" },
+      "futuro": { "yo": "ayudaré", "tú": "ayudarás", "usted": "ayudará", "nosotros": "ayudaremos", "vosotros": "ayudaréis", "ustedes": "ayudarán" },
+      "imperativo_afirmativo": { "tú": "ayuda", "usted": "ayude", "nosotros": "ayudemos", "vosotros": "ayudad", "ustedes": "ayuden" }
+    }
+  },
+  {
+    "infinitive": "descansar",
+    "translation_ru": "отдыхать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "descanso", "tú": "descansas", "usted": "descansa", "nosotros": "descansamos", "vosotros": "descansáis", "ustedes": "descansan" },
+      "indefinido": { "yo": "descansé", "tú": "descansaste", "usted": "descansó", "nosotros": "descansamos", "vosotros": "descansasteis", "ustedes": "descansaron" },
+      "imperfecto": { "yo": "descansaba", "tú": "descansabas", "usted": "descansaba", "nosotros": "descansábamos", "vosotros": "descansabais", "ustedes": "descansaban" },
+      "futuro": { "yo": "descansaré", "tú": "descansarás", "usted": "descansará", "nosotros": "descansaremos", "vosotros": "descansaréis", "ustedes": "descansarán" },
+      "imperativo_afirmativo": { "tú": "descansa", "usted": "descanse", "nosotros": "descansemos", "vosotros": "descansad", "ustedes": "descansen" }
+    }
+  },
+  {
+    "infinitive": "pasar",
+    "translation_ru": "проходить / передавать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "paso", "tú": "pasas", "usted": "pasa", "nosotros": "pasamos", "vosotros": "pasáis", "ustedes": "pasan" },
+      "indefinido": { "yo": "pasé", "tú": "pasaste", "usted": "pasó", "nosotros": "pasamos", "vosotros": "pasasteis", "ustedes": "pasaron" },
+      "imperfecto": { "yo": "pasaba", "tú": "pasabas", "usted": "pasaba", "nosotros": "pasábamos", "vosotros": "pasabais", "ustedes": "pasaban" },
+      "futuro": { "yo": "pasaré", "tú": "pasarás", "usted": "pasará", "nosotros": "pasaremos", "vosotros": "pasaréis", "ustedes": "pasarán" },
+      "imperativo_afirmativo": { "tú": "pasa", "usted": "pase", "nosotros": "pasemos", "vosotros": "pasad", "ustedes": "pasen" }
+    }
+  },
+  {
+    "infinitive": "beber",
+    "translation_ru": "пить",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "bebo", "tú": "bebes", "usted": "bebe", "nosotros": "bebemos", "vosotros": "bebéis", "ustedes": "beben" },
+      "indefinido": { "yo": "bebí", "tú": "bebiste", "usted": "bebió", "nosotros": "bebimos", "vosotros": "bebisteis", "ustedes": "bebieron" },
+      "imperfecto": { "yo": "bebía", "tú": "bebías", "usted": "bebía", "nosotros": "bebíamos", "vosotros": "bebíais", "ustedes": "bebían" },
+      "futuro": { "yo": "beberé", "tú": "beberás", "usted": "beberá", "nosotros": "beberemos", "vosotros": "beberéis", "ustedes": "beberán" },
+      "imperativo_afirmativo": { "tú": "bebe", "usted": "beba", "nosotros": "bebamos", "vosotros": "bebed", "ustedes": "beban" }
+    }
+  },
+  {
+    "infinitive": "aprender",
+    "translation_ru": "учиться / узнавать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "aprendo", "tú": "aprendes", "usted": "aprende", "nosotros": "aprendemos", "vosotros": "aprendéis", "ustedes": "aprenden" },
+      "indefinido": { "yo": "aprendí", "tú": "aprendiste", "usted": "aprendió", "nosotros": "aprendimos", "vosotros": "aprendisteis", "ustedes": "aprendieron" },
+      "imperfecto": { "yo": "aprendía", "tú": "aprendías", "usted": "aprendía", "nosotros": "aprendíamos", "vosotros": "aprendíais", "ustedes": "aprendían" },
+      "futuro": { "yo": "aprenderé", "tú": "aprenderás", "usted": "aprenderá", "nosotros": "aprenderemos", "vosotros": "aprenderéis", "ustedes": "aprenderán" },
+      "imperativo_afirmativo": { "tú": "aprende", "usted": "aprenda", "nosotros": "aprendamos", "vosotros": "aprended", "ustedes": "aprendan" }
+    }
+  },
+  {
+    "infinitive": "leer",
+    "translation_ru": "читать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "leo", "tú": "lees", "usted": "lee", "nosotros": "leemos", "vosotros": "leéis", "ustedes": "leen" },
+      "indefinido": { "yo": "leí", "tú": "leíste", "usted": "leyó", "nosotros": "leímos", "vosotros": "leísteis", "ustedes": "leyeron" },
+      "imperfecto": { "yo": "leía", "tú": "leías", "usted": "leía", "nosotros": "leíamos", "vosotros": "leíais", "ustedes": "leían" },
+      "futuro": { "yo": "leeré", "tú": "leerás", "usted": "leerá", "nosotros": "leeremos", "vosotros": "leeréis", "ustedes": "leerán" },
+      "imperativo_afirmativo": { "tú": "lee", "usted": "lea", "nosotros": "leamos", "vosotros": "leed", "ustedes": "lean" }
+    }
+  },
+  {
+    "infinitive": "escribir",
+    "translation_ru": "писать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "escribo", "tú": "escribes", "usted": "escribe", "nosotros": "escribimos", "vosotros": "escribís", "ustedes": "escriben" },
+      "indefinido": { "yo": "escribí", "tú": "escribiste", "usted": "escribió", "nosotros": "escribimos", "vosotros": "escribisteis", "ustedes": "escribieron" },
+      "imperfecto": { "yo": "escribía", "tú": "escribías", "usted": "escribía", "nosotros": "escribíamos", "vosotros": "escribíais", "ustedes": "escribían" },
+      "futuro": { "yo": "escribiré", "tú": "escribirás", "usted": "escribirá", "nosotros": "escribiremos", "vosotros": "escribiréis", "ustedes": "escribirán" },
+      "imperativo_afirmativo": { "tú": "escribe", "usted": "escriba", "nosotros": "escribamos", "vosotros": "escribid", "ustedes": "escriban" }
+    }
+  },
+  {
+    "infinitive": "abrir",
+    "translation_ru": "открывать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "abro", "tú": "abres", "usted": "abre", "nosotros": "abrimos", "vosotros": "abrís", "ustedes": "abren" },
+      "indefinido": { "yo": "abrí", "tú": "abriste", "usted": "abrió", "nosotros": "abrimos", "vosotros": "abristeis", "ustedes": "abrieron" },
+      "imperfecto": { "yo": "abría", "tú": "abrías", "usted": "abría", "nosotros": "abríamos", "vosotros": "abríais", "ustedes": "abrían" },
+      "futuro": { "yo": "abriré", "tú": "abrirás", "usted": "abrirá", "nosotros": "abriremos", "vosotros": "abriréis", "ustedes": "abrirán" },
+      "imperativo_afirmativo": { "tú": "abre", "usted": "abra", "nosotros": "abramos", "vosotros": "abrid", "ustedes": "abran" }
+    }
+  },
+  {
+    "infinitive": "subir",
+    "translation_ru": "подниматься / загружать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "subo", "tú": "subes", "usted": "sube", "nosotros": "subimos", "vosotros": "subís", "ustedes": "suben" },
+      "indefinido": { "yo": "subí", "tú": "subiste", "usted": "subió", "nosotros": "subimos", "vosotros": "subisteis", "ustedes": "subieron" },
+      "imperfecto": { "yo": "subía", "tú": "subías", "usted": "subía", "nosotros": "subíamos", "vosotros": "subíais", "ustedes": "subían" },
+      "futuro": { "yo": "subiré", "tú": "subirás", "usted": "subirá", "nosotros": "subiremos", "vosotros": "subiréis", "ustedes": "subirán" },
+      "imperativo_afirmativo": { "tú": "sube", "usted": "suba", "nosotros": "subamos", "vosotros": "subid", "ustedes": "suban" }
+    }
+  },
+  {
+    "infinitive": "recibir",
+    "translation_ru": "получать",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "recibo", "tú": "recibes", "usted": "recibe", "nosotros": "recibimos", "vosotros": "recibís", "ustedes": "reciben" },
+      "indefinido": { "yo": "recibí", "tú": "recibiste", "usted": "recibió", "nosotros": "recibimos", "vosotros": "recibisteis", "ustedes": "recibieron" },
+      "imperfecto": { "yo": "recibía", "tú": "recibías", "usted": "recibía", "nosotros": "recibíamos", "vosotros": "recibíais", "ustedes": "recibían" },
+      "futuro": { "yo": "recibiré", "tú": "recibirás", "usted": "recibirá", "nosotros": "recibiremos", "vosotros": "recibiréis", "ustedes": "recibirán" },
+      "imperativo_afirmativo": { "tú": "recibe", "usted": "reciba", "nosotros": "recibamos", "vosotros": "recibid", "ustedes": "reciban" }
+    }
+  },
+  {
+    "infinitive": "salir",
+    "translation_ru": "выходить",
+    "level": "A1",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "salgo", "tú": "sales", "usted": "sale", "nosotros": "salimos", "vosotros": "salís", "ustedes": "salen" },
+      "indefinido": { "yo": "salí", "tú": "saliste", "usted": "salió", "nosotros": "salimos", "vosotros": "salisteis", "ustedes": "salieron" },
+      "imperfecto": { "yo": "salía", "tú": "salías", "usted": "salía", "nosotros": "salíamos", "vosotros": "salíais", "ustedes": "salían" },
+      "futuro": { "yo": "saldré", "tú": "saldrás", "usted": "saldrá", "nosotros": "saldremos", "vosotros": "saldréis", "ustedes": "saldrán" },
+      "imperativo_afirmativo": { "tú": "sal", "usted": "salga", "nosotros": "salgamos", "vosotros": "salid", "ustedes": "salgan" }
+    }
+  },
+  {
+    "infinitive": "dormir",
+    "translation_ru": "спать",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "duermo", "tú": "duermes", "usted": "duerme", "nosotros": "dormimos", "vosotros": "dormís", "ustedes": "duermen" },
+      "indefinido": { "yo": "dormí", "tú": "dormiste", "usted": "durmió", "nosotros": "dormimos", "vosotros": "dormisteis", "ustedes": "durmieron" },
+      "imperfecto": { "yo": "dormía", "tú": "dormías", "usted": "dormía", "nosotros": "dormíamos", "vosotros": "dormíais", "ustedes": "dormían" },
+      "futuro": { "yo": "dormiré", "tú": "dormirás", "usted": "dormirá", "nosotros": "dormiremos", "vosotros": "dormiréis", "ustedes": "dormirán" },
+      "imperativo_afirmativo": { "tú": "duerme", "usted": "duerma", "nosotros": "durmamos", "vosotros": "dormid", "ustedes": "duerman" }
+    }
+  },
+  {
+    "infinitive": "sentir",
+    "translation_ru": "чувствовать",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "siento", "tú": "sientes", "usted": "siente", "nosotros": "sentimos", "vosotros": "sentís", "ustedes": "sienten" },
+      "indefinido": { "yo": "sentí", "tú": "sentiste", "usted": "sintió", "nosotros": "sentimos", "vosotros": "sentisteis", "ustedes": "sintieron" },
+      "imperfecto": { "yo": "sentía", "tú": "sentías", "usted": "sentía", "nosotros": "sentíamos", "vosotros": "sentíais", "ustedes": "sentían" },
+      "futuro": { "yo": "sentiré", "tú": "sentirás", "usted": "sentirá", "nosotros": "sentiremos", "vosotros": "sentiréis", "ustedes": "sentirán" },
+      "imperativo_afirmativo": { "tú": "siente", "usted": "sienta", "nosotros": "sintamos", "vosotros": "sentid", "ustedes": "sientan" }
+    }
+  },
+  {
+    "infinitive": "seguir",
+    "translation_ru": "продолжать / следовать",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "sigo", "tú": "sigues", "usted": "sigue", "nosotros": "seguimos", "vosotros": "seguís", "ustedes": "siguen" },
+      "indefinido": { "yo": "seguí", "tú": "seguiste", "usted": "siguió", "nosotros": "seguimos", "vosotros": "seguisteis", "ustedes": "siguieron" },
+      "imperfecto": { "yo": "seguía", "tú": "seguías", "usted": "seguía", "nosotros": "seguíamos", "vosotros": "seguíais", "ustedes": "seguían" },
+      "futuro": { "yo": "seguiré", "tú": "seguirás", "usted": "seguirá", "nosotros": "seguiremos", "vosotros": "seguiréis", "ustedes": "seguirán" },
+      "imperativo_afirmativo": { "tú": "sigue", "usted": "siga", "nosotros": "sigamos", "vosotros": "seguid", "ustedes": "sigan" }
+    }
+  },
+  {
+    "infinitive": "entender",
+    "translation_ru": "понимать",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "entiendo", "tú": "entiendes", "usted": "entiende", "nosotros": "entendemos", "vosotros": "entendéis", "ustedes": "entienden" },
+      "indefinido": { "yo": "entendí", "tú": "entendiste", "usted": "entendió", "nosotros": "entendimos", "vosotros": "entendisteis", "ustedes": "entendieron" },
+      "imperfecto": { "yo": "entendía", "tú": "entendías", "usted": "entendía", "nosotros": "entendíamos", "vosotros": "entendíais", "ustedes": "entendían" },
+      "futuro": { "yo": "entenderé", "tú": "entenderás", "usted": "entenderá", "nosotros": "entenderemos", "vosotros": "entenderéis", "ustedes": "entenderán" },
+      "imperativo_afirmativo": { "tú": "entiende", "usted": "entienda", "nosotros": "entendamos", "vosotros": "entended", "ustedes": "entiendan" }
+    }
+  },
+  {
+    "infinitive": "conocer",
+    "translation_ru": "знать (человека) / познакомиться",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "conozco", "tú": "conoces", "usted": "conoce", "nosotros": "conocemos", "vosotros": "conocéis", "ustedes": "conocen" },
+      "indefinido": { "yo": "conocí", "tú": "conociste", "usted": "conoció", "nosotros": "conocimos", "vosotros": "conocisteis", "ustedes": "conocieron" },
+      "imperfecto": { "yo": "conocía", "tú": "conocías", "usted": "conocía", "nosotros": "conocíamos", "vosotros": "conocíais", "ustedes": "conocían" },
+      "futuro": { "yo": "conoceré", "tú": "conocerás", "usted": "conocerá", "nosotros": "conoceremos", "vosotros": "conoceréis", "ustedes": "conocerán" },
+      "imperativo_afirmativo": { "tú": "conoce", "usted": "conozca", "nosotros": "conozcamos", "vosotros": "conoced", "ustedes": "conozcan" }
+    }
+  },
+  {
+    "infinitive": "volver",
+    "translation_ru": "возвращаться",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "vuelvo", "tú": "vuelves", "usted": "vuelve", "nosotros": "volvemos", "vosotros": "volvéis", "ustedes": "vuelven" },
+      "indefinido": { "yo": "volví", "tú": "volviste", "usted": "volvió", "nosotros": "volvimos", "vosotros": "volvisteis", "ustedes": "volvieron" },
+      "imperfecto": { "yo": "volvía", "tú": "volvías", "usted": "volvía", "nosotros": "volvíamos", "vosotros": "volvíais", "ustedes": "volvían" },
+      "futuro": { "yo": "volveré", "tú": "volverás", "usted": "volverá", "nosotros": "volveremos", "vosotros": "volveréis", "ustedes": "volverán" },
+      "imperativo_afirmativo": { "tú": "vuelve", "usted": "vuelva", "nosotros": "volvamos", "vosotros": "volved", "ustedes": "vuelvan" }
+    }
+  },
+  {
+    "infinitive": "perder",
+    "translation_ru": "терять",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "pierdo", "tú": "pierdes", "usted": "pierde", "nosotros": "perdemos", "vosotros": "perdéis", "ustedes": "pierden" },
+      "indefinido": { "yo": "perdí", "tú": "perdiste", "usted": "perdió", "nosotros": "perdimos", "vosotros": "perdisteis", "ustedes": "perdieron" },
+      "imperfecto": { "yo": "perdía", "tú": "perdías", "usted": "perdía", "nosotros": "perdíamos", "vosotros": "perdíais", "ustedes": "perdían" },
+      "futuro": { "yo": "perderé", "tú": "perderás", "usted": "perderá", "nosotros": "perderemos", "vosotros": "perderéis", "ustedes": "perderán" },
+      "imperativo_afirmativo": { "tú": "pierde", "usted": "pierda", "nosotros": "perdamos", "vosotros": "perded", "ustedes": "pierdan" }
+    }
+  },
+  {
+    "infinitive": "encontrar",
+    "translation_ru": "находить / встречать",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "encuentro", "tú": "encuentras", "usted": "encuentra", "nosotros": "encontramos", "vosotros": "encontráis", "ustedes": "encuentran" },
+      "indefinido": { "yo": "encontré", "tú": "encontraste", "usted": "encontró", "nosotros": "encontramos", "vosotros": "encontrasteis", "ustedes": "encontraron" },
+      "imperfecto": { "yo": "encontraba", "tú": "encontrabas", "usted": "encontraba", "nosotros": "encontrábamos", "vosotros": "encontrabais", "ustedes": "encontraban" },
+      "futuro": { "yo": "encontraré", "tú": "encontrarás", "usted": "encontrará", "nosotros": "encontraremos", "vosotros": "encontraréis", "ustedes": "encontrarán" },
+      "imperativo_afirmativo": { "tú": "encuentra", "usted": "encuentre", "nosotros": "encontremos", "vosotros": "encontrad", "ustedes": "encuentren" }
+    }
+  },
+  {
+    "infinitive": "recordar",
+    "translation_ru": "помнить / вспоминать",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "recuerdo", "tú": "recuerdas", "usted": "recuerda", "nosotros": "recordamos", "vosotros": "recordáis", "ustedes": "recuerdan" },
+      "indefinido": { "yo": "recordé", "tú": "recordaste", "usted": "recordó", "nosotros": "recordamos", "vosotros": "recordasteis", "ustedes": "recordaron" },
+      "imperfecto": { "yo": "recordaba", "tú": "recordabas", "usted": "recordaba", "nosotros": "recordábamos", "vosotros": "recordabais", "ustedes": "recordaban" },
+      "futuro": { "yo": "recordaré", "tú": "recordarás", "usted": "recordará", "nosotros": "recordaremos", "vosotros": "recordaréis", "ustedes": "recordarán" },
+      "imperativo_afirmativo": { "tú": "recuerda", "usted": "recuerde", "nosotros": "recordemos", "vosotros": "recordad", "ustedes": "recuerden" }
+    }
+  },
+  {
+    "infinitive": "contar",
+    "translation_ru": "считать / рассказывать",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "cuento", "tú": "cuentas", "usted": "cuenta", "nosotros": "contamos", "vosotros": "contáis", "ustedes": "cuentan" },
+      "indefinido": { "yo": "conté", "tú": "contaste", "usted": "contó", "nosotros": "contamos", "vosotros": "contasteis", "ustedes": "contaron" },
+      "imperfecto": { "yo": "contaba", "tú": "contabas", "usted": "contaba", "nosotros": "contábamos", "vosotros": "contabais", "ustedes": "contaban" },
+      "futuro": { "yo": "contaré", "tú": "contarás", "usted": "contará", "nosotros": "contaremos", "vosotros": "contaréis", "ustedes": "contarán" },
+      "imperativo_afirmativo": { "tú": "cuenta", "usted": "cuente", "nosotros": "contemos", "vosotros": "contad", "ustedes": "cuenten" }
+    }
+  },
+  {
+    "infinitive": "mostrar",
+    "translation_ru": "показывать",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "muestro", "tú": "muestras", "usted": "muestra", "nosotros": "mostramos", "vosotros": "mostráis", "ustedes": "muestran" },
+      "indefinido": { "yo": "mostré", "tú": "mostraste", "usted": "mostró", "nosotros": "mostramos", "vosotros": "mostrasteis", "ustedes": "mostraron" },
+      "imperfecto": { "yo": "mostraba", "tú": "mostrabas", "usted": "mostraba", "nosotros": "mostrábamos", "vosotros": "mostrabais", "ustedes": "mostraban" },
+      "futuro": { "yo": "mostraré", "tú": "mostrarás", "usted": "mostrará", "nosotros": "mostraremos", "vosotros": "mostraréis", "ustedes": "mostrarán" },
+      "imperativo_afirmativo": { "tú": "muestra", "usted": "muestre", "nosotros": "mostremos", "vosotros": "mostrad", "ustedes": "muestren" }
+    }
+  },
+  {
+    "infinitive": "añadir",
+    "translation_ru": "добавлять",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "añado", "tú": "añades", "usted": "añade", "nosotros": "añadimos", "vosotros": "añadís", "ustedes": "añaden" },
+      "indefinido": { "yo": "añadí", "tú": "añadiste", "usted": "añadió", "nosotros": "añadimos", "vosotros": "añadisteis", "ustedes": "añadieron" },
+      "imperfecto": { "yo": "añadía", "tú": "añadías", "usted": "añadía", "nosotros": "añadíamos", "vosotros": "añadíais", "ustedes": "añadían" },
+      "futuro": { "yo": "añadiré", "tú": "añadirás", "usted": "añadirá", "nosotros": "añadiremos", "vosotros": "añadiréis", "ustedes": "añadirán" },
+      "imperativo_afirmativo": { "tú": "añade", "usted": "añada", "nosotros": "añadamos", "vosotros": "añadid", "ustedes": "añadan" }
+    }
+  },
+  {
+    "infinitive": "compartir",
+    "translation_ru": "делиться",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "comparto", "tú": "compartes", "usted": "comparte", "nosotros": "compartimos", "vosotros": "compartís", "ustedes": "comparten" },
+      "indefinido": { "yo": "compartí", "tú": "compartiste", "usted": "compartió", "nosotros": "compartimos", "vosotros": "compartisteis", "ustedes": "compartieron" },
+      "imperfecto": { "yo": "compartía", "tú": "compartías", "usted": "compartía", "nosotros": "compartíamos", "vosotros": "compartíais", "ustedes": "compartían" },
+      "futuro": { "yo": "compartiré", "tú": "compartirás", "usted": "compartirá", "nosotros": "compartiremos", "vosotros": "compartiréis", "ustedes": "compartirán" },
+      "imperativo_afirmativo": { "tú": "comparte", "usted": "comparta", "nosotros": "compartamos", "vosotros": "compartid", "ustedes": "compartan" }
+    }
+  },
+  {
+    "infinitive": "elegir",
+    "translation_ru": "выбирать",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "elijo", "tú": "eliges", "usted": "elige", "nosotros": "elegimos", "vosotros": "elegís", "ustedes": "eligen" },
+      "indefinido": { "yo": "elegí", "tú": "elegiste", "usted": "eligió", "nosotros": "elegimos", "vosotros": "elegisteis", "ustedes": "eligieron" },
+      "imperfecto": { "yo": "elegía", "tú": "elegías", "usted": "elegía", "nosotros": "elegíamos", "vosotros": "elegíais", "ustedes": "elegían" },
+      "futuro": { "yo": "elegiré", "tú": "elegirás", "usted": "elegirá", "nosotros": "elegiremos", "vosotros": "elegiréis", "ustedes": "elegirán" },
+      "imperativo_afirmativo": { "tú": "elige", "usted": "elija", "nosotros": "elijamos", "vosotros": "elegid", "ustedes": "elijan" }
+    }
+  },
+  {
+    "infinitive": "olvidar",
+    "translation_ru": "забывать",
+    "level": "A2",
+    "type": "regular",
+    "conjugations": {
+      "presente": { "yo": "olvido", "tú": "olvidas", "usted": "olvida", "nosotros": "olvidamos", "vosotros": "olvidáis", "ustedes": "olvidan" },
+      "indefinido": { "yo": "olvidé", "tú": "olvidaste", "usted": "olvidó", "nosotros": "olvidamos", "vosotros": "olvidasteis", "ustedes": "olvidaron" },
+      "imperfecto": { "yo": "olvidaba", "tú": "olvidabas", "usted": "olvidaba", "nosotros": "olvidábamos", "vosotros": "olvidabais", "ustedes": "olvidaban" },
+      "futuro": { "yo": "olvidaré", "tú": "olvidarás", "usted": "olvidará", "nosotros": "olvidaremos", "vosotros": "olvidaréis", "ustedes": "olvidarán" },
+      "imperativo_afirmativo": { "tú": "olvida", "usted": "olvide", "nosotros": "olvidemos", "vosotros": "olvidad", "ustedes": "olviden" }
+    }
+  },
+  {
+    "infinitive": "ser",
+    "translation_ru": "быть (постоянное)",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "soy", "tú": "eres", "usted": "es", "nosotros": "somos", "vosotros": "sois", "ustedes": "son" },
+      "indefinido": { "yo": "fui", "tú": "fuiste", "usted": "fue", "nosotros": "fuimos", "vosotros": "fuisteis", "ustedes": "fueron" },
+      "imperfecto": { "yo": "era", "tú": "eras", "usted": "era", "nosotros": "éramos", "vosotros": "erais", "ustedes": "eran" },
+      "futuro": { "yo": "seré", "tú": "serás", "usted": "será", "nosotros": "seremos", "vosotros": "seréis", "ustedes": "serán" },
+      "imperativo_afirmativo": { "tú": "sé", "usted": "sea", "nosotros": "seamos", "vosotros": "sed", "ustedes": "sean" }
+    }
+  },
+  {
+    "infinitive": "estar",
+    "translation_ru": "быть (временное) / находиться",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "estoy", "tú": "estás", "usted": "está", "nosotros": "estamos", "vosotros": "estáis", "ustedes": "están" },
+      "indefinido": { "yo": "estuve", "tú": "estuviste", "usted": "estuvo", "nosotros": "estuvimos", "vosotros": "estuvisteis", "ustedes": "estuvieron" },
+      "imperfecto": { "yo": "estaba", "tú": "estabas", "usted": "estaba", "nosotros": "estábamos", "vosotros": "estabais", "ustedes": "estaban" },
+      "futuro": { "yo": "estaré", "tú": "estarás", "usted": "estará", "nosotros": "estaremos", "vosotros": "estaréis", "ustedes": "estarán" },
+      "imperativo_afirmativo": { "tú": "está", "usted": "esté", "nosotros": "estemos", "vosotros": "estad", "ustedes": "estén" }
+    }
+  },
+  {
+    "infinitive": "tener",
+    "translation_ru": "иметь",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "tengo", "tú": "tienes", "usted": "tiene", "nosotros": "tenemos", "vosotros": "tenéis", "ustedes": "tienen" },
+      "indefinido": { "yo": "tuve", "tú": "tuviste", "usted": "tuvo", "nosotros": "tuvimos", "vosotros": "tuvisteis", "ustedes": "tuvieron" },
+      "imperfecto": { "yo": "tenía", "tú": "tenías", "usted": "tenía", "nosotros": "teníamos", "vosotros": "teníais", "ustedes": "tenían" },
+      "futuro": { "yo": "tendré", "tú": "tendrás", "usted": "tendrá", "nosotros": "tendremos", "vosotros": "tendréis", "ustedes": "tendrán" },
+      "imperativo_afirmativo": { "tú": "ten", "usted": "tenga", "nosotros": "tengamos", "vosotros": "tened", "ustedes": "tengan" }
+    }
+  },
+  {
+    "infinitive": "ir",
+    "translation_ru": "идти / ехать",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "voy", "tú": "vas", "usted": "va", "nosotros": "vamos", "vosotros": "vais", "ustedes": "van" },
+      "indefinido": { "yo": "fui", "tú": "fuiste", "usted": "fue", "nosotros": "fuimos", "vosotros": "fuisteis", "ustedes": "fueron" },
+      "imperfecto": { "yo": "iba", "tú": "ibas", "usted": "iba", "nosotros": "íbamos", "vosotros": "ibais", "ustedes": "iban" },
+      "futuro": { "yo": "iré", "tú": "irás", "usted": "irá", "nosotros": "iremos", "vosotros": "iréis", "ustedes": "irán" },
+      "imperativo_afirmativo": { "tú": "ve", "usted": "vaya", "nosotros": "vayamos", "vosotros": "id", "ustedes": "vayan" }
+    }
+  },
+  {
+    "infinitive": "hacer",
+    "translation_ru": "делать",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "hago", "tú": "haces", "usted": "hace", "nosotros": "hacemos", "vosotros": "hacéis", "ustedes": "hacen" },
+      "indefinido": { "yo": "hice", "tú": "hiciste", "usted": "hizo", "nosotros": "hicimos", "vosotros": "hicisteis", "ustedes": "hicieron" },
+      "imperfecto": { "yo": "hacía", "tú": "hacías", "usted": "hacía", "nosotros": "hacíamos", "vosotros": "hacíais", "ustedes": "hacían" },
+      "futuro": { "yo": "haré", "tú": "harás", "usted": "hará", "nosotros": "haremos", "vosotros": "haréis", "ustedes": "harán" },
+      "imperativo_afirmativo": { "tú": "haz", "usted": "haga", "nosotros": "hagamos", "vosotros": "haced", "ustedes": "hagan" }
+    }
+  },
+  {
+    "infinitive": "poder",
+    "translation_ru": "мочь",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "puedo", "tú": "puedes", "usted": "puede", "nosotros": "podemos", "vosotros": "podéis", "ustedes": "pueden" },
+      "indefinido": { "yo": "pude", "tú": "pudiste", "usted": "pudo", "nosotros": "pudimos", "vosotros": "pudisteis", "ustedes": "pudieron" },
+      "imperfecto": { "yo": "podía", "tú": "podías", "usted": "podía", "nosotros": "podíamos", "vosotros": "podíais", "ustedes": "podían" },
+      "futuro": { "yo": "podré", "tú": "podrás", "usted": "podrá", "nosotros": "podremos", "vosotros": "podréis", "ustedes": "podrán" },
+      "imperativo_afirmativo": { "tú": "puede", "usted": "pueda", "nosotros": "podamos", "vosotros": "poded", "ustedes": "puedan" }
+    }
+  },
+  {
+    "infinitive": "querer",
+    "translation_ru": "хотеть / любить",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "quiero", "tú": "quieres", "usted": "quiere", "nosotros": "queremos", "vosotros": "queréis", "ustedes": "quieren" },
+      "indefinido": { "yo": "quise", "tú": "quisiste", "usted": "quiso", "nosotros": "quisimos", "vosotros": "quisisteis", "ustedes": "quisieron" },
+      "imperfecto": { "yo": "quería", "tú": "querías", "usted": "quería", "nosotros": "queríamos", "vosotros": "queríais", "ustedes": "querían" },
+      "futuro": { "yo": "querré", "tú": "querrás", "usted": "querrá", "nosotros": "querremos", "vosotros": "querréis", "ustedes": "querrán" },
+      "imperativo_afirmativo": { "tú": "quiere", "usted": "quiera", "nosotros": "queramos", "vosotros": "quered", "ustedes": "quieran" }
+    }
+  },
+  {
+    "infinitive": "saber",
+    "translation_ru": "знать (факт / умение)",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "sé", "tú": "sabes", "usted": "sabe", "nosotros": "sabemos", "vosotros": "sabéis", "ustedes": "saben" },
+      "indefinido": { "yo": "supe", "tú": "supiste", "usted": "supo", "nosotros": "supimos", "vosotros": "supisteis", "ustedes": "supieron" },
+      "imperfecto": { "yo": "sabía", "tú": "sabías", "usted": "sabía", "nosotros": "sabíamos", "vosotros": "sabíais", "ustedes": "sabían" },
+      "futuro": { "yo": "sabré", "tú": "sabrás", "usted": "sabrá", "nosotros": "sabremos", "vosotros": "sabréis", "ustedes": "sabrán" },
+      "imperativo_afirmativo": { "tú": "sabe", "usted": "sepa", "nosotros": "sepamos", "vosotros": "sabed", "ustedes": "sepan" }
+    }
+  },
+  {
+    "infinitive": "venir",
+    "translation_ru": "приходить / приезжать",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "vengo", "tú": "vienes", "usted": "viene", "nosotros": "venimos", "vosotros": "venís", "ustedes": "vienen" },
+      "indefinido": { "yo": "vine", "tú": "viniste", "usted": "vino", "nosotros": "vinimos", "vosotros": "vinisteis", "ustedes": "vinieron" },
+      "imperfecto": { "yo": "venía", "tú": "venías", "usted": "venía", "nosotros": "veníamos", "vosotros": "veníais", "ustedes": "venían" },
+      "futuro": { "yo": "vendré", "tú": "vendrás", "usted": "vendrá", "nosotros": "vendremos", "vosotros": "vendréis", "ustedes": "vendrán" },
+      "imperativo_afirmativo": { "tú": "ven", "usted": "venga", "nosotros": "vengamos", "vosotros": "venid", "ustedes": "vengan" }
+    }
+  },
+  {
+    "infinitive": "decir",
+    "translation_ru": "говорить / сказать",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "digo", "tú": "dices", "usted": "dice", "nosotros": "decimos", "vosotros": "decís", "ustedes": "dicen" },
+      "indefinido": { "yo": "dije", "tú": "dijiste", "usted": "dijo", "nosotros": "dijimos", "vosotros": "dijisteis", "ustedes": "dijeron" },
+      "imperfecto": { "yo": "decía", "tú": "decías", "usted": "decía", "nosotros": "decíamos", "vosotros": "decíais", "ustedes": "decían" },
+      "futuro": { "yo": "diré", "tú": "dirás", "usted": "dirá", "nosotros": "diremos", "vosotros": "diréis", "ustedes": "dirán" },
+      "imperativo_afirmativo": { "tú": "di", "usted": "diga", "nosotros": "digamos", "vosotros": "decid", "ustedes": "digan" }
+    }
+  },
+  {
+    "infinitive": "ver",
+    "translation_ru": "видеть",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "veo", "tú": "ves", "usted": "ve", "nosotros": "vemos", "vosotros": "veis", "ustedes": "ven" },
+      "indefinido": { "yo": "vi", "tú": "viste", "usted": "vio", "nosotros": "vimos", "vosotros": "visteis", "ustedes": "vieron" },
+      "imperfecto": { "yo": "veía", "tú": "veías", "usted": "veía", "nosotros": "veíamos", "vosotros": "veíais", "ustedes": "veían" },
+      "futuro": { "yo": "veré", "tú": "verás", "usted": "verá", "nosotros": "veremos", "vosotros": "veréis", "ustedes": "verán" },
+      "imperativo_afirmativo": { "tú": "ve", "usted": "vea", "nosotros": "veamos", "vosotros": "ved", "ustedes": "vean" }
+    }
+  },
+  {
+    "infinitive": "dar",
+    "translation_ru": "давать",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "doy", "tú": "das", "usted": "da", "nosotros": "damos", "vosotros": "dais", "ustedes": "dan" },
+      "indefinido": { "yo": "di", "tú": "diste", "usted": "dio", "nosotros": "dimos", "vosotros": "disteis", "ustedes": "dieron" },
+      "imperfecto": { "yo": "daba", "tú": "dabas", "usted": "daba", "nosotros": "dábamos", "vosotros": "dabais", "ustedes": "daban" },
+      "futuro": { "yo": "daré", "tú": "darás", "usted": "dará", "nosotros": "daremos", "vosotros": "daréis", "ustedes": "darán" },
+      "imperativo_afirmativo": { "tú": "da", "usted": "dé", "nosotros": "demos", "vosotros": "dad", "ustedes": "den" }
+    }
+  },
+  {
+    "infinitive": "poner",
+    "translation_ru": "класть / ставить",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "pongo", "tú": "pones", "usted": "pone", "nosotros": "ponemos", "vosotros": "ponéis", "ustedes": "ponen" },
+      "indefinido": { "yo": "puse", "tú": "pusiste", "usted": "puso", "nosotros": "pusimos", "vosotros": "pusisteis", "ustedes": "pusieron" },
+      "imperfecto": { "yo": "ponía", "tú": "ponías", "usted": "ponía", "nosotros": "poníamos", "vosotros": "poníais", "ustedes": "ponían" },
+      "futuro": { "yo": "pondré", "tú": "pondrás", "usted": "pondrá", "nosotros": "pondremos", "vosotros": "pondréis", "ustedes": "pondrán" },
+      "imperativo_afirmativo": { "tú": "pon", "usted": "ponga", "nosotros": "pongamos", "vosotros": "poned", "ustedes": "pongan" }
+    }
+  },
+  {
+    "infinitive": "traer",
+    "translation_ru": "приносить",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "traigo", "tú": "traes", "usted": "trae", "nosotros": "traemos", "vosotros": "traéis", "ustedes": "traen" },
+      "indefinido": { "yo": "traje", "tú": "trajiste", "usted": "trajo", "nosotros": "trajimos", "vosotros": "trajisteis", "ustedes": "trajeron" },
+      "imperfecto": { "yo": "traía", "tú": "traías", "usted": "traía", "nosotros": "traíamos", "vosotros": "traíais", "ustedes": "traían" },
+      "futuro": { "yo": "traeré", "tú": "traerás", "usted": "traerá", "nosotros": "traeremos", "vosotros": "traeréis", "ustedes": "traerán" },
+      "imperativo_afirmativo": { "tú": "trae", "usted": "traiga", "nosotros": "traigamos", "vosotros": "traed", "ustedes": "traigan" }
+    }
+  },
+  {
+    "infinitive": "caer",
+    "translation_ru": "падать",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "caigo", "tú": "caes", "usted": "cae", "nosotros": "caemos", "vosotros": "caéis", "ustedes": "caen" },
+      "indefinido": { "yo": "caí", "tú": "caíste", "usted": "cayó", "nosotros": "caímos", "vosotros": "caísteis", "ustedes": "cayeron" },
+      "imperfecto": { "yo": "caía", "tú": "caías", "usted": "caía", "nosotros": "caíamos", "vosotros": "caíais", "ustedes": "caían" },
+      "futuro": { "yo": "caeré", "tú": "caerás", "usted": "caerá", "nosotros": "caeremos", "vosotros": "caeréis", "ustedes": "caerán" },
+      "imperativo_afirmativo": { "tú": "cae", "usted": "caiga", "nosotros": "caigamos", "vosotros": "caed", "ustedes": "caigan" }
+    }
+  },
+  {
+    "infinitive": "oír",
+    "translation_ru": "слышать",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "oigo", "tú": "oyes", "usted": "oye", "nosotros": "oímos", "vosotros": "oís", "ustedes": "oyen" },
+      "indefinido": { "yo": "oí", "tú": "oíste", "usted": "oyó", "nosotros": "oímos", "vosotros": "oísteis", "ustedes": "oyeron" },
+      "imperfecto": { "yo": "oía", "tú": "oías", "usted": "oía", "nosotros": "oíamos", "vosotros": "oíais", "ustedes": "oían" },
+      "futuro": { "yo": "oiré", "tú": "oirás", "usted": "oirá", "nosotros": "oiremos", "vosotros": "oiréis", "ustedes": "oirán" },
+      "imperativo_afirmativo": { "tú": "oye", "usted": "oiga", "nosotros": "oigamos", "vosotros": "oíd", "ustedes": "oigan" }
+    }
+  },
+  {
+    "infinitive": "conducir",
+    "translation_ru": "водить (машину)",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "conduzco", "tú": "conduces", "usted": "conduce", "nosotros": "conducimos", "vosotros": "conducís", "ustedes": "conducen" },
+      "indefinido": { "yo": "conduje", "tú": "condujiste", "usted": "condujo", "nosotros": "condujimos", "vosotros": "condujisteis", "ustedes": "condujeron" },
+      "imperfecto": { "yo": "conducía", "tú": "conducías", "usted": "conducía", "nosotros": "conducíamos", "vosotros": "conducíais", "ustedes": "conducían" },
+      "futuro": { "yo": "conduciré", "tú": "conducirás", "usted": "conducirá", "nosotros": "conduciremos", "vosotros": "conduciréis", "ustedes": "conducirán" },
+      "imperativo_afirmativo": { "tú": "conduce", "usted": "conduzca", "nosotros": "conduzcamos", "vosotros": "conducid", "ustedes": "conduzcan" }
+    }
+  },
+  {
+    "infinitive": "construir",
+    "translation_ru": "строить",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "construyo", "tú": "construyes", "usted": "construye", "nosotros": "construimos", "vosotros": "construís", "ustedes": "construyen" },
+      "indefinido": { "yo": "construí", "tú": "construiste", "usted": "construyó", "nosotros": "construimos", "vosotros": "construisteis", "ustedes": "construyeron" },
+      "imperfecto": { "yo": "construía", "tú": "construías", "usted": "construía", "nosotros": "construíamos", "vosotros": "construíais", "ustedes": "construían" },
+      "futuro": { "yo": "construiré", "tú": "construirás", "usted": "construirá", "nosotros": "construiremos", "vosotros": "construiréis", "ustedes": "construirán" },
+      "imperativo_afirmativo": { "tú": "construye", "usted": "construya", "nosotros": "construyamos", "vosotros": "construid", "ustedes": "construyan" }
+    }
+  },
+  {
+    "infinitive": "reír",
+    "translation_ru": "смеяться",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "río", "tú": "ríes", "usted": "ríe", "nosotros": "reímos", "vosotros": "reís", "ustedes": "ríen" },
+      "indefinido": { "yo": "reí", "tú": "reíste", "usted": "rió", "nosotros": "reímos", "vosotros": "reísteis", "ustedes": "rieron" },
+      "imperfecto": { "yo": "reía", "tú": "reías", "usted": "reía", "nosotros": "reíamos", "vosotros": "reíais", "ustedes": "reían" },
+      "futuro": { "yo": "reiré", "tú": "reirás", "usted": "reirá", "nosotros": "reiremos", "vosotros": "reiréis", "ustedes": "reirán" },
+      "imperativo_afirmativo": { "tú": "ríe", "usted": "ría", "nosotros": "riamos", "vosotros": "reíd", "ustedes": "rían" }
+    }
+  },
+  {
+    "infinitive": "pedir",
+    "translation_ru": "просить / заказывать",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "pido", "tú": "pides", "usted": "pide", "nosotros": "pedimos", "vosotros": "pedís", "ustedes": "piden" },
+      "indefinido": { "yo": "pedí", "tú": "pediste", "usted": "pidió", "nosotros": "pedimos", "vosotros": "pedisteis", "ustedes": "pidieron" },
+      "imperfecto": { "yo": "pedía", "tú": "pedías", "usted": "pedía", "nosotros": "pedíamos", "vosotros": "pedíais", "ustedes": "pedían" },
+      "futuro": { "yo": "pediré", "tú": "pedirás", "usted": "pedirá", "nosotros": "pediremos", "vosotros": "pediréis", "ustedes": "pedirán" },
+      "imperativo_afirmativo": { "tú": "pide", "usted": "pida", "nosotros": "pidamos", "vosotros": "pedid", "ustedes": "pidan" }
+    }
+  },
+  {
+    "infinitive": "jugar",
+    "translation_ru": "играть",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "juego", "tú": "juegas", "usted": "juega", "nosotros": "jugamos", "vosotros": "jugáis", "ustedes": "juegan" },
+      "indefinido": { "yo": "jugué", "tú": "jugaste", "usted": "jugó", "nosotros": "jugamos", "vosotros": "jugasteis", "ustedes": "jugaron" },
+      "imperfecto": { "yo": "jugaba", "tú": "jugabas", "usted": "jugaba", "nosotros": "jugábamos", "vosotros": "jugabais", "ustedes": "jugaban" },
+      "futuro": { "yo": "jugaré", "tú": "jugarás", "usted": "jugará", "nosotros": "jugaremos", "vosotros": "jugaréis", "ustedes": "jugarán" },
+      "imperativo_afirmativo": { "tú": "juega", "usted": "juegue", "nosotros": "juguemos", "vosotros": "jugad", "ustedes": "jueguen" }
+    }
+  },
+  {
+    "infinitive": "empezar",
+    "translation_ru": "начинать",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "empiezo", "tú": "empiezas", "usted": "empieza", "nosotros": "empezamos", "vosotros": "empezáis", "ustedes": "empiezan" },
+      "indefinido": { "yo": "empecé", "tú": "empezaste", "usted": "empezó", "nosotros": "empezamos", "vosotros": "empezasteis", "ustedes": "empezaron" },
+      "imperfecto": { "yo": "empezaba", "tú": "empezabas", "usted": "empezaba", "nosotros": "empezábamos", "vosotros": "empezabais", "ustedes": "empezaban" },
+      "futuro": { "yo": "empezaré", "tú": "empezarás", "usted": "empezará", "nosotros": "empezaremos", "vosotros": "empezaréis", "ustedes": "empezarán" },
+      "imperativo_afirmativo": { "tú": "empieza", "usted": "empiece", "nosotros": "empecemos", "vosotros": "empezad", "ustedes": "empiecen" }
+    }
+  },
+  {
+    "infinitive": "pensar",
+    "translation_ru": "думать",
+    "level": "A1",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "pienso", "tú": "piensas", "usted": "piensa", "nosotros": "pensamos", "vosotros": "pensáis", "ustedes": "piensan" },
+      "indefinido": { "yo": "pensé", "tú": "pensaste", "usted": "pensó", "nosotros": "pensamos", "vosotros": "pensasteis", "ustedes": "pensaron" },
+      "imperfecto": { "yo": "pensaba", "tú": "pensabas", "usted": "pensaba", "nosotros": "pensábamos", "vosotros": "pensabais", "ustedes": "pensaban" },
+      "futuro": { "yo": "pensaré", "tú": "pensarás", "usted": "pensará", "nosotros": "pensaremos", "vosotros": "pensaréis", "ustedes": "pensarán" },
+      "imperativo_afirmativo": { "tú": "piensa", "usted": "piense", "nosotros": "pensemos", "vosotros": "pensad", "ustedes": "piensen" }
+    }
+  },
+  {
+    "infinitive": "volver",
+    "translation_ru": "возвращаться",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "vuelvo", "tú": "vuelves", "usted": "vuelve", "nosotros": "volvemos", "vosotros": "volvéis", "ustedes": "vuelven" },
+      "indefinido": { "yo": "volví", "tú": "volviste", "usted": "volvió", "nosotros": "volvimos", "vosotros": "volvisteis", "ustedes": "volvieron" },
+      "imperfecto": { "yo": "volvía", "tú": "volvías", "usted": "volvía", "nosotros": "volvíamos", "vosotros": "volvíais", "ustedes": "volvían" },
+      "futuro": { "yo": "volveré", "tú": "volverás", "usted": "volverá", "nosotros": "volveremos", "vosotros": "volveréis", "ustedes": "volverán" },
+      "imperativo_afirmativo": { "tú": "vuelve", "usted": "vuelva", "nosotros": "volvamos", "vosotros": "volved", "ustedes": "vuelvan" }
+    }
+  },
+  {
+    "infinitive": "obtener",
+    "translation_ru": "получать / добиваться",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "obtengo", "tú": "obtienes", "usted": "obtiene", "nosotros": "obtenemos", "vosotros": "obtenéis", "ustedes": "obtienen" },
+      "indefinido": { "yo": "obtuve", "tú": "obtuviste", "usted": "obtuvo", "nosotros": "obtuvimos", "vosotros": "obtuvisteis", "ustedes": "obtuvieron" },
+      "imperfecto": { "yo": "obtenía", "tú": "obtenías", "usted": "obtenía", "nosotros": "obteníamos", "vosotros": "obteníais", "ustedes": "obtenían" },
+      "futuro": { "yo": "obtendré", "tú": "obtendrás", "usted": "obtendrá", "nosotros": "obtendremos", "vosotros": "obtendréis", "ustedes": "obtendrán" },
+      "imperativo_afirmativo": { "tú": "obtén", "usted": "obtenga", "nosotros": "obtengamos", "vosotros": "obtened", "ustedes": "obtengan" }
+    }
+  },
+  {
+    "infinitive": "mantener",
+    "translation_ru": "поддерживать / содержать",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "mantengo", "tú": "mantienes", "usted": "mantiene", "nosotros": "mantenemos", "vosotros": "mantenéis", "ustedes": "mantienen" },
+      "indefinido": { "yo": "mantuve", "tú": "mantuviste", "usted": "mantuvo", "nosotros": "mantuvimos", "vosotros": "mantuvisteis", "ustedes": "mantuvieron" },
+      "imperfecto": { "yo": "mantenía", "tú": "mantenías", "usted": "mantenía", "nosotros": "manteníamos", "vosotros": "manteníais", "ustedes": "mantenían" },
+      "futuro": { "yo": "mantendré", "tú": "mantendrás", "usted": "mantendrá", "nosotros": "mantendremos", "vosotros": "mantendréis", "ustedes": "mantendrán" },
+      "imperativo_afirmativo": { "tú": "mantén", "usted": "mantenga", "nosotros": "mantengamos", "vosotros": "mantened", "ustedes": "mantengan" }
+    }
+  },
+  {
+    "infinitive": "resolver",
+    "translation_ru": "решать (проблему)",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "resuelvo", "tú": "resuelves", "usted": "resuelve", "nosotros": "resolvemos", "vosotros": "resolvéis", "ustedes": "resuelven" },
+      "indefinido": { "yo": "resolví", "tú": "resolviste", "usted": "resolvió", "nosotros": "resolvimos", "vosotros": "resolvisteis", "ustedes": "resolvieron" },
+      "imperfecto": { "yo": "resolvía", "tú": "resolvías", "usted": "resolvía", "nosotros": "resolvíamos", "vosotros": "resolvíais", "ustedes": "resolvían" },
+      "futuro": { "yo": "resolveré", "tú": "resolverás", "usted": "resolverá", "nosotros": "resolveremos", "vosotros": "resolveréis", "ustedes": "resolverán" },
+      "imperativo_afirmativo": { "tú": "resuelve", "usted": "resuelva", "nosotros": "resolvamos", "vosotros": "resolved", "ustedes": "resuelvan" }
+    }
+  },
+  {
+    "infinitive": "proponer",
+    "translation_ru": "предлагать",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "propongo", "tú": "propones", "usted": "propone", "nosotros": "proponemos", "vosotros": "proponéis", "ustedes": "proponen" },
+      "indefinido": { "yo": "propuse", "tú": "propusiste", "usted": "propuso", "nosotros": "propusimos", "vosotros": "propusisteis", "ustedes": "propusieron" },
+      "imperfecto": { "yo": "proponía", "tú": "proponías", "usted": "proponía", "nosotros": "proponíamos", "vosotros": "proponíais", "ustedes": "proponían" },
+      "futuro": { "yo": "propondré", "tú": "propondrás", "usted": "propondrá", "nosotros": "propondremos", "vosotros": "pondréis", "ustedes": "propondrán" },
+      "imperativo_afirmativo": { "tú": "propón", "usted": "proponga", "nosotros": "propongamos", "vosotros": "proponed", "ustedes": "propongan" }
+    }
+  },
+  {
+    "infinitive": "suponer",
+    "translation_ru": "предполагать",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "supongo", "tú": "supones", "usted": "supone", "nosotros": "suponemos", "vosotros": "suponéis", "ustedes": "suponen" },
+      "indefinido": { "yo": "supuse", "tú": "supusiste", "usted": "supuso", "nosotros": "supusimos", "vosotros": "supusisteis", "ustedes": "supusieron" },
+      "imperfecto": { "yo": "suponía", "tú": "suponías", "usted": "suponía", "nosotros": "suponíamos", "vosotros": "suponíais", "ustedes": "suponían" },
+      "futuro": { "yo": "supondré", "tú": "supondrás", "usted": "supondrá", "nosotros": "supondremos", "vosotros": "supondréis", "ustedes": "supondrán" },
+      "imperativo_afirmativo": { "tú": "supón", "usted": "suponga", "nosotros": "supongamos", "vosotros": "suponed", "ustedes": "supongan" }
+    }
+  },
+  {
+    "infinitive": "proteger",
+    "translation_ru": "защищать",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "protejo", "tú": "proteges", "usted": "protege", "nosotros": "protegemos", "vosotros": "protegéis", "ustedes": "protegen" },
+      "indefinido": { "yo": "protegí", "tú": "protegiste", "usted": "protegió", "nosotros": "protegimos", "vosotros": "protegisteis", "ustedes": "protegieron" },
+      "imperfecto": { "yo": "protegía", "tú": "protegías", "usted": "protegía", "nosotros": "protegíamos", "vosotros": "protegíais", "ustedes": "protegían" },
+      "futuro": { "yo": "protegeré", "tú": "protegerás", "usted": "protegerá", "nosotros": "protegeremos", "vosotros": "protegeréis", "ustedes": "protegerán" },
+      "imperativo_afirmativo": { "tú": "protege", "usted": "proteja", "nosotros": "protejamos", "vosotros": "proteged", "ustedes": "protejan" }
+    }
+  },
+  {
+    "infinitive": "producir",
+    "translation_ru": "производить",
+    "level": "A2",
+    "type": "irregular",
+    "conjugations": {
+      "presente": { "yo": "produzco", "tú": "produces", "usted": "produce", "nosotros": "producimos", "vosotros": "producís", "ustedes": "producen" },
+      "indefinido": { "yo": "produje", "tú": "produjiste", "usted": "produjo", "nosotros": "produjimos", "vosotros": "produjisteis", "ustedes": "produjeron" },
+      "imperfecto": { "yo": "producía", "tú": "producías", "usted": "producía", "nosotros": "producíamos", "vosotros": "producíais", "ustedes": "producían" },
+      "futuro": { "yo": "produciré", "tú": "producirás", "usted": "producirá", "nosotros": "produciremos", "vosotros": "produciréis", "ustedes": "producirán" },
+      "imperativo_afirmativo": { "tú": "produce", "usted": "produzca", "nosotros": "produzcamos", "vosotros": "producid", "ustedes": "produzcan" }
+    }
+  }
+]

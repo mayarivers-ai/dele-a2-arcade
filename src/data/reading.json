@@ -1,0 +1,199 @@
+[
+  {
+    "id": "r1",
+    "type": "task2",
+    "title_es": "Un email de trabajo",
+    "title_ru": "Рабочее письмо",
+    "text": "Hola Carlos,\n\nTe escribo para confirmarte la reunión del próximo martes a las diez de la mañana en la sala de conferencias B. El tema principal será el nuevo proyecto de marketing para el mes de septiembre.\n\nPor favor, trae los informes del trimestre anterior y también las estadísticas de ventas. Si no puedes asistir, avísame antes del viernes para buscar otra fecha.\n\nUn saludo,\nSofía",
+    "questions": [
+      {
+        "id": "r1q1",
+        "text": "¿Cuándo es la reunión?",
+        "options": ["El lunes por la tarde", "El martes a las diez", "El viernes por la mañana"],
+        "correct": 1,
+        "explanation_es": "El email dice 'el próximo martes a las diez de la mañana'.",
+        "explanation_ru": "В письме написано 'в следующий вторник в десять утра'."
+      },
+      {
+        "id": "r1q2",
+        "text": "¿Dónde se celebra la reunión?",
+        "options": ["En la oficina de Carlos", "En la cafetería", "En la sala de conferencias B"],
+        "correct": 2,
+        "explanation_es": "Sofía indica 'en la sala de conferencias B'.",
+        "explanation_ru": "Софья указывает 'в конференц-зале B'."
+      },
+      {
+        "id": "r1q3",
+        "text": "¿Qué debe traer Carlos a la reunión?",
+        "options": ["Solo las estadísticas de ventas", "Los informes del trimestre y las estadísticas de ventas", "El nuevo proyecto de marketing"],
+        "correct": 1,
+        "explanation_es": "El email pide 'los informes del trimestre anterior y las estadísticas de ventas'.",
+        "explanation_ru": "Письмо просит 'отчёты за предыдущий квартал и статистику продаж'."
+      },
+      {
+        "id": "r1q4",
+        "text": "¿Qué debe hacer Carlos si no puede ir?",
+        "options": ["Llamar a Sofía el mismo martes", "Avisar antes del viernes", "Enviar un informe por email"],
+        "correct": 1,
+        "explanation_es": "'Avísame antes del viernes para buscar otra fecha'.",
+        "explanation_ru": "'Сообщи мне до пятницы, чтобы найти другую дату'."
+      }
+    ]
+  },
+  {
+    "id": "r2",
+    "type": "task3",
+    "title_es": "Anuncio de un curso de español",
+    "title_ru": "Объявление о курсе испанского",
+    "text": "ACADEMIA CERVANTES — CURSOS DE ESPAÑOL\n\n¿Quieres mejorar tu español? Ofrecemos clases para todos los niveles, desde principiante hasta avanzado. Nuestros profesores son nativos con experiencia internacional.\n\nModalidades:\n• Presencial: lunes, miércoles y viernes de 18:00 a 20:00\n• Online: horario flexible, clases individuales o en grupo\n• Intensivo de verano: julio y agosto, 4 horas diarias\n\nPrecio: desde 80€ al mes. Descuento del 15% para estudiantes universitarios.\n\nMás información: academia@cervantes.es | Tel: 91 234 56 78",
+    "questions": [
+      {
+        "id": "r2q1",
+        "text": "¿Para quién son los cursos de la Academia Cervantes?",
+        "options": ["Solo para principiantes", "Solo para nivel avanzado", "Para todos los niveles"],
+        "correct": 2,
+        "explanation_es": "'Ofrecemos clases para todos los niveles, desde principiante hasta avanzado'.",
+        "explanation_ru": "'Мы предлагаем занятия для всех уровней, от начального до продвинутого'."
+      },
+      {
+        "id": "r2q2",
+        "text": "¿Cuándo son las clases presenciales?",
+        "options": ["De martes a jueves", "Lunes, miércoles y viernes por la tarde", "Todos los días por la mañana"],
+        "correct": 1,
+        "explanation_es": "'Presencial: lunes, miércoles y viernes de 18:00 a 20:00'.",
+        "explanation_ru": "'Очно: понедельник, среда и пятница с 18:00 до 20:00'."
+      },
+      {
+        "id": "r2q3",
+        "text": "¿Qué descuento tienen los estudiantes universitarios?",
+        "options": ["10%", "15%", "20%"],
+        "correct": 1,
+        "explanation_es": "'Descuento del 15% para estudiantes universitarios'.",
+        "explanation_ru": "'Скидка 15% для студентов университетов'."
+      },
+      {
+        "id": "r2q4",
+        "text": "¿Cómo se puede pedir más información?",
+        "options": ["Solo por teléfono", "Solo por email", "Por email o por teléfono"],
+        "correct": 2,
+        "explanation_es": "Se dan dos opciones: email y teléfono.",
+        "explanation_ru": "Указаны два варианта: email и телефон."
+      }
+    ]
+  },
+  {
+    "id": "r3",
+    "type": "task2",
+    "title_es": "Un artículo sobre el mercado",
+    "title_ru": "Статья о рынке",
+    "text": "EL MERCADO DE SAN TELMO\n\nEl Mercado de San Telmo es uno de los lugares más visitados de Buenos Aires. Construido en 1897, este edificio histórico combina arquitectura tradicional con modernos puestos de comida, antigüedades y artesanía local.\n\nTodos los días, desde las diez de la mañana hasta las nueve de la noche, los visitantes pueden encontrar productos frescos, ropa vintage, libros de segunda mano y mucho más. Los domingos hay espectáculos de tango en vivo.\n\nLa entrada es gratuita y el mercado está en el barrio de San Telmo, a cinco minutos a pie del centro histórico.",
+    "questions": [
+      {
+        "id": "r3q1",
+        "text": "¿Cuándo se construyó el Mercado de San Telmo?",
+        "options": ["En 1879", "En 1897", "En 1970"],
+        "correct": 1,
+        "explanation_es": "'Construido en 1897'.",
+        "explanation_ru": "'Построен в 1897 году'."
+      },
+      {
+        "id": "r3q2",
+        "text": "¿Qué horario tiene el mercado?",
+        "options": ["De 9:00 a 21:00", "De 10:00 a 21:00", "De 10:00 a 22:00"],
+        "correct": 1,
+        "explanation_es": "'Desde las diez de la mañana hasta las nueve de la noche'.",
+        "explanation_ru": "'С десяти утра до девяти вечера'."
+      },
+      {
+        "id": "r3q3",
+        "text": "¿Qué pasa los domingos en el mercado?",
+        "options": ["El mercado está cerrado", "Hay espectáculos de tango en vivo", "Solo venden antigüedades"],
+        "correct": 1,
+        "explanation_es": "'Los domingos hay espectáculos de tango en vivo'.",
+        "explanation_ru": "'По воскресеньям проходят живые выступления танго'."
+      },
+      {
+        "id": "r3q4",
+        "text": "¿Cuánto cuesta entrar al mercado?",
+        "options": ["5 pesos", "10 pesos", "La entrada es gratuita"],
+        "correct": 2,
+        "explanation_es": "'La entrada es gratuita'.",
+        "explanation_ru": "'Вход бесплатный'."
+      }
+    ]
+  },
+  {
+    "id": "r4",
+    "type": "task2",
+    "title_es": "Una nota de vecinos",
+    "title_ru": "Записка от соседей",
+    "text": "Estimados vecinos:\n\nLes informamos que el próximo sábado 15 de abril se realizarán trabajos de mantenimiento en el ascensor del edificio. Durante todo el día, desde las 8:00 hasta las 20:00, el ascensor no estará disponible.\n\nPedimos disculpas por las molestias. Las personas con movilidad reducida que necesiten ayuda pueden llamar al conserje (extensión 01) con antelación para coordinar asistencia.\n\nGracias por su comprensión.\n\nLa Comunidad de Propietarios",
+    "questions": [
+      {
+        "id": "r4q1",
+        "text": "¿Qué van a hacer el sábado?",
+        "options": ["Pintar el edificio", "Reparar el ascensor", "Limpiar el portal"],
+        "correct": 1,
+        "explanation_es": "'Se realizarán trabajos de mantenimiento en el ascensor'.",
+        "explanation_ru": "'Будут проводиться работы по техническому обслуживанию лифта'."
+      },
+      {
+        "id": "r4q2",
+        "text": "¿Cuántas horas estará fuera de servicio el ascensor?",
+        "options": ["8 horas", "10 horas", "12 horas"],
+        "correct": 2,
+        "explanation_es": "De 8:00 a 20:00 son 12 horas.",
+        "explanation_ru": "С 8:00 до 20:00 — это 12 часов."
+      },
+      {
+        "id": "r4q3",
+        "text": "¿Qué deben hacer las personas con movilidad reducida?",
+        "options": ["Esperar en su piso todo el día", "Llamar al conserje con antelación", "Salir del edificio antes de las 8:00"],
+        "correct": 1,
+        "explanation_es": "'Pueden llamar al conserje con antelación para coordinar asistencia'.",
+        "explanation_ru": "'Могут позвонить консьержу заранее для координации помощи'."
+      }
+    ]
+  },
+  {
+    "id": "r5",
+    "type": "task3",
+    "title_es": "Folleto de una excursión",
+    "title_ru": "Буклет экскурсии",
+    "text": "EXCURSIÓN A TOLEDO — VIAJE DE UN DÍA\n\nDescubre la ciudad imperial con nuestra excursión en autobús desde Madrid. Toledo, declarada Patrimonio de la Humanidad por la UNESCO, combina historia medieval, arquitectura árabe, judía y cristiana en un espacio único.\n\nPROGRAMA:\n• 8:00 — Salida desde la Puerta del Sol, Madrid\n• 9:30 — Llegada a Toledo\n• 10:00 a 14:00 — Visita guiada por el casco histórico\n• 14:00 a 16:00 — Tiempo libre para comer y compras\n• 16:30 — Regreso a Madrid\n\nINCLUYE: transporte, guía oficial y entrada a la Catedral\nNO INCLUYE: comidas ni bebidas\n\nPRECIO: 45€ por persona | Niños menores de 12 años: 25€",
+    "questions": [
+      {
+        "id": "r5q1",
+        "text": "¿Desde dónde sale la excursión?",
+        "options": ["Desde la estación de Atocha", "Desde la Puerta del Sol", "Desde el aeropuerto de Barajas"],
+        "correct": 1,
+        "explanation_es": "'Salida desde la Puerta del Sol, Madrid'.",
+        "explanation_ru": "'Отправление с Пуэрта-дель-Соль, Мадрид'."
+      },
+      {
+        "id": "r5q2",
+        "text": "¿Cuánto dura la visita guiada?",
+        "options": ["2 horas", "3 horas", "4 horas"],
+        "correct": 2,
+        "explanation_es": "De 10:00 a 14:00 son 4 horas.",
+        "explanation_ru": "С 10:00 до 14:00 — это 4 часа."
+      },
+      {
+        "id": "r5q3",
+        "text": "¿Qué incluye el precio de la excursión?",
+        "options": ["Transporte, guía y comidas", "Transporte, guía y entrada a la Catedral", "Solo el transporte"],
+        "correct": 1,
+        "explanation_es": "'INCLUYE: transporte, guía oficial y entrada a la Catedral'.",
+        "explanation_ru": "'ВКЛЮЧАЕТ: транспорт, официального гида и вход в Собор'."
+      },
+      {
+        "id": "r5q4",
+        "text": "¿Cuánto paga un niño de 10 años?",
+        "options": ["45€", "25€", "Gratis"],
+        "correct": 1,
+        "explanation_es": "'Niños menores de 12 años: 25€'.",
+        "explanation_ru": "'Дети до 12 лет: 25€'."
+      }
+    ]
+  }
+]
