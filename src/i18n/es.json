@@ -71,6 +71,8 @@
     "your_answer": "Tu respuesta",
     "score": "{{correct}} de {{total}} correctas",
     "new_exercise": "Nuevo ejercicio",
+    "generating": "Generando...",
+    "ai_error": "No se pudo generar el ejercicio. Inténtalo de nuevo.",
     "paywall_title": "Continúa practicando",
     "paywall_desc": "Has completado los ejercicios gratuitos. Suscríbete para acceder a ejercicios ilimitados generados por IA.",
     "upgrade": "Ver Premium"
@@ -81,6 +83,8 @@
     "hint": "Pista",
     "explanation": "Explicación",
     "new_exercise": "Siguiente ejercicio",
+    "generating": "Generando...",
+    "ai_error": "No se pudo generar el ejercicio. Inténtalo de nuevo.",
     "paywall_title": "Sigue practicando",
     "paywall_desc": "Has usado los ejercicios gratuitos. Desbloquea gramática ilimitada con Premium.",
     "upgrade": "Ver Premium"

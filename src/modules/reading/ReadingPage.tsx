@@ -7,20 +7,35 @@ import { GameHUD } from '../../components/GameHUD'
 import { ModuleGameOver } from '../../components/ModuleGameOver'
 import { useProgressStore } from '../../stores/progressStore'
 
-const exercises = readingData as ReadingExercise[]
+const STATIC_EXERCISES = readingData as ReadingExercise[]
 const FREE_LIMIT = 5
 const XP_PER_CORRECT = 15
+
+async function fetchAIExercise(): Promise<ReadingExercise> {
+  const res = await fetch('/api/generate-exercise', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'reading' }),
+  })
+  if (!res.ok) throw new Error(await res.text())
+  return res.json()
+}
 
 export function ReadingPage() {
   const { t, i18n } = useTranslation()
   const { moduleHearts, addLifetimeXP, loseModuleLife, resetModuleLives } = useProgressStore()
 
+  const [exercises, setExercises] = useState<ReadingExercise[]>(STATIC_EXERCISES)
   const [currentIdx, setCurrentIdx] = useState(0)
   const [selected, setSelected] = useState<Record<string, number>>({})
   const [checked, setChecked] = useState(false)
   const [showPaywall, setShowPaywall] = useState(false)
   const [shakeKey, setShakeKey] = useState(0)
   const [sessionXP, setSessionXP] = useState(0)
+  const [isGenerating, setIsGenerating] = useState(false)
+  const [aiError, setAiError] = useState<string | null>(null)
+  // Track how many exercises we've done total (static + AI)
+  const [totalDone, setTotalDone] = useState(0)
 
   const ex = exercises[currentIdx]
   const isRu = i18n.language === 'ru'
@@ -45,25 +60,46 @@ export function ReadingPage() {
     })
 
     setSessionXP((prev) => prev + xpEarned)
-
-    if (anyWrong) {
-      setShakeKey((k) => k + 1)
-    }
+    if (anyWrong) setShakeKey((k) => k + 1)
   }
 
-  const handleNext = () => {
+  const handleNext = async () => {
     const nextIdx = currentIdx + 1
-    if (nextIdx >= FREE_LIMIT) {
-      setShowPaywall(true)
+    const nextTotalDone = totalDone + 1
+    setTotalDone(nextTotalDone)
+
+    // Static exercises available → advance normally
+    if (nextIdx < exercises.length) {
+      setCurrentIdx(nextIdx)
+      setSelected({})
+      setChecked(false)
       return
     }
-    setCurrentIdx(nextIdx)
+
+    // Hit FREE_LIMIT and no AI configured → show paywall
+    if (nextTotalDone >= FREE_LIMIT) {
+      // Try AI first, fall back to paywall
+    }
+
+    // Generate AI exercise
+    setIsGenerating(true)
+    setAiError(null)
     setSelected({})
     setChecked(false)
+
+    try {
+      const aiEx = await fetchAIExercise()
+      setExercises((prev) => [...prev, aiEx])
+      setCurrentIdx(nextIdx)
+    } catch {
+      setAiError(t('reading.ai_error'))
+      setShowPaywall(true)
+    } finally {
+      setIsGenerating(false)
+    }
   }
 
   const handleContinue = () => {
-    // resetModuleLives called inside ModuleGameOver
     resetModuleLives('reading')
     setChecked(false)
   }
@@ -71,6 +107,8 @@ export function ReadingPage() {
   const correctCount = checked
     ? ex.questions.filter((q) => selected[q.id] === q.correct).length
     : 0
+
+  const isAIExercise = currentIdx >= STATIC_EXERCISES.length
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-10">
@@ -86,10 +124,15 @@ export function ReadingPage() {
       )}
 
       {/* Header */}
-      <div className="mb-2">
+      <div className="mb-2 flex items-center gap-3">
         <h1 className="font-['Playfair_Display'] text-3xl font-bold text-gray-900">
           {t('reading.title')}
         </h1>
+        {isAIExercise && (
+          <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-700">
+            ✨ IA
+          </span>
+        )}
       </div>
 
       <GameHUD module="reading" current={currentIdx + 1} total={exercises.length} />
@@ -158,9 +201,17 @@ export function ReadingPage() {
             </span>
             <button
               onClick={handleNext}
-              className="rounded-xl bg-amber-700 px-6 py-2.5 font-semibold text-white hover:bg-amber-600 transition-colors shadow-lg"
+              disabled={isGenerating}
+              className="rounded-xl bg-amber-700 px-6 py-2.5 font-semibold text-white hover:bg-amber-600 transition-colors shadow-lg disabled:opacity-60 flex items-center gap-2"
             >
-              {t('reading.new_exercise')} →
+              {isGenerating ? (
+                <>
+                  <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                  {t('reading.generating')}
+                </>
+              ) : (
+                <>{t('reading.new_exercise')} →</>
+              )}
             </button>
           </>
         ) : (
@@ -173,6 +224,10 @@ export function ReadingPage() {
           </button>
         )}
       </div>
+
+      {aiError && (
+        <p className="mt-3 text-center text-sm text-red-500">{aiError}</p>
+      )}
     </div>
   )
 }

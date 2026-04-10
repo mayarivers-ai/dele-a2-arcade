@@ -7,32 +7,51 @@ import { GameHUD } from '../../components/GameHUD'
 import { ModuleGameOver } from '../../components/ModuleGameOver'
 import { useProgressStore } from '../../stores/progressStore'
 
-const exercises = grammarData as GrammarExercise[]
-const FREE_LIMIT = 5
+const STATIC_EXERCISES = grammarData as GrammarExercise[]
 const XP_PER_CORRECT = 20
 
 const TOPIC_COLORS: Record<string, string> = {
-  ser_estar: 'bg-blue-100 text-blue-700',
-  indefinido: 'bg-purple-100 text-purple-700',
-  imperfecto: 'bg-indigo-100 text-indigo-700',
-  por_para: 'bg-orange-100 text-orange-700',
+  ser_estar:    'bg-blue-100 text-blue-700',
+  indefinido:   'bg-purple-100 text-purple-700',
+  imperfecto:   'bg-indigo-100 text-indigo-700',
+  por_para:     'bg-orange-100 text-orange-700',
+  futuro:       'bg-cyan-100 text-cyan-700',
+  imperativo:   'bg-rose-100 text-rose-700',
+  reflexivos:   'bg-teal-100 text-teal-700',
+  comparativos: 'bg-lime-100 text-lime-700',
+  pronombres:   'bg-yellow-100 text-yellow-700',
+  subjuntivo:   'bg-pink-100 text-pink-700',
+}
+
+async function fetchAIExercise(): Promise<GrammarExercise> {
+  const res = await fetch('/api/generate-exercise', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'grammar' }),
+  })
+  if (!res.ok) throw new Error(await res.text())
+  return res.json()
 }
 
 export function GrammarPage() {
   const { t, i18n } = useTranslation()
   const { moduleHearts, addLifetimeXP, loseModuleLife, resetModuleLives } = useProgressStore()
 
+  const [exercises, setExercises] = useState<GrammarExercise[]>(STATIC_EXERCISES)
   const [currentIdx, setCurrentIdx] = useState(0)
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null)
   const [checked, setChecked] = useState(false)
   const [showPaywall, setShowPaywall] = useState(false)
   const [sentenceAnim, setSentenceAnim] = useState<'correct' | 'wrong' | null>(null)
   const [sessionXP, setSessionXP] = useState(0)
+  const [isGenerating, setIsGenerating] = useState(false)
+  const [aiError, setAiError] = useState<string | null>(null)
 
   const ex = exercises[currentIdx]
   const isRu = i18n.language === 'ru'
   const hearts = moduleHearts['grammar'] ?? 3
   const isGameOver = hearts === 0
+  const isAIExercise = currentIdx >= STATIC_EXERCISES.length
 
   const correctIdx = ex.options.findIndex((o) => o.correct)
   const isCorrect = checked && selectedIdx === correctIdx
@@ -52,16 +71,35 @@ export function GrammarPage() {
     }
   }
 
-  const handleNext = () => {
+  const handleNext = async () => {
     const nextIdx = currentIdx + 1
-    if (nextIdx >= FREE_LIMIT) {
-      setShowPaywall(true)
+
+    // Static exercises still available
+    if (nextIdx < exercises.length) {
+      setCurrentIdx(nextIdx)
+      setSelectedIdx(null)
+      setChecked(false)
+      setSentenceAnim(null)
       return
     }
-    setCurrentIdx(nextIdx)
+
+    // Generate AI exercise
+    setIsGenerating(true)
+    setAiError(null)
     setSelectedIdx(null)
     setChecked(false)
     setSentenceAnim(null)
+
+    try {
+      const aiEx = await fetchAIExercise()
+      setExercises((prev) => [...prev, aiEx])
+      setCurrentIdx(nextIdx)
+    } catch {
+      setAiError(t('grammar.ai_error'))
+      setShowPaywall(true)
+    } finally {
+      setIsGenerating(false)
+    }
   }
 
   const handleContinue = () => {
@@ -70,7 +108,6 @@ export function GrammarPage() {
     setSentenceAnim(null)
   }
 
-  // Parse sentence to highlight blank
   const parts = ex.sentence.split('____')
 
   return (
@@ -87,10 +124,15 @@ export function GrammarPage() {
       )}
 
       {/* Header */}
-      <div className="mb-2">
+      <div className="mb-2 flex items-center gap-3">
         <h1 className="font-['Playfair_Display'] text-3xl font-bold text-gray-900">
           {t('grammar.title')}
         </h1>
+        {isAIExercise && (
+          <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-700">
+            ✨ IA
+          </span>
+        )}
       </div>
 
       <GameHUD module="grammar" current={currentIdx + 1} total={exercises.length} />
@@ -101,7 +143,7 @@ export function GrammarPage() {
           TOPIC_COLORS[ex.topic] ?? 'bg-gray-100 text-gray-600'
         }`}
       >
-        {ex.topic.replace('_', ' / ')}
+        {ex.topic.replace(/_/g, ' / ')}
       </div>
 
       {/* Instruction */}
@@ -112,7 +154,8 @@ export function GrammarPage() {
       {/* Sentence with blank */}
       <div
         className={`mb-8 rounded-xl bg-white/80 border border-amber-100 p-6 shadow-md text-center text-xl text-gray-900 leading-loose font-['Playfair_Display'] ${
-          sentenceAnim === 'correct' ? 'animate-pulse-correct' : sentenceAnim === 'wrong' ? 'animate-shake' : ''
+          sentenceAnim === 'correct' ? 'animate-pulse-correct' :
+          sentenceAnim === 'wrong'   ? 'animate-shake' : ''
         }`}
       >
         {parts[0]}
@@ -173,9 +216,17 @@ export function GrammarPage() {
         {checked ? (
           <button
             onClick={handleNext}
-            className="rounded-xl bg-amber-700 px-6 py-2.5 font-semibold text-white hover:bg-amber-600 transition-colors shadow-lg"
+            disabled={isGenerating}
+            className="rounded-xl bg-amber-700 px-6 py-2.5 font-semibold text-white hover:bg-amber-600 transition-colors shadow-lg disabled:opacity-60 flex items-center gap-2"
           >
-            {t('grammar.new_exercise')} →
+            {isGenerating ? (
+              <>
+                <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                {t('grammar.generating')}
+              </>
+            ) : (
+              <>{t('grammar.new_exercise')} →</>
+            )}
           </button>
         ) : (
           <button
@@ -187,6 +238,10 @@ export function GrammarPage() {
           </button>
         )}
       </div>
+
+      {aiError && (
+        <p className="mt-3 text-right text-sm text-red-500">{aiError}</p>
+      )}
     </div>
   )
 }
