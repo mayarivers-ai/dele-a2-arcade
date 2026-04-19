@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { useProgressStore } from '../stores/progressStore'
-import { LivesBar } from './LivesBar'
 import { XPFloat } from './XPFloat'
 
 interface GameHUDProps {
@@ -12,6 +11,7 @@ interface GameHUDProps {
 export function GameHUD({ module, current, total }: GameHUDProps) {
   const { moduleHearts, lifetimeXP, lastXPGain } = useProgressStore()
   const lives = moduleHearts[module] ?? 3
+  const max = 3
   const progress = total > 0 ? (current / total) * 100 : 0
 
   const [showFloat, setShowFloat] = useState(false)
@@ -31,30 +31,46 @@ export function GameHUD({ module, current, total }: GameHUDProps) {
   }, [lastXPGain])
 
   return (
-    <div className="mb-6 flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-900/10 to-amber-700/5 border border-amber-100 px-4 py-3">
-      {/* Lives */}
-      <LivesBar lives={lives} />
-
-      {/* Progress bar */}
-      <div className="flex flex-1 flex-col gap-1">
-        <div className="h-2 rounded-full bg-amber-100 overflow-hidden">
-          <div
-            className="h-full rounded-full bg-amber-500 transition-all duration-300"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-        <span className="text-xs text-amber-700/60 text-right tabular-nums">
-          {current} / {total}
-        </span>
+    <div className="mb-8 border-y border-[#1a1a1a]/10">
+      {/* Progress line — full width, razor thin */}
+      <div className="h-px w-full bg-[#1a1a1a]/8">
+        <div
+          className="h-px bg-[#C0392B] transition-all duration-500"
+          style={{ width: `${progress}%` }}
+        />
       </div>
 
-      {/* XP */}
-      <div className="relative flex items-center gap-1 shrink-0">
-        <span className="text-amber-500 text-base">⭐</span>
-        <span className="font-bold text-amber-700 tabular-nums">{lifetimeXP}</span>
-        {showFloat && (
-          <XPFloat key={floatKey} amount={floatAmount} variant="warm" />
-        )}
+      <div className="flex items-center justify-between py-3">
+        {/* Lives — editorial dashes */}
+        <div className="flex items-center gap-1.5">
+          {Array.from({ length: max }).map((_, i) => (
+            <span
+              key={i}
+              className={`inline-block h-[3px] w-5 rounded-none transition-all duration-200 ${
+                i < lives ? 'bg-[#C0392B]' : 'bg-[#1a1a1a]/15'
+              }`}
+            />
+          ))}
+          <span className="ml-2 text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/40">
+            {lives}/{max}
+          </span>
+        </div>
+
+        {/* Progress counter + XP */}
+        <div className="flex items-center gap-5">
+          <span className="text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/40 tabular-nums">
+            {current} / {total}
+          </span>
+          <div className="relative flex items-center gap-1.5">
+            <span className="text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/40">XP</span>
+            <span className="font-['Playfair_Display'] text-base font-semibold tabular-nums text-[#1a1a1a]">
+              {lifetimeXP}
+            </span>
+            {showFloat && (
+              <XPFloat key={floatKey} amount={floatAmount} variant="warm" />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   )

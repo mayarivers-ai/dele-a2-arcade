@@ -84,6 +84,48 @@ body {
 .animate-fade-in-up    { animation: fade-in-up 0.4s ease-out; }
 .animate-blink         { animation: blink 1s step-end infinite; }
 
+/* ─── Level up burst ─────────────────────────────────────────── */
+@keyframes level-up-scale {
+  0%   { transform: scale(0.4); opacity: 0; }
+  60%  { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes level-up-glow {
+  0%, 100% { text-shadow: 0 0 20px #39FF14, 0 0 60px #39FF14; }
+  50%       { text-shadow: 0 0 40px #39FF14, 0 0 120px #39FF14, 0 0 200px #39FF14; }
+}
+@keyframes star-burst {
+  0%   { transform: translate(-50%,-50%) scale(0) rotate(0deg);   opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(1) rotate(360deg); opacity: 0; }
+}
+.animate-level-up-scale { animation: level-up-scale 0.6s cubic-bezier(0.175,0.885,0.32,1.275) forwards; }
+.animate-level-up-glow  { animation: level-up-glow 1.5s ease-in-out infinite; }
+.animate-star-burst      { animation: star-burst 1s ease-out forwards; }
+
+/* ─── Editorial marquee ──────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 40s linear infinite; }
+
+/* Editorial hero display scale */
+.display-xl {
+  font-size: clamp(3rem, 10vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+}
+.display-lg {
+  font-size: clamp(2.25rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+}
+.display-md {
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
 /* ─── Neon helpers ───────────────────────────────────────────── */
 .neon-green {
   color: #39FF14;
@@ -123,6 +165,105 @@ body {
   box-shadow: 0 0 16px rgba(255, 49, 49, 0.6);
   color: #FF3131;
   caret-color: #FF3131;
+}
+
+/* ─── DELE Arcade Landing (retro-pastel) ─────────────────────── */
+.dele-landing {
+  --bg: #FFF6EF; --bg-2: #FFEFE3; --surface: #FFFFFF;
+  --cobalt: #2E4BCE; --cobalt-dark: #1E3399; --cobalt-soft: #DCE3FA; --cobalt-glow: rgba(46,75,206,.15);
+  --coral: #FF7A6B; --coral-dark: #E85D4E; --coral-soft: #FFD8D2;
+  --mint: #7FC29B; --mint-dark: #4A9670; --mint-soft: #D4EBDE;
+  --sun: #FFD48A; --sun-dark: #F4B14A; --sun-soft: #FFF2D9;
+  --ink: #1A0F2E; --ink-2: #5B4E6E; --muted: #9A8FAB;
+  --rule: rgba(46,75,206,.12);
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(255,122,107,.08), transparent 50%),
+    radial-gradient(ellipse at 80% 40%, rgba(46,75,206,.06), transparent 55%),
+    radial-gradient(ellipse at 30% 80%, rgba(127,194,155,.07), transparent 50%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.dele-landing * { box-sizing: border-box; }
+.dele-frau { font-family: 'Fraunces', serif; font-variation-settings: "SOFT" 80, "WONK" 0; }
+.dele-pixel { font-family: 'Press Start 2P', monospace; }
+.dele-mono { font-family: 'VT323', monospace; }
+.dele-display { font-family: 'Fraunces', serif; font-weight: 700; line-height: .95; letter-spacing: -0.025em; font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 144; }
+.dele-italic-soft { font-style: italic; font-weight: 500; font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144; }
+
+.dele-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 28px; border-radius: 14px;
+  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 15px;
+  cursor: pointer; border: 0; position: relative; overflow: hidden;
+  text-decoration: none;
+  transition: transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
+}
+.dele-btn:hover { transform: translateY(-2px); }
+.dele-btn:active { transform: translateY(2px); }
+.dele-btn-primary { background: var(--cobalt); color: white; box-shadow: 0 5px 0 var(--cobalt-dark), 0 10px 30px rgba(46,75,206,.25); }
+.dele-btn-primary:hover { box-shadow: 0 7px 0 var(--cobalt-dark), 0 16px 40px rgba(46,75,206,.35); }
+.dele-btn-coral { background: var(--coral); color: white; box-shadow: 0 5px 0 var(--coral-dark); }
+.dele-btn-ghost { background: rgba(255,255,255,.6); color: var(--cobalt); border: 2px solid var(--cobalt); padding: 14px 26px; backdrop-filter: blur(6px); }
+.dele-btn-ghost:hover { background: var(--cobalt); color: white; }
+.dele-btn::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.3) 50%, transparent 70%);
+  transform: translateX(-100%); transition: transform .7s; pointer-events: none;
+}
+.dele-btn:hover::after { transform: translateX(100%); }
+
+.dele-lang-seg { display: inline-flex; background: rgba(255,255,255,.7); backdrop-filter: blur(8px); border-radius: 999px; padding: 4px; gap: 2px; border: 1px solid var(--rule); }
+.dele-lang-seg button { border: 0; background: transparent; padding: 6px 14px; font-size: 12px; font-weight: 700; cursor: pointer; color: var(--ink-2); border-radius: 999px; font-family: inherit; transition: all .2s; }
+.dele-lang-seg button.on { background: var(--cobalt); color: white; box-shadow: 0 2px 8px var(--cobalt-glow); }
+
+.dele-reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+.dele-reveal.in { opacity: 1; transform: translateY(0); }
+.dele-landing .d1 { transition-delay: .08s; }
+.dele-landing .d2 { transition-delay: .16s; }
+.dele-landing .d3 { transition-delay: .24s; }
+.dele-landing .d4 { transition-delay: .32s; }
+.dele-landing .d5 { transition-delay: .4s; }
+.dele-landing .d6 { transition-delay: .48s; }
+
+@keyframes dele-bob { 0%,100%{transform: translateY(0) rotate(var(--r,0deg));} 50%{transform: translateY(-12px) rotate(var(--r,0deg));} }
+.dele-bob { animation: dele-bob 4s ease-in-out infinite; }
+.dele-bob-slow { animation: dele-bob 6s ease-in-out infinite; animation-delay: -2s; }
+
+@keyframes dele-spin-slow { from{transform: rotate(0);} to{transform: rotate(360deg);} }
+.dele-spin-slow { animation: dele-spin-slow 40s linear infinite; }
+
+@keyframes dele-blink { 0%,50%{opacity:1;} 51%,100%{opacity:0;} }
+.dele-blink { animation: dele-blink 1s step-end infinite; }
+
+@keyframes dele-pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(255,122,107,.5); }
+  70% { box-shadow: 0 0 0 22px rgba(255,122,107,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,122,107,0); }
+}
+.dele-pulse-ring { animation: dele-pulse-ring 2.4s cubic-bezier(0,0,.2,1) infinite; }
+
+@keyframes dele-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.dele-marquee-track { display: inline-flex; gap: 0; white-space: nowrap; animation: dele-marquee 50s linear infinite; }
+
+.dele-lift { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; will-change: transform; }
+.dele-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(26,15,46,.12); }
+
+.dele-pill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; background: white; border: 1px solid var(--rule); }
+
+.dele-scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--cobalt), var(--coral), var(--mint)); transform-origin: 0 0; z-index: 100; transition: transform .08s linear; transform: scaleX(0); }
+
+@keyframes dele-orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.dele-orbit-ring { animation: dele-orbit 28s linear infinite; }
+
+.dele-chip-float {
+  position: absolute; display: inline-flex; align-items: center; gap: 8px;
+  background: white; border-radius: 999px; padding: 8px 14px;
+  box-shadow: 0 8px 24px rgba(46,75,206,.15); border: 1px solid var(--rule);
+  font-size: 13px; font-weight: 700; z-index: 3;
 }
 
 /* ─── Scrollbar minimal ──────────────────────────────────────── */

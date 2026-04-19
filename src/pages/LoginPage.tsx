@@ -13,7 +13,10 @@ export function LoginPage() {
     e.preventDefault()
     setLoading(true)
     setError('')
-    const { error } = await supabase.auth.signInWithOtp({ email })
+    const { error } = await supabase.auth.signInWithOtp({
+      email,
+      options: { emailRedirectTo: window.location.origin + '/auth/callback' },
+    })
     if (error) {
       setError(error.message)
     } else {

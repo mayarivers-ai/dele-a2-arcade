@@ -1,19 +1,19 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { LanguageToggle } from './LanguageToggle'
 import { useUserStore } from '../stores/userStore'
-import { useSettingsStore } from '../stores/settingsStore'
 
 export function Header() {
   const { t } = useTranslation()
-  const { user, logout } = useUserStore()
-  const { testerMode, setTesterMode } = useSettingsStore()
+  const { user, isTester, logout } = useUserStore()
   const location = useLocation()
   const isArcade = location.pathname === '/arcade'
-  const [practiceOpen, setPracticeOpen] = useState(false)
+  const isLanding = location.pathname === '/'
 
-  if (isArcade) return null
+  if (isArcade || isLanding) return null
+
+  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `transition-colors hover:text-gray-900 ${isActive ? 'text-gray-900 font-semibold' : ''}`
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-sm">
@@ -29,78 +29,31 @@ export function Header() {
         </Link>
 
         {/* Nav */}
-        <nav className="hidden items-center gap-5 text-sm font-medium text-gray-600 md:flex">
-          <Link
-            to="/arcade"
-            className="flex items-center gap-1 transition-colors hover:text-gray-900"
-          >
+        <nav className="hidden items-center gap-6 text-sm font-medium text-gray-600 md:flex">
+          <NavLink to="/arcade" className={navLinkClass}>
             🕹 {t('nav.arcade')}
-            <span className="ml-1 rounded bg-green-100 px-1.5 py-0.5 text-[10px] font-bold text-green-700">
-              {t('common.free_badge')}
-            </span>
-          </Link>
-
-          {/* Práctica dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setPracticeOpen((o) => !o)}
-              onBlur={() => setTimeout(() => setPracticeOpen(false), 150)}
-              className="flex items-center gap-1 transition-colors hover:text-gray-900"
-            >
-              📚 {t('nav.practice')} <span className="text-gray-400">▾</span>
-            </button>
-            {practiceOpen && (
-              <div className="absolute top-full left-0 mt-2 w-44 rounded-xl border border-gray-100 bg-white shadow-lg py-1 z-50">
-                <Link
-                  to="/reading"
-                  className="block px-4 py-2.5 text-sm hover:bg-amber-50 hover:text-amber-800 transition-colors"
-                  onClick={() => setPracticeOpen(false)}
-                >
-                  📖 {t('nav.reading')}
-                </Link>
-                <Link
-                  to="/grammar"
-                  className="block px-4 py-2.5 text-sm hover:bg-amber-50 hover:text-amber-800 transition-colors"
-                  onClick={() => setPracticeOpen(false)}
-                >
-                  ✏️ {t('nav.grammar')}
-                </Link>
-                <Link
-                  to="/vocabulary"
-                  className="block px-4 py-2.5 text-sm hover:bg-amber-50 hover:text-amber-800 transition-colors"
-                  onClick={() => setPracticeOpen(false)}
-                >
-                  🗂 {t('nav.vocabulary')}
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Simulacro */}
-          <Link
-            to="/exam"
-            className="flex items-center gap-1 transition-colors hover:text-gray-900"
-          >
-            📝 {t('nav.exam')}
-            <span className="ml-1 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold text-amber-700">
-              {t('common.new_badge')}
-            </span>
-          </Link>
+          </NavLink>
+          <NavLink to="/play" className={navLinkClass}>
+            🏆 {t('nav.career')}
+          </NavLink>
+          <NavLink to="/practica" className={navLinkClass}>
+            📚 {t('nav.practice')}
+          </NavLink>
+          <NavLink to="/teoria" className={navLinkClass}>
+            📖 {t('nav.theory')}
+          </NavLink>
         </nav>
 
         {/* Right side */}
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setTesterMode(!testerMode)}
-            title={testerMode ? 'Desactivar modo tester' : 'Activar modo tester (IA directa)'}
-            className={`rounded-full px-2.5 py-1 text-xs font-bold transition-colors ${
-              testerMode
-                ? 'bg-purple-100 text-purple-700 hover:bg-purple-200'
-                : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
-            }`}
-          >
-            🧪
-          </button>
+          {user && isTester && (
+            <span
+              title="Modo tester activo"
+              className="rounded-full bg-purple-100 px-2.5 py-1 text-xs font-bold text-purple-700"
+            >
+              🧪
+            </span>
+          )}
           <LanguageToggle />
           {user ? (
             <div className="flex items-center gap-2">
