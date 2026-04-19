@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { getLessonById, getAdjacentLessons, theoryBlocks } from '../../data/theory'
 
 export function TheoryPage() {
-  const { bloque, leccion } = useParams<{ bloque: string; leccion: string }>()
+  const { leccion } = useParams<{ bloque: string; leccion: string }>()
   const { t } = useTranslation()
   const navigate = useNavigate()
 
