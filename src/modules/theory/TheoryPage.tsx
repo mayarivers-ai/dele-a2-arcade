@@ -47,7 +47,7 @@ export function TheoryPage() {
           {isRu ? 'УРОК' : 'LECCIÓN'} {lesson.id}
         </p>
         <h1 className="dele-frau" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, color: 'var(--ink)', margin: 0, lineHeight: 1.1 }}>
-          {lesson.title}
+          {isRu ? lesson.title_ru : lesson.title}
         </h1>
       </div>
 
@@ -142,7 +142,7 @@ export function TheoryPage() {
             onMouseOver={e => { e.currentTarget.style.borderColor = 'var(--cobalt)'; e.currentTarget.style.color = 'var(--cobalt)' }}
             onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--rule)'; e.currentTarget.style.color = 'var(--ink-2)' }}
           >
-            ← <span>{prev.title}</span>
+            ← <span>{isRu ? prev.title_ru : prev.title}</span>
           </Link>
         ) : <div />}
         {next ? (
@@ -158,7 +158,7 @@ export function TheoryPage() {
             onMouseOver={e => { e.currentTarget.style.borderColor = 'var(--cobalt)'; e.currentTarget.style.color = 'var(--cobalt)' }}
             onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--rule)'; e.currentTarget.style.color = 'var(--ink-2)' }}
           >
-            <span>{next.title}</span> →
+            <span>{isRu ? next.title_ru : next.title}</span> →
           </Link>
         ) : <div />}
       </div>

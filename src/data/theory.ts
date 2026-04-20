@@ -6,6 +6,7 @@ export interface TheoryExample {
 export interface TheoryLesson {
   id: string
   title: string
+  title_ru: string
   bloque: number
   content: {
     explanation: string
@@ -37,6 +38,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '0.1',
         title: 'El alfabeto español y la pronunciación',
+        title_ru: 'Испанский алфавит и произношение',
         bloque: 0,
         content: {
           explanation: 'El español usa el alfabeto latino con 27 letras. A diferencia del ruso, cada letra tiene casi siempre el mismo sonido — no hay reducción vocálica ni consonantes suaves/duras.',
@@ -55,6 +57,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '0.2',
         title: 'El español no tiene casos gramaticales',
+        title_ru: 'В испанском нет падежей',
         bloque: 0,
         content: {
           explanation: 'El ruso tiene 6 casos que cambian la terminación de las palabras según su función en la frase. El español no tiene casos: la posición en la oración y las preposiciones hacen ese trabajo.',
@@ -72,6 +75,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '0.3',
         title: 'Acento y entonación: el español es musical',
+        title_ru: 'Ударение и интонация',
         bloque: 0,
         content: {
           explanation: 'El español tiene un ritmo silábico — todas las sílabas duran aproximadamente lo mismo. El ruso tiene ritmo acentual, con sílabas tónicas más largas y átonas muy reducidas.',
@@ -88,6 +92,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '0.4',
         title: 'Cómo leer fonética española',
+        title_ru: 'Как читать по-испански',
         bloque: 0,
         content: {
           explanation: 'El español es muy fonético: casi siempre se escribe como se pronuncia. Los pocos sonidos que no existen en ruso se aprenden rápido.',
@@ -113,6 +118,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '1.1',
         title: 'Género masculino y femenino',
+        title_ru: 'Мужской и женский род',
         bloque: 1,
         content: {
           explanation: 'El español solo tiene dos géneros: masculino y femenino. El ruso tiene tres (masculino, femenino, neutro). En español todos los objetos son "él" o "ella" — no existe el neutro para sustantivos comunes.',
@@ -130,6 +136,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '1.2',
         title: 'Artículos determinados: el, la, los, las',
+        title_ru: 'Определённые артикли: el, la, los, las',
         bloque: 1,
         content: {
           explanation: 'El artículo determinado equivale al concepto de "ese específico" o "ya sabemos de cuál hablamos". En ruso NO existe este concepto gramatical — es uno de los mayores retos para rusohablantes.',
@@ -148,6 +155,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '1.3',
         title: 'Artículos indeterminados: un, una, unos, unas',
+        title_ru: 'Неопределённые артикли: un, una, unos, unas',
         bloque: 1,
         content: {
           explanation: 'El artículo indeterminado introduce algo nuevo en la conversación, algo que el oyente no conoce todavía. Equivale al concepto "algún, cierto".',
@@ -164,6 +172,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '1.4',
         title: 'Cuándo NO usar artículo',
+        title_ru: 'Когда НЕ нужен артикль',
         bloque: 1,
         content: {
           explanation: 'No siempre se usa artículo. Hay contextos donde se omite, y aprenderlos evita el error de "sobrearticular".',
@@ -181,6 +190,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '1.5',
         title: 'Plural: reglas y excepciones',
+        title_ru: 'Множественное число: правила и исключения',
         bloque: 1,
         content: {
           explanation: 'El plural en español es mucho más simple que en ruso. En ruso el plural cambia según el caso y el género. En español hay dos reglas principales.',
@@ -205,6 +215,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '2.1',
         title: 'Pronombres personales sujeto',
+        title_ru: 'Личные местоимения-подлежащие',
         bloque: 2,
         content: {
           explanation: 'En español, los pronombres sujeto son opcionales porque la terminación del verbo ya indica la persona. En ruso también se omiten, pero por razones ligeramente distintas.',
@@ -222,6 +233,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '2.2',
         title: 'Pronombres de objeto directo',
+        title_ru: 'Местоимения прямого дополнения',
         bloque: 2,
         content: {
           explanation: 'Los pronombres de objeto directo reemplazan al sustantivo que recibe directamente la acción del verbo. En ruso esto se expresa con el caso acusativo.',
@@ -239,6 +251,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '2.3',
         title: 'Pronombres de objeto indirecto',
+        title_ru: 'Местоимения косвенного дополнения',
         bloque: 2,
         content: {
           explanation: 'Los pronombres de objeto indirecto indican a quién va dirigida la acción. En ruso se expresa con el dativo.',
@@ -255,6 +268,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '2.4',
         title: 'Pronombres reflexivos',
+        title_ru: 'Возвратные местоимения',
         bloque: 2,
         content: {
           explanation: 'Los pronombres reflexivos indican que la acción recae sobre el mismo sujeto. En ruso existe el sufijo -ся/-сь para verbos reflexivos.',
@@ -273,6 +287,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '2.5',
         title: 'Pronombres posesivos',
+        title_ru: 'Притяжательные местоимения',
         bloque: 2,
         content: {
           explanation: 'Los posesivos en español tienen dos formas: los átonos (antes del sustantivo) y los tónicos (después o solos). En ruso solo hay una forma que concuerda con el sustantivo.',
@@ -289,6 +304,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '2.6',
         title: 'Pronombres demostrativos',
+        title_ru: 'Указательные местоимения',
         bloque: 2,
         content: {
           explanation: 'Los demostrativos señalan la distancia entre el objeto y el hablante. El español tiene tres niveles de distancia; el ruso moderno solo usa dos (этот/тот).',
@@ -313,6 +329,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '3.1',
         title: 'Conjugación regular: -AR, -ER, -IR',
+        title_ru: 'Правильные глаголы: -AR, -ER, -IR',
         bloque: 3,
         content: {
           explanation: 'Los verbos regulares siguen patrones fijos según su terminación en infinitivo. La terminación del verbo indica la persona — no se necesita el pronombre sujeto.',
@@ -330,6 +347,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '3.2',
         title: 'Los verbos irregulares más frecuentes',
+        title_ru: 'Самые частые неправильные глаголы',
         bloque: 3,
         content: {
           explanation: 'Hay verbos muy usados que no siguen los patrones regulares. Son irregulares en la 1ª persona singular o en todas las personas. Hay que memorizarlos.',
@@ -347,6 +365,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '3.3',
         title: 'SER vs ESTAR',
+        title_ru: 'SER vs ESTAR',
         bloque: 3,
         content: {
           explanation: 'Это самая известная ошибка русскоязычных. В русском — одно слово "быть" (опускается в настоящем). В испанском ДВА глагола: ser и estar с чёткими различиями.',
@@ -365,6 +384,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '3.4',
         title: 'Verbos reflexivos',
+        title_ru: 'Возвратные глаголы',
         bloque: 3,
         content: {
           explanation: 'Los verbos reflexivos llevan siempre el pronombre reflexivo (me, te, se…). Son muy frecuentes en el vocabulario de rutinas diarias.',
@@ -381,6 +401,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '3.5',
         title: 'Verbos con cambio vocálico',
+        title_ru: 'Глаголы с чередованием гласных',
         bloque: 3,
         content: {
           explanation: 'Muchos verbos cambian la vocal de la raíz en las formas tónicas (yo, tú, él, ellos). Este cambio ocurre solo cuando el acento cae en la raíz.',
@@ -398,6 +419,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '3.6',
         title: 'Hay vs. Está / Están',
+        title_ru: 'Hay vs. Está / Están',
         bloque: 3,
         content: {
           explanation: 'Otro error clásico del rusohablante. El ruso usa "есть" (o lo omite) para ambos conceptos. El español distingue existencia (hay) de ubicación de algo concreto (está/están).',
@@ -423,6 +445,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '4.1',
         title: 'Pretérito Indefinido: verbos regulares',
+        title_ru: 'Pretérito Indefinido: правильные глаголы',
         bloque: 4,
         content: {
           explanation: 'El Pretérito Indefinido expresa acciones completadas en el pasado, con un tiempo definido o visto como concluido.',
@@ -441,6 +464,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '4.2',
         title: 'Pretérito Indefinido: irregulares frecuentes',
+        title_ru: 'Pretérito Indefinido: частые неправильные',
         bloque: 4,
         content: {
           explanation: 'Los verbos más usados tienen formas irregulares en el Indefinido. Los irregulares "fuertes" tienen acento en la raíz en yo y él.',
@@ -459,6 +483,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '4.3',
         title: 'Pretérito Imperfecto: usos y conjugación',
+        title_ru: 'Imperfecto: использование и спряжение',
         bloque: 4,
         content: {
           explanation: 'El Imperfecto describe situaciones en el pasado: hábitos pasados, descripciones, acciones en curso cuando otra cosa ocurrió, y estados mentales o físicos.',
@@ -475,6 +500,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '4.4',
         title: 'Indefinido vs Imperfecto',
+        title_ru: 'Indefinido vs Imperfecto',
         bloque: 4,
         content: {
           explanation: 'Esta distinción es difícil para rusohablantes porque el ruso la resuelve con el aspecto verbal (perfectivo vs imperfectivo), que es un mecanismo diferente aunque con cierto paralelismo.',
@@ -493,6 +519,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '4.5',
         title: 'Pretérito Perfecto: he comido',
+        title_ru: 'Pretérito Perfecto: he comido',
         bloque: 4,
         content: {
           explanation: 'El Pretérito Perfecto (he/has/ha + participio) se usa en España para acciones pasadas recientes o conectadas al presente.',
@@ -518,6 +545,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '5.1',
         title: 'Futuro inmediato: ir a + infinitivo',
+        title_ru: 'Ближайшее будущее: ir a + инфинитив',
         bloque: 5,
         content: {
           explanation: 'La forma más común para hablar del futuro en el español cotidiano es ir a + infinitivo. Es equivalente al inglés "going to" y al русскому "собираться + инфинитив".',
@@ -534,6 +562,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '5.2',
         title: 'Futuro simple: conjugación y uso',
+        title_ru: 'Futuro Simple: спряжение и использование',
         bloque: 5,
         content: {
           explanation: 'El Futuro Simple tiene sus propias terminaciones que se añaden directamente al infinitivo (para regulares). Se usa para predicciones más generales y promesas.',
@@ -551,6 +580,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '5.3',
         title: 'El condicional básico',
+        title_ru: 'Условное наклонение: основы',
         bloque: 5,
         content: {
           explanation: 'El condicional expresa hipótesis, deseos corteses y la consecuencia de algo irreal. Es muy útil para "suavizar" peticiones.',
@@ -575,6 +605,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '6.1',
         title: 'Orden de palabras: SVO',
+        title_ru: 'Порядок слов: ПГД',
         bloque: 6,
         content: {
           explanation: 'El español tiene un orden básico Sujeto-Verbo-Objeto. El ruso, gracias a los casos, permite casi cualquier orden. En español el orden transmite énfasis.',
@@ -592,6 +623,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '6.2',
         title: 'La negación: no + verbo',
+        title_ru: 'Отрицание: no + глагол',
         bloque: 6,
         content: {
           explanation: 'La negación básica en español es simple: solo se añade "no" antes del verbo. En ruso se usa "не" antes del verbo — es muy similar.',
@@ -609,6 +641,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '6.3',
         title: 'Preguntas: entonación y partículas',
+        title_ru: 'Вопросы: интонация и вопросительные слова',
         bloque: 6,
         content: {
           explanation: 'Las preguntas en español se forman con entonación ascendente al final (como en ruso) o usando pronombres interrogativos. En español escrito, las preguntas se marcan con ¿ al inicio.',
@@ -625,6 +658,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '6.4',
         title: 'Las preposiciones más usadas',
+        title_ru: 'Основные предлоги',
         bloque: 6,
         content: {
           explanation: 'Las preposiciones en español hacen el trabajo que los casos hacen en ruso. No hay una equivalencia 1:1 — cada preposición española tiene varios usos.',
@@ -642,6 +676,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '6.5',
         title: 'Por vs. Para',
+        title_ru: 'Por vs. Para',
         bloque: 6,
         content: {
           explanation: 'La distinción por/para es difícil para todos los estudiantes. Ambas se traducen al ruso como "за", "для", "по", "через", "из-за"… según el contexto.',
@@ -668,6 +703,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '7.1',
         title: 'Concordancia de género y número',
+        title_ru: 'Согласование рода и числа',
         bloque: 7,
         content: {
           explanation: 'En español, el adjetivo concuerda en género (m/f) y número (sg/pl) con el sustantivo. En ruso también hay concordancia, pero con 3 géneros y 6 casos.',
@@ -685,6 +721,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '7.2',
         title: 'Posición del adjetivo',
+        title_ru: 'Позиция прилагательного',
         bloque: 7,
         content: {
           explanation: 'En español el adjetivo puede ir antes o después del sustantivo, y la posición puede cambiar el significado. En ruso suele ir antes del sustantivo.',
@@ -701,6 +738,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '7.3',
         title: 'Comparativos',
+        title_ru: 'Сравнительная степень',
         bloque: 7,
         content: {
           explanation: 'El español usa estructura analítica (más/menos + adjetivo + que) para comparativos. En ruso existen formas sintéticas (-ее, -ше) y analíticas (более/менее).',
@@ -717,6 +755,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '7.4',
         title: 'Superlativos',
+        title_ru: 'Превосходная степень',
         bloque: 7,
         content: {
           explanation: 'El superlativo expresa el grado máximo. El español tiene dos formas: relativa (el más…) y absoluta (-ísimo). En ruso: самый + прилагательное.',
@@ -741,6 +780,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.1',
         title: 'Presentaciones y datos personales',
+        title_ru: 'Знакомство и личные данные',
         bloque: 8,
         content: {
           explanation: 'Vocabulario esencial para hablar de uno mismo: nombre, origen, edad, estado civil, estudios y trabajo.',
@@ -758,6 +798,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.2',
         title: 'Familia y relaciones',
+        title_ru: 'Семья и отношения',
         bloque: 8,
         content: {
           explanation: 'Vocabulario de parentesco y relaciones personales.',
@@ -774,6 +815,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.3',
         title: 'Casa, habitaciones y objetos cotidianos',
+        title_ru: 'Дом, комнаты и бытовые предметы',
         bloque: 8,
         content: {
           explanation: 'Vocabulario del hogar para describir dónde vives y qué hay en tu casa.',
@@ -790,6 +832,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.4',
         title: 'Rutinas diarias y tiempo libre',
+        title_ru: 'Распорядок дня и свободное время',
         bloque: 8,
         content: {
           explanation: 'Verbos y expresiones para hablar de lo que haces cada día y en tu tiempo libre.',
@@ -807,6 +850,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.5',
         title: 'Comida y restaurante',
+        title_ru: 'Еда и ресторан',
         bloque: 8,
         content: {
           explanation: 'Vocabulario para pedir en un restaurante, hablar de gustos gastronómicos y comprender menús.',
@@ -823,6 +867,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.6',
         title: 'Compras y ropa',
+        title_ru: 'Покупки и одежда',
         bloque: 8,
         content: {
           explanation: 'Vocabulario para comprar ropa, preguntar precios y tallas.',
@@ -839,6 +884,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.7',
         title: 'Transporte y ciudad',
+        title_ru: 'Транспорт и город',
         bloque: 8,
         content: {
           explanation: 'Vocabulario para moverse por la ciudad, preguntar direcciones y usar el transporte público.',
@@ -855,6 +901,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.8',
         title: 'Trabajo y estudios',
+        title_ru: 'Работа и учёба',
         bloque: 8,
         content: {
           explanation: 'Vocabulario para hablar de la vida profesional y académica.',
@@ -871,6 +918,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.9',
         title: 'Salud y cuerpo',
+        title_ru: 'Здоровье и тело',
         bloque: 8,
         content: {
           explanation: 'Vocabulario para hablar de enfermedades, síntomas y visitas al médico.',
@@ -887,6 +935,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.10',
         title: 'El tiempo meteorológico',
+        title_ru: 'Погода',
         bloque: 8,
         content: {
           explanation: 'Vocabulario para hablar del tiempo y las condiciones atmosféricas.',
@@ -903,6 +952,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '8.11',
         title: 'Números, fechas y horas',
+        title_ru: 'Числа, даты и время',
         bloque: 8,
         content: {
           explanation: 'Los números, las fechas y la hora son fundamentales en cualquier interacción básica.',
@@ -927,6 +977,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '9.1',
         title: 'Pedir y dar información',
+        title_ru: 'Запрашивать и давать информацию',
         bloque: 9,
         content: {
           explanation: 'Fórmulas para solicitar y proporcionar información en contextos cotidianos.',
@@ -943,6 +994,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '9.2',
         title: 'Hacer y responder invitaciones',
+        title_ru: 'Приглашать и отвечать на приглашения',
         bloque: 9,
         content: {
           explanation: 'Cómo invitar a alguien, aceptar y declinar educadamente.',
@@ -959,6 +1011,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '9.3',
         title: 'Expresar gustos y preferencias',
+        title_ru: 'Выражать симпатии и предпочтения',
         bloque: 9,
         content: {
           explanation: 'La estructura gustar es peculiar: el sujeto gramatical es lo que gusta, no la persona. Es un error muy común del rusohablante.',
@@ -977,6 +1030,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '9.4',
         title: 'Hablar de planes y proyectos',
+        title_ru: 'Говорить о планах и проектах',
         bloque: 9,
         content: {
           explanation: 'Cómo hablar de intenciones, planes futuros y proyectos.',
@@ -993,6 +1047,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '9.5',
         title: 'Describir personas, lugares y objetos',
+        title_ru: 'Описывать людей, места и предметы',
         bloque: 9,
         content: {
           explanation: 'Vocabulario y estructuras para hacer descripciones detalladas.',
@@ -1009,6 +1064,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '9.6',
         title: 'Narrar en pasado',
+        title_ru: 'Рассказывать в прошедшем времени',
         bloque: 9,
         content: {
           explanation: 'Cómo contar una historia combinando el Indefinido (acciones puntuales) y el Imperfecto (contexto y descripciones).',
@@ -1025,6 +1081,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '9.7',
         title: 'Expresar opinión básica',
+        title_ru: 'Выражать базовое мнение',
         bloque: 9,
         content: {
           explanation: 'Fórmulas para dar tu opinión, estar de acuerdo y expresar duda.',
@@ -1041,6 +1098,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '9.8',
         title: 'Pedir en tiendas, transportes y restaurantes',
+        title_ru: 'Заказывать в магазинах, транспорте и ресторанах',
         bloque: 9,
         content: {
           explanation: 'Fórmulas de cortesía para transacciones cotidianas.',
@@ -1065,6 +1123,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '10.1',
         title: 'Olvidar los artículos',
+        title_ru: 'Забывать артикли',
         bloque: 10,
         content: {
           explanation: 'El error más frecuente: omitir el artículo porque en ruso no existe esta categoría gramatical.',
@@ -1082,6 +1141,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '10.2',
         title: 'Confundir ser y estar',
+        title_ru: 'Путать ser и estar',
         bloque: 10,
         content: {
           explanation: 'Usar ser donde va estar y viceversa es uno de los errores más notorios.',
@@ -1099,6 +1159,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '10.3',
         title: 'Concordancia de género en adjetivos',
+        title_ru: 'Согласование рода в прилагательных',
         bloque: 10,
         content: {
           explanation: 'En ruso los adjetivos también concuerdan, pero a veces el rusohablante olvida la concordancia de género en español.',
@@ -1115,6 +1176,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '10.4',
         title: 'Uso incorrecto de hay/está/están',
+        title_ru: 'Неправильное употребление hay/está/están',
         bloque: 10,
         content: {
           explanation: 'La confusión entre "hay" y "está/están" es muy común para rusohablantes que usan "есть" o simplemente omiten el verbo.',
@@ -1131,6 +1193,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '10.5',
         title: 'Traducir literalmente desde el ruso (calcos)',
+        title_ru: 'Дословный перевод с русского (кальки)',
         bloque: 10,
         content: {
           explanation: 'Los calcos son traducciones literales que suenan incorrectas. El ruso y el español estructuran algunas expresiones de forma muy diferente.',
@@ -1147,6 +1210,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '10.6',
         title: 'Falsos amigos ruso-español',
+        title_ru: 'Ложные друзья переводчика (рус.–исп.)',
         bloque: 10,
         content: {
           explanation: 'Palabras que se parecen en ruso y español pero tienen significados distintos. Pueden causar malentendidos graves.',
@@ -1164,6 +1228,7 @@ export const theoryBlocks: TheoryBlock[] = [
       {
         id: '10.7',
         title: 'Omitir preposiciones o copiarlas del ruso',
+        title_ru: 'Пропуск предлогов или их калька с русского',
         bloque: 10,
         content: {
           explanation: 'El ruso expresa las relaciones gramaticales con casos. El español lo hace con preposiciones. No siempre hay correspondencia directa.',

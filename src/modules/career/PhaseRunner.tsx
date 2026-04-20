@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useCareerStore, pickNextVariant, type PhaseKey, thresholdFor } from '../../stores/careerStore'
+import { useSettingsStore } from '../../stores/settingsStore'
 import { getLevel, type Question } from '../../data/career'
 
 function normalize(s: string) {
@@ -13,11 +14,63 @@ function gradeAnswer(q: Question, userAnswer: string | undefined): boolean {
 }
 
 type PhaseParam = 'reading' | 'vocab' | 'grammar' | 'exam'
-const PHASE_LABEL: Record<PhaseParam, string> = {
-  reading: 'Lectura',
-  vocab: 'Vocabulario',
-  grammar: 'Gramática',
-  exam: 'Examen',
+
+const PHASE_LABEL: Record<PhaseParam, { ru: string; es: string }> = {
+  reading: { ru: 'Чтение', es: 'Lectura' },
+  vocab:   { ru: 'Лексика', es: 'Vocabulario' },
+  grammar: { ru: 'Грамматика', es: 'Gramática' },
+  exam:    { ru: 'Экзамен', es: 'Examen' },
+}
+
+const COPY = {
+  ru: {
+    unknownPhase: 'Неизвестный этап.',
+    back: '← Назад',
+    exhausted: (label: string) => `Вы использовали все 3 попытки для этапа «${label}»`,
+    exhaustedSub: 'Разблокируйте больше упражнений с ИИ — скоро.',
+    noContent: 'Материал в разработке',
+    noContentSub: 'У этого упражнения пока нет вопросов.',
+    backToHub: '← К карьере',
+    review: 'ПРОСМОТР',
+    passed: 'СДАНО',
+    failed: 'НЕ СДАНО',
+    minScore: (threshold: number) => `мин. ${threshold}% для зачёта`,
+    levelUp: (levelUpAgain?: boolean) => `🎉 Уровень завершён! ${levelUpAgain ? '' : 'Следующий разблокирован.'}`,
+    attemptsExhausted: '⚠ Вы использовали все 3 попытки этого этапа.',
+    answers: 'Ответы',
+    question: (n: number) => `Вопрос ${n}`,
+    yourAnswer: 'Ваш ответ',
+    correct: 'Правильный ответ',
+    retry: 'Повторить с другим упражнением',
+    hub: '← К карьере',
+    exit: '← Выйти',
+    placeholder: 'Введите ответ',
+    submit: 'Отправить ответы →',
+  },
+  es: {
+    unknownPhase: 'Fase desconocida.',
+    back: '← Volver',
+    exhausted: (label: string) => `Has agotado los 3 intentos de ${label.toLowerCase()} para este nivel`,
+    exhaustedSub: 'Desbloquea más ejercicios con IA — próximamente.',
+    noContent: 'Contenido en preparación',
+    noContentSub: 'Este ejercicio aún no tiene preguntas.',
+    backToHub: '← Volver al hub',
+    review: 'REVISIÓN',
+    passed: 'APROBADO',
+    failed: 'NO APROBADO',
+    minScore: (threshold: number) => `mín ${threshold}% para aprobar`,
+    levelUp: (levelUpAgain?: boolean) => `🎉 ¡Nivel completado! ${levelUpAgain ? '' : 'Se desbloqueó el siguiente.'}`,
+    attemptsExhausted: '⚠ Has usado los 3 intentos de esta fase.',
+    answers: 'Respuestas',
+    question: (n: number) => `Pregunta ${n}`,
+    yourAnswer: 'Tu respuesta',
+    correct: 'Correcta',
+    retry: 'Reintentar con otro ejercicio',
+    hub: '← Hub',
+    exit: '← Salir',
+    placeholder: 'Escribe tu respuesta',
+    submit: 'Enviar respuestas →',
+  },
 }
 
 export function PhaseRunner() {
@@ -25,6 +78,9 @@ export function PhaseRunner() {
   const [params] = useSearchParams()
   const navigate = useNavigate()
   const isReview = params.get('review') === '1'
+  const { language } = useSettingsStore()
+  const lang = (language as 'ru' | 'es') ?? 'ru'
+  const copy = COPY[lang]
 
   const { currentLevel, levels, recordAttempt } = useCareerStore()
   const phaseKey = phase as PhaseParam
@@ -34,32 +90,30 @@ export function PhaseRunner() {
   if (!content || !levelState || !['reading', 'vocab', 'grammar', 'exam'].includes(phaseKey)) {
     return (
       <div style={{ padding: 40, textAlign: 'center' }}>
-        <p>Fase desconocida.</p>
-        <Link to="/play">← Volver</Link>
+        <p>{copy.unknownPhase}</p>
+        <Link to="/play">{copy.back}</Link>
       </div>
     )
   }
 
-  // Pick variant
+  const phaseLabel = PHASE_LABEL[phaseKey][lang]
   const phaseState = levelState[phaseKey as PhaseKey]
   const reviewingVariant = isReview && phaseState.lastVariantIdx != null ? phaseState.lastVariantIdx : null
   const variantIdx = reviewingVariant ?? (phaseKey === 'exam' ? 0 : pickNextVariant(phaseState))
 
-  // Exhausted pool
   if (variantIdx === -1) {
     return (
-      <div className="dele-landing" style={{ minHeight: '100vh', padding: 40 }}>
-        <div style={{ maxWidth: 520, margin: '0 auto', background: 'white', borderRadius: 20, padding: 32, textAlign: 'center', border: '1.5px dashed var(--rule)' }}>
+      <div style={{ minHeight: '100vh', padding: 40, background: 'var(--bg)' }}>
+        <div style={{ maxWidth: 520, margin: '0 auto', background: 'var(--bg-card)', borderRadius: 20, padding: 32, textAlign: 'center', border: '1.5px dashed var(--rule)' }}>
           <div style={{ fontSize: 40 }}>⚠</div>
-          <h2 className="dele-frau" style={{ marginTop: 8 }}>Has agotado los 3 intentos de {PHASE_LABEL[phaseKey].toLowerCase()} para este nivel</h2>
-          <p style={{ color: 'var(--ink-2)' }}>Desbloquea más ejercicios con IA — <em>próximamente.</em></p>
-          <Link to="/play" className="dele-btn dele-btn-primary" style={{ marginTop: 14 }}>← Volver</Link>
+          <h2 className="dele-frau" style={{ marginTop: 8, color: 'var(--ink)' }}>{copy.exhausted(phaseLabel)}</h2>
+          <p style={{ color: 'var(--ink-2)' }}>{copy.exhaustedSub}</p>
+          <Link to="/play" className="dele-btn dele-btn-primary" style={{ marginTop: 14 }}>{copy.back}</Link>
         </div>
       </div>
     )
   }
 
-  // Load questions
   let questions: Question[] = []
   let passageTitle = ''
   let passage = ''
@@ -78,11 +132,11 @@ export function PhaseRunner() {
 
   if (questions.length === 0) {
     return (
-      <div className="dele-landing" style={{ minHeight: '100vh', padding: 40 }}>
-        <div style={{ maxWidth: 520, margin: '0 auto', background: 'white', borderRadius: 20, padding: 32, textAlign: 'center' }}>
-          <h2 className="dele-frau">Contenido en preparación</h2>
-          <p style={{ color: 'var(--ink-2)' }}>Este ejercicio aún no tiene preguntas.</p>
-          <Link to="/play" className="dele-btn dele-btn-primary" style={{ marginTop: 14 }}>← Volver</Link>
+      <div style={{ minHeight: '100vh', padding: 40, background: 'var(--bg)' }}>
+        <div style={{ maxWidth: 520, margin: '0 auto', background: 'var(--bg-card)', borderRadius: 20, padding: 32, textAlign: 'center' }}>
+          <h2 className="dele-frau" style={{ color: 'var(--ink)' }}>{copy.noContent}</h2>
+          <p style={{ color: 'var(--ink-2)' }}>{copy.noContentSub}</p>
+          <Link to="/play" className="dele-btn dele-btn-primary" style={{ marginTop: 14 }}>{copy.back}</Link>
         </div>
       </div>
     )
@@ -91,12 +145,14 @@ export function PhaseRunner() {
   return (
     <Runner
       phase={phaseKey}
+      phaseLabel={phaseLabel}
       variantIdx={variantIdx}
       questions={questions}
       passageTitle={passageTitle}
       passage={passage}
       isReview={isReview}
       reviewAnswers={isReview ? phaseState.lastAnswers ?? {} : undefined}
+      copy={copy}
       onSubmit={(answers, score) => recordAttempt(currentLevel, phaseKey, variantIdx, score, answers)}
       onExit={() => navigate('/play')}
     />
@@ -105,18 +161,20 @@ export function PhaseRunner() {
 
 interface RunnerProps {
   phase: PhaseParam
+  phaseLabel: string
   variantIdx: number
   questions: Question[]
   passageTitle: string
   passage: string
   isReview: boolean
   reviewAnswers?: Record<number, string>
+  copy: typeof COPY['ru']
   onSubmit: (answers: Record<number, string>, score: number) => { passed: boolean; levelUp: boolean; exhausted: boolean }
   onExit: () => void
 }
 
 function Runner(props: RunnerProps) {
-  const { phase, questions, passageTitle, passage, isReview, reviewAnswers, onSubmit, onExit } = props
+  const { phase, phaseLabel, questions, passageTitle, passage, isReview, reviewAnswers, copy, onSubmit, onExit } = props
   const [answers, setAnswers] = useState<Record<number, string>>(reviewAnswers ?? {})
   const [submitted, setSubmitted] = useState<{ score: number; passed: boolean; levelUp: boolean; exhausted: boolean } | null>(null)
 
@@ -132,54 +190,53 @@ function Runner(props: RunnerProps) {
 
   const threshold = thresholdFor(phase as PhaseKey)
 
-  // Results view
   if (submitted || isReview) {
     const score = submitted
       ? submitted.score
       : Math.round((questions.reduce((acc, q, i) => acc + (gradeAnswer(q, answers[i]) ? 1 : 0), 0) / questions.length) * 100)
     const passed = submitted?.passed ?? score >= threshold
     return (
-      <div className="dele-landing" style={{ minHeight: '100vh', padding: '32px 24px 80px' }}>
+      <div style={{ minHeight: '100vh', padding: '32px 24px 80px', background: 'var(--bg)' }}>
         <div style={{ maxWidth: 720, margin: '0 auto' }}>
           <button onClick={onExit} style={{ background: 'none', border: 0, color: 'var(--ink-2)', fontSize: 13, fontWeight: 600, cursor: 'pointer', marginBottom: 16 }}>
-            ← Volver al hub
+            {copy.backToHub}
           </button>
 
-          <div style={{ background: 'white', borderRadius: 20, padding: 28, border: `1.5px solid ${passed ? 'var(--mint)' : 'var(--coral)'}` }}>
+          <div style={{ background: 'var(--bg-card)', borderRadius: 20, padding: 28, border: `1.5px solid ${passed ? 'var(--mint)' : 'var(--coral)'}` }}>
             <div className="dele-pixel" style={{ fontSize: 10, color: passed ? 'var(--mint-dark)' : 'var(--coral-dark)', letterSpacing: '.2em' }}>
-              ◆ {isReview ? 'REVISIÓN' : passed ? 'APROBADO' : 'NO APROBADO'}
+              ◆ {isReview ? copy.review : passed ? copy.passed : copy.failed}
             </div>
-            <div className="dele-frau" style={{ fontSize: 48, fontWeight: 700, margin: '6px 0' }}>{score}%</div>
+            <div className="dele-frau" style={{ fontSize: 48, fontWeight: 700, margin: '6px 0', color: 'var(--ink)' }}>{score}%</div>
             <div style={{ fontSize: 14, color: 'var(--ink-2)' }}>
-              {PHASE_LABEL[phase]} · mín {threshold}% para aprobar
+              {phaseLabel} · {copy.minScore(threshold)}
             </div>
 
             {submitted?.levelUp && (
               <div style={{ marginTop: 14, padding: 12, background: 'var(--sun-soft)', borderRadius: 12, fontSize: 14, fontWeight: 700, color: 'var(--ink)' }}>
-                🎉 ¡Nivel completado! {submitted.exhausted ? '' : 'Se desbloqueó el siguiente.'}
+                {copy.levelUp(submitted.exhausted)}
               </div>
             )}
             {submitted?.exhausted && (
               <div style={{ marginTop: 14, padding: 12, background: '#f3e8ff', borderRadius: 12, fontSize: 13, color: '#7e22ce' }}>
-                ⚠ Has usado los 3 intentos de esta fase.
+                {copy.attemptsExhausted}
               </div>
             )}
           </div>
 
-          <h3 className="dele-frau" style={{ marginTop: 28, fontSize: 22 }}>Respuestas</h3>
+          <h3 className="dele-frau" style={{ marginTop: 28, fontSize: 22, color: 'var(--ink)' }}>{copy.answers}</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 10 }}>
             {questions.map((q, i) => {
               const userAns = answers[i] ?? '—'
               const ok = gradeAnswer(q, answers[i])
               return (
-                <div key={i} style={{ background: 'white', borderRadius: 14, padding: 16, border: `1px solid ${ok ? 'var(--mint)' : 'var(--coral)'}` }}>
-                  <div style={{ fontSize: 13, color: 'var(--muted)' }}>Pregunta {i + 1}</div>
+                <div key={i} style={{ background: 'var(--bg-card)', borderRadius: 14, padding: 16, border: `1px solid ${ok ? 'var(--mint)' : 'var(--coral)'}` }}>
+                  <div style={{ fontSize: 13, color: 'var(--muted)' }}>{copy.question(i + 1)}</div>
                   <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)', margin: '4px 0 8px' }}>{q.prompt}</div>
                   <div style={{ fontSize: 13, color: ok ? 'var(--mint-dark)' : 'var(--coral-dark)' }}>
-                    Tu respuesta: <strong>{userAns}</strong> {ok ? '✓' : '✗'}
+                    {copy.yourAnswer}: <strong>{userAns}</strong> {ok ? '✓' : '✗'}
                   </div>
                   {!ok && (
-                    <div style={{ fontSize: 13, color: 'var(--mint-dark)' }}>Correcta: <strong>{q.answer}</strong></div>
+                    <div style={{ fontSize: 13, color: 'var(--mint-dark)' }}>{copy.correct}: <strong>{q.answer}</strong></div>
                   )}
                 </div>
               )
@@ -187,13 +244,13 @@ function Runner(props: RunnerProps) {
           </div>
 
           <div style={{ display: 'flex', gap: 10, marginTop: 24 }}>
-            <button onClick={onExit} className="dele-btn dele-btn-primary">← Hub</button>
+            <button onClick={onExit} className="dele-btn dele-btn-primary">{copy.hub}</button>
             {submitted && !submitted.passed && !submitted.exhausted && (
               <button
                 onClick={() => { setSubmitted(null); setAnswers({}) }}
                 className="dele-btn dele-btn-coral"
               >
-                Reintentar con otro ejercicio
+                {copy.retry}
               </button>
             )}
           </div>
@@ -202,29 +259,28 @@ function Runner(props: RunnerProps) {
     )
   }
 
-  // Active view
   return (
-    <div className="dele-landing" style={{ minHeight: '100vh', padding: '32px 24px 80px' }}>
+    <div style={{ minHeight: '100vh', padding: '32px 24px 80px', background: 'var(--bg)' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <button onClick={onExit} style={{ background: 'none', border: 0, color: 'var(--ink-2)', fontSize: 13, fontWeight: 600, cursor: 'pointer', marginBottom: 16 }}>
-          ← Salir
+          {copy.exit}
         </button>
 
-        <div className="dele-pixel" style={{ fontSize: 10, color: 'var(--coral)', letterSpacing: '.2em' }}>◆ {PHASE_LABEL[phase].toUpperCase()}</div>
-        <h1 className="dele-frau" style={{ fontSize: 34, fontWeight: 700, margin: '4px 0 20px' }}>
-          {phase === 'reading' ? passageTitle : PHASE_LABEL[phase]}
+        <div className="dele-pixel" style={{ fontSize: 10, color: 'var(--coral)', letterSpacing: '.2em' }}>◆ {phaseLabel.toUpperCase()}</div>
+        <h1 className="dele-frau" style={{ fontSize: 34, fontWeight: 700, margin: '4px 0 20px', color: 'var(--ink)' }}>
+          {phase === 'reading' ? passageTitle : phaseLabel}
         </h1>
 
         {phase === 'reading' && (
-          <div style={{ background: 'white', borderRadius: 16, padding: 20, marginBottom: 20, border: '1px solid var(--rule)', fontSize: 15, lineHeight: 1.6, color: 'var(--ink)' }}>
+          <div style={{ background: 'var(--bg-card)', borderRadius: 16, padding: 20, marginBottom: 20, border: '1px solid var(--rule)', fontSize: 15, lineHeight: 1.6, color: 'var(--ink)' }}>
             {passage}
           </div>
         )}
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {questions.map((q, i) => (
-            <div key={i} style={{ background: 'white', borderRadius: 16, padding: 18, border: '1px solid var(--rule)' }}>
-              <div style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 700, letterSpacing: '.05em' }}>PREGUNTA {i + 1} / {questions.length}</div>
+            <div key={i} style={{ background: 'var(--bg-card)', borderRadius: 16, padding: 18, border: '1px solid var(--rule)' }}>
+              <div style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 700, letterSpacing: '.05em' }}>{copy.question(i + 1).toUpperCase()} / {questions.length}</div>
               <div className="dele-frau" style={{ fontSize: 17, fontWeight: 500, color: 'var(--ink)', margin: '6px 0 12px', lineHeight: 1.4 }}>{q.prompt}</div>
               {q.options && q.options.length > 0 ? (
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
@@ -238,7 +294,7 @@ function Runner(props: RunnerProps) {
                           padding: '10px 14px',
                           borderRadius: 10,
                           border: `1.5px solid ${selected ? 'var(--cobalt)' : 'var(--rule)'}`,
-                          background: selected ? 'var(--cobalt-soft)' : 'white',
+                          background: selected ? 'var(--cobalt-soft)' : 'var(--bg-card)',
                           color: selected ? 'var(--cobalt-dark)' : 'var(--ink)',
                           fontWeight: 600, fontSize: 14, cursor: 'pointer', textAlign: 'left',
                           fontFamily: 'inherit',
@@ -253,8 +309,8 @@ function Runner(props: RunnerProps) {
                 <input
                   value={answers[i] ?? ''}
                   onChange={e => setAnswers(a => ({ ...a, [i]: e.target.value }))}
-                  placeholder="Escribe tu respuesta"
-                  style={{ width: '100%', padding: '12px 14px', borderRadius: 10, border: '1.5px solid var(--rule)', fontSize: 15, fontFamily: 'inherit' }}
+                  placeholder={copy.placeholder}
+                  style={{ width: '100%', padding: '12px 14px', borderRadius: 10, border: '1.5px solid var(--rule)', fontSize: 15, fontFamily: 'inherit', background: 'var(--bg-card)', color: 'var(--ink)' }}
                 />
               )}
             </div>
@@ -267,7 +323,7 @@ function Runner(props: RunnerProps) {
           className="dele-btn dele-btn-primary"
           style={{ marginTop: 24, width: '100%', opacity: canSubmit ? 1 : 0.5, cursor: canSubmit ? 'pointer' : 'not-allowed' }}
         >
-          Enviar respuestas →
+          {copy.submit}
         </button>
       </div>
     </div>

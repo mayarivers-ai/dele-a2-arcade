@@ -99,7 +99,7 @@ export function TheoryIndex() {
                       <span className="dele-pixel" style={{ fontSize: 7, color: 'var(--muted)', minWidth: 28, flexShrink: 0 }}>
                         {lesson.id}
                       </span>
-                      <span>{lesson.title}</span>
+                      <span>{lang === 'ru' ? lesson.title_ru : lesson.title}</span>
                     </Link>
                   </li>
                 ))}
