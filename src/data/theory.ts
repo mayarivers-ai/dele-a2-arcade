@@ -22,6 +22,7 @@ export interface TheoryLesson {
 export interface TheoryBlock {
   id: number
   title: string
+  title_ru: string
   emoji: string
   lessons: TheoryLesson[]
 }
@@ -30,6 +31,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 0,
     title: 'Fundamentos',
+    title_ru: 'Основы',
     emoji: '🔤',
     lessons: [
       {
@@ -105,6 +107,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 1,
     title: 'El Sustantivo y el Artículo',
+    title_ru: 'Существительное и артикль',
     emoji: '📝',
     lessons: [
       {
@@ -196,6 +199,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 2,
     title: 'Los Pronombres',
+    title_ru: 'Местоимения',
     emoji: '👤',
     lessons: [
       {
@@ -303,6 +307,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 3,
     title: 'El Verbo — Presente',
+    title_ru: 'Глагол — настоящее время',
     emoji: '⚡',
     lessons: [
       {
@@ -412,6 +417,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 4,
     title: 'El Verbo — Pasado',
+    title_ru: 'Глагол — прошедшее время',
     emoji: '⏪',
     lessons: [
       {
@@ -506,6 +512,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 5,
     title: 'El Verbo — Futuro y otros',
+    title_ru: 'Глагол — будущее и другие',
     emoji: '🔮',
     lessons: [
       {
@@ -562,6 +569,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 6,
     title: 'Estructura de la Oración',
+    title_ru: 'Структура предложения',
     emoji: '🔧',
     lessons: [
       {
@@ -654,6 +662,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 7,
     title: 'El Adjetivo',
+    title_ru: 'Прилагательное',
     emoji: '🎨',
     lessons: [
       {
@@ -726,6 +735,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 8,
     title: 'Vocabulario Temático A2',
+    title_ru: 'Тематический словарь A2',
     emoji: '📚',
     lessons: [
       {
@@ -911,6 +921,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 9,
     title: 'Comunicación Funcional',
+    title_ru: 'Функциональная коммуникация',
     emoji: '💬',
     lessons: [
       {
@@ -1048,6 +1059,7 @@ export const theoryBlocks: TheoryBlock[] = [
   {
     id: 10,
     title: 'Errores típicos del Ruso',
+    title_ru: 'Типичные ошибки русскоязычных',
     emoji: '⚠️',
     lessons: [
       {
