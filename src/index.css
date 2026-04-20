@@ -2,24 +2,33 @@
 
 /* ─── CSS Variables ─────────────────────────────────────────── */
 :root {
-  /* Tema académico (default) */
-  --bg: #F7F4EF;
-  --bg-card: #FFFFFF;
-  --text-primary: #1a1a1a;
-  --text-secondary: #5a5a5a;
-  --accent: #C0392B;
-  --accent-2: #B8860B;
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Source Sans 3', sans-serif;
+  /* Palette */
+  --bg: #FFF6EF; --bg-2: #FFEFE3; --bg-card: #FFFFFF; --surface: #FFFFFF;
+  --cobalt: #2E4BCE; --cobalt-dark: #1E3399; --cobalt-soft: #DCE3FA; --cobalt-glow: rgba(46,75,206,.15);
+  --coral: #FF7A6B; --coral-dark: #E85D4E; --coral-soft: #FFD8D2;
+  --mint: #7FC29B; --mint-dark: #4A9670; --mint-soft: #D4EBDE;
+  --sun: #FFD48A; --sun-dark: #F4B14A; --sun-soft: #FFF2D9;
+  --ink: #1A0F2E; --ink-2: #5B4E6E; --muted: #9A8FAB;
+  --rule: rgba(46,75,206,.12);
+  /* Legacy */
+  --text-primary: #1a1a1a; --text-secondary: #5a5a5a;
+  --accent: #C0392B; --accent-2: #B8860B;
+  --font-heading: 'Fraunces', serif; --font-body: 'Inter', system-ui, sans-serif;
 }
 
 /* ─── Reset / base ───────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--bg);
-  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(255,122,107,.06), transparent 50%),
+    radial-gradient(ellipse at 80% 40%, rgba(46,75,206,.04), transparent 55%),
+    radial-gradient(ellipse at 30% 80%, rgba(127,194,155,.05), transparent 50%);
+  background-attachment: fixed;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
 }

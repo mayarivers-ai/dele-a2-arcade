@@ -31,10 +31,7 @@ export function VocabQuiz({ word, allWords, onNext, total, current }: VocabQuizP
   const [selected, setSelected] = useState<string | null>(null)
 
   useEffect(() => {
-    // Build 4 options: correct + 3 random distractors from same field or any
-    const distractors = shuffle(
-      allWords.filter((w) => w.id !== word.id)
-    ).slice(0, 3)
+    const distractors = shuffle(allWords.filter((w) => w.id !== word.id)).slice(0, 3)
     setOptions(shuffle([word, ...distractors]))
     setSelected(null)
   }, [word.id]) // eslint-disable-line react-hooks/exhaustive-deps
@@ -49,46 +46,47 @@ export function VocabQuiz({ word, allWords, onNext, total, current }: VocabQuizP
 
   const answered = selected !== null
 
-  function optionClass(optId: string) {
-    if (!answered) {
-      return 'border-gray-200 bg-white hover:border-amber-400 hover:bg-amber-50 cursor-pointer'
+  function optionStyle(optId: string): React.CSSProperties {
+    const base: React.CSSProperties = {
+      display: 'block', width: '100%', borderRadius: 12,
+      border: '1.5px solid', padding: '12px 16px', textAlign: 'left',
+      fontSize: 14, fontFamily: 'inherit', transition: 'all .15s',
+      background: 'var(--bg-card)',
     }
-    if (optId === word.id) return 'border-green-500 bg-green-50 text-green-800'
-    if (optId === selected) return 'border-red-400 bg-red-50 text-red-700'
-    return 'border-gray-200 bg-white text-gray-400'
+    if (!answered) return { ...base, borderColor: 'var(--rule)', color: 'var(--ink)', cursor: 'pointer' }
+    if (optId === word.id) return { ...base, borderColor: 'var(--mint-dark)', background: 'var(--mint-soft)', color: 'var(--mint-dark)', fontWeight: 700, cursor: 'default' }
+    if (optId === selected) return { ...base, borderColor: 'var(--coral-dark)', background: 'var(--coral-soft)', color: 'var(--coral-dark)', cursor: 'default' }
+    return { ...base, borderColor: 'var(--rule)', color: 'var(--muted)', cursor: 'default' }
   }
 
   return (
-    <div className="flex flex-col items-center gap-6 w-full max-w-lg mx-auto">
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, width: '100%', maxWidth: 520, margin: '0 auto' }}>
       {/* Progress */}
-      <div className="w-full flex items-center justify-between text-sm text-gray-500">
-        <span>{current} / {total}</span>
-        <div className="flex-1 mx-4 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-amber-500 rounded-full transition-all duration-300"
-            style={{ width: `${(current / total) * 100}%` }}
-          />
+      <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12 }}>
+        <span style={{ fontSize: 12, color: 'var(--muted)', minWidth: 40 }}>{current} / {total}</span>
+        <div style={{ flex: 1, height: 4, background: 'var(--rule)', borderRadius: 999, overflow: 'hidden' }}>
+          <div style={{ height: '100%', width: `${(current / total) * 100}%`, background: 'var(--cobalt)', borderRadius: 999, transition: 'width .3s' }} />
         </div>
       </div>
 
       {/* Prompt */}
-      <div className="w-full rounded-2xl bg-[#F7F4EF] border border-amber-200 p-8 text-center">
-        <p className="text-xs uppercase tracking-widest text-amber-600 font-semibold mb-3">
+      <div style={{
+        width: '100%', borderRadius: 20, border: '1px solid var(--rule)',
+        background: 'var(--bg-card)', padding: '28px 24px', textAlign: 'center',
+        boxShadow: '0 2px 12px rgba(46,75,206,.06)',
+      }}>
+        <p className="dele-pixel" style={{ fontSize: 7, color: 'var(--cobalt)', letterSpacing: '.14em', marginBottom: 12 }}>
           {t('vocab.quiz_prompt')}
         </p>
-        <p className="font-['Playfair_Display'] text-4xl font-bold text-gray-900">
+        <p className="dele-frau" style={{ fontSize: 40, fontWeight: 800, color: 'var(--ink)', margin: 0 }}>
           {word.word_es}
         </p>
       </div>
 
       {/* Options */}
-      <div className="w-full grid grid-cols-1 gap-3">
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 8 }}>
         {options.map((opt) => (
-          <button
-            key={opt.id}
-            onClick={() => handleSelect(opt.id)}
-            className={`w-full rounded-xl border-2 px-5 py-3.5 text-left text-base font-medium transition-all ${optionClass(opt.id)}`}
-          >
+          <button key={opt.id} onClick={() => handleSelect(opt.id)} style={optionStyle(opt.id)}>
             {opt.translation_ru}
           </button>
         ))}
@@ -96,20 +94,17 @@ export function VocabQuiz({ word, allWords, onNext, total, current }: VocabQuizP
 
       {/* Feedback + Next */}
       {answered && (
-        <div className="w-full flex flex-col gap-3">
-          <p className={`text-sm font-semibold text-center ${selected === word.id ? 'text-green-600' : 'text-red-600'}`}>
+        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <p style={{ fontSize: 13, fontWeight: 700, textAlign: 'center', color: selected === word.id ? 'var(--mint-dark)' : 'var(--coral-dark)' }}>
             {selected === word.id ? t('common.correct') : t('common.incorrect')}
           </p>
           {selected !== word.id && (
-            <p className="text-sm text-gray-500 text-center">
-              {t('vocab.correct_answer')}: <span className="font-semibold text-gray-800">{word.translation_ru}</span>
+            <p style={{ fontSize: 13, color: 'var(--ink-2)', textAlign: 'center' }}>
+              {t('vocab.correct_answer')}: <strong style={{ color: 'var(--ink)' }}>{word.translation_ru}</strong>
             </p>
           )}
-          <p className="text-xs text-gray-400 italic text-center">"{word.example_es}"</p>
-          <button
-            onClick={onNext}
-            className="w-full rounded-xl bg-amber-600 py-3 text-sm font-semibold text-white hover:bg-amber-500 transition-colors"
-          >
+          <p style={{ fontSize: 12, color: 'var(--muted)', fontStyle: 'italic', textAlign: 'center' }}>"{word.example_es}"</p>
+          <button onClick={onNext} className="dele-btn dele-btn-coral" style={{ width: '100%', justifyContent: 'center', padding: '11px 20px', fontSize: 13, boxShadow: '0 3px 0 var(--coral-dark)' }}>
             {t('vocab.next')} →
           </button>
         </div>

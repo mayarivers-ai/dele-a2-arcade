@@ -26,48 +26,63 @@ export function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-[80svh] items-center justify-center px-4">
-      <div className="w-full max-w-sm">
+    <div style={{ minHeight: '80svh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px 24px' }}>
+      <div style={{ width: '100%', maxWidth: 400 }}>
         {sent ? (
-          <div className="text-center">
-            <div className="mb-4 text-5xl">📬</div>
-            <h2 className="mb-2 font-['Playfair_Display'] text-2xl font-bold">
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: 48, marginBottom: 16 }}>📬</div>
+            <h2 className="dele-frau" style={{ fontSize: 28, fontWeight: 800, color: 'var(--ink)', margin: '0 0 8px' }}>
               {t('auth.check_email')}
             </h2>
-            <p className="text-gray-500">
+            <p style={{ color: 'var(--ink-2)', fontSize: 14 }}>
               {t('auth.check_email_desc', { email })}
             </p>
             <button
               onClick={() => setSent(false)}
-              className="mt-6 text-sm text-gray-400 hover:text-gray-700"
+              style={{ marginTop: 24, fontSize: 13, color: 'var(--muted)', background: 'none', border: 'none', cursor: 'pointer' }}
             >
               {t('auth.back')}
             </button>
           </div>
         ) : (
           <>
-            <h1 className="mb-2 text-center font-['Playfair_Display'] text-3xl font-bold">
-              {t('auth.login_title')}
-            </h1>
-            <p className="mb-8 text-center text-gray-500">{t('auth.login_desc')}</p>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t('auth.email_placeholder')}
-                required
-                className="rounded-xl border border-gray-200 px-4 py-3 text-gray-900 outline-none focus:border-[#C0392B] focus:ring-1 focus:ring-[#C0392B]"
-              />
-              {error && <p className="text-sm text-red-500">{error}</p>}
-              <button
-                type="submit"
-                disabled={loading}
-                className="rounded-xl bg-gray-900 py-3 font-semibold text-white hover:bg-gray-700 disabled:opacity-50"
-              >
-                {loading ? t('common.loading') : t('auth.send_link')}
-              </button>
-            </form>
+            <div style={{ textAlign: 'center', marginBottom: 32 }}>
+              <h1 className="dele-frau" style={{ fontSize: 36, fontWeight: 800, color: 'var(--ink)', margin: '0 0 8px' }}>
+                {t('auth.login_title')}
+              </h1>
+              <p style={{ color: 'var(--ink-2)', fontSize: 14 }}>{t('auth.login_desc')}</p>
+            </div>
+
+            <div style={{ background: 'var(--bg-card)', borderRadius: 20, border: '1px solid var(--rule)', padding: '32px 28px', boxShadow: '0 4px 24px rgba(46,75,206,.07)' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={t('auth.email_placeholder')}
+                  required
+                  style={{
+                    borderRadius: 12, border: '1.5px solid var(--rule)',
+                    padding: '12px 16px', fontSize: 14, color: 'var(--ink)',
+                    background: 'var(--bg)', outline: 'none',
+                    fontFamily: 'inherit', transition: 'border-color .2s',
+                  }}
+                  onFocus={e => e.target.style.borderColor = 'var(--cobalt)'}
+                  onBlur={e => e.target.style.borderColor = 'var(--rule)'}
+                />
+                {error && (
+                  <p style={{ fontSize: 13, color: 'var(--coral-dark)', margin: 0 }}>{error}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="dele-btn dele-btn-coral"
+                  style={{ padding: '12px 24px', fontSize: 14, width: '100%', justifyContent: 'center', boxShadow: '0 3px 0 var(--coral-dark)', opacity: loading ? 0.6 : 1 }}
+                >
+                  {loading ? t('common.loading') : t('auth.send_link')}
+                </button>
+              </form>
+            </div>
           </>
         )}
       </div>

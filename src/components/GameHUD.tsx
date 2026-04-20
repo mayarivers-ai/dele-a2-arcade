@@ -31,44 +31,41 @@ export function GameHUD({ module, current, total }: GameHUDProps) {
   }, [lastXPGain])
 
   return (
-    <div className="mb-8 border-y border-[#1a1a1a]/10">
-      {/* Progress line — full width, razor thin */}
-      <div className="h-px w-full bg-[#1a1a1a]/8">
-        <div
-          className="h-px bg-[#C0392B] transition-all duration-500"
-          style={{ width: `${progress}%` }}
-        />
+    <div style={{ marginBottom: 32, borderBottom: '1px solid var(--rule)' }}>
+      {/* Progress bar */}
+      <div style={{ height: 2, width: '100%', background: 'var(--rule)' }}>
+        <div style={{ height: '100%', width: `${progress}%`, background: 'var(--cobalt)', transition: 'width .5s' }} />
       </div>
 
-      <div className="flex items-center justify-between py-3">
-        {/* Lives — editorial dashes */}
-        <div className="flex items-center gap-1.5">
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 0' }}>
+        {/* Lives */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           {Array.from({ length: max }).map((_, i) => (
             <span
               key={i}
-              className={`inline-block h-[3px] w-5 rounded-none transition-all duration-200 ${
-                i < lives ? 'bg-[#C0392B]' : 'bg-[#1a1a1a]/15'
-              }`}
+              style={{
+                display: 'inline-block', height: 3, width: 20, borderRadius: 2,
+                background: i < lives ? 'var(--coral)' : 'var(--rule)',
+                transition: 'background .2s',
+              }}
             />
           ))}
-          <span className="ml-2 text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/40">
+          <span className="dele-pixel" style={{ fontSize: 7, color: 'var(--muted)', marginLeft: 4 }}>
             {lives}/{max}
           </span>
         </div>
 
-        {/* Progress counter + XP */}
-        <div className="flex items-center gap-5">
-          <span className="text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/40 tabular-nums">
+        {/* Counter + XP */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+          <span className="dele-pixel" style={{ fontSize: 7, color: 'var(--muted)' }}>
             {current} / {total}
           </span>
-          <div className="relative flex items-center gap-1.5">
-            <span className="text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/40">XP</span>
-            <span className="font-['Playfair_Display'] text-base font-semibold tabular-nums text-[#1a1a1a]">
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 6 }}>
+            <span className="dele-pixel" style={{ fontSize: 7, color: 'var(--muted)' }}>XP</span>
+            <span className="dele-frau" style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)' }}>
               {lifetimeXP}
             </span>
-            {showFloat && (
-              <XPFloat key={floatKey} amount={floatAmount} variant="warm" />
-            )}
+            {showFloat && <XPFloat key={floatKey} amount={floatAmount} variant="warm" />}
           </div>
         </div>
       </div>
