@@ -5,8 +5,8 @@ import { useSettingsStore } from '../stores/settingsStore'
 /* ─── COPY ──────────────────────────────────────────────────── */
 const COPY = {
   nav: {
-    ru: { courses: 'Курсы', levels: 'Уровни', arcade: 'Аркада', grammar: 'Грамматика', about: 'О проекте' },
-    es: { courses: 'Cursos', levels: 'Niveles', arcade: 'Arcade', grammar: 'Gramática', about: 'Proyecto' },
+    ru: { arcade: 'Аркада', career: 'Карьера', practice: 'Практика', theory: 'Теория' },
+    es: { arcade: 'Arcade', career: 'Carrera', practice: 'Practica', theory: 'Teoría' },
   },
   hero: {
     badge_ru: 'Открытый бета-доступ',
@@ -143,11 +143,10 @@ function Nav({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   }, [])
   const nav = COPY.nav[lang]
   const items: { key: keyof typeof nav; href: string }[] = [
-    { key: 'courses', href: '/play' },
-    { key: 'levels', href: '/play' },
     { key: 'arcade', href: '/arcade' },
-    { key: 'grammar', href: '/grammar' },
-    { key: 'about', href: '#about' },
+    { key: 'career', href: '/play' },
+    { key: 'practice', href: '/practica' },
+    { key: 'theory', href: '/teoria' },
   ]
   return (
     <header style={{
