@@ -9,9 +9,12 @@ export interface TheoryLesson {
   bloque: number
   content: {
     explanation: string
+    explanation_ru: string
     rule: string
+    rule_ru: string
     examples: TheoryExample[]
     note?: string
+    note_ru?: string
   }
   exerciseLink?: string
 }
@@ -34,15 +37,17 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'El alfabeto español y la pronunciación',
         bloque: 0,
         content: {
-          explanation:
-            'El español usa el alfabeto latino con 27 letras. A diferencia del ruso, cada letra tiene casi siempre el mismo sonido — no hay reducción vocálica ni consonantes suaves/duras.',
-          rule: 'En español, las vocales (a, e, i, o, u) siempre suenan igual, independientemente de la posición en la palabra. No existe la "o átona" que suena como "a" como en ruso.',
+          explanation: 'El español usa el alfabeto latino con 27 letras. A diferencia del ruso, cada letra tiene casi siempre el mismo sonido — no hay reducción vocálica ni consonantes suaves/duras.',
+          explanation_ru: 'Испанский язык использует латинский алфавит из 27 букв. В отличие от русского, каждая буква почти всегда звучит одинаково — нет редукции гласных и нет мягких/твёрдых согласных.',
+          rule: 'En español, las vocales (a, e, i, o, u) siempre suenan igual, independientemente de la posición en la palabra.',
+          rule_ru: 'В испанском гласные (a, e, i, o, u) всегда звучат одинаково, независимо от позиции в слове. Нет безударного "о", которое звучит как "а", как в русском.',
           examples: [
-            { es: 'casa → ca-sa (no "casa" reducida)', ru: 'дом — гласные всегда чёткие' },
-            { es: 'mesa → me-sa', ru: 'стол — "е" всегда звучит как "е"' },
-            { es: 'libro → li-bro', ru: 'книга — все гласные произносятся чётко' },
+            { es: 'casa → ca-sa', ru: 'дом — все гласные звучат чётко, без редукции' },
+            { es: 'mesa → me-sa', ru: 'стол — "е" всегда "е", не "и"' },
+            { es: 'libro → li-bro', ru: 'книга — все гласные произносятся полно' },
           ],
-          note: 'En ruso las vocales átonas se reducen (молоко suena "малако"). En español esto NO ocurre: todas las vocales se pronuncian igual, estén o no bajo el acento.',
+          note: 'En ruso las vocales átonas se reducen (молоко suena "малако"). En español esto NO ocurre.',
+          note_ru: 'В русском безударные гласные редуцируются: "молоко" → "малако". В испанском этого НЕТ: все гласные произносятся чётко, даже без ударения.',
         },
       },
       {
@@ -50,15 +55,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'El español no tiene casos gramaticales',
         bloque: 0,
         content: {
-          explanation:
-            'El ruso tiene 6 casos que cambian la terminación de las palabras según su función en la frase. El español no tiene casos: la posición en la oración y las preposiciones hacen ese trabajo.',
+          explanation: 'El ruso tiene 6 casos que cambian la terminación de las palabras según su función en la frase. El español no tiene casos: la posición en la oración y las preposiciones hacen ese trabajo.',
+          explanation_ru: 'В русском языке 6 падежей, которые изменяют окончания слов в зависимости от их роли в предложении. В испанском падежей НЕТ: их работу выполняют предлоги и порядок слов.',
           rule: 'En español el sustantivo nunca cambia su forma según la función gramatical. Se usan preposiciones (a, de, con, en…) para indicar relaciones.',
+          rule_ru: 'В испанском существительное НИКОГДА не меняет форму в зависимости от грамматической функции. Для выражения отношений используются предлоги (a, de, con, en…).',
           examples: [
-            { es: 'Veo a Juan (objeto directo)', ru: 'Я вижу Хуана — винительный падеж en ruso' },
-            { es: 'El libro de Juan (posesión)', ru: 'Книга Хуана — родительный падеж en ruso' },
-            { es: 'Hablo con Juan (compañía)', ru: 'Я говорю с Хуаном — творительный падеж en ruso' },
+            { es: 'Veo a Juan (objeto directo)', ru: 'Я вижу Хуана — в рус. винительный: Хуана' },
+            { es: 'El libro de Juan (posesión)', ru: 'Книга Хуана — в рус. родительный: Хуана' },
+            { es: 'Hablo con Juan (compañía)', ru: 'Говорю с Хуаном — в рус. творительный: с Хуаном' },
           ],
-          note: 'El ruso usa desinencias (-а, -у, -ом, -е…) para lo que el español expresa con preposiciones. No intentes "traducir" el caso: busca la preposición española equivalente.',
+          note_ru: 'Не пытайся "переводить" падеж напрямую — ищи испанский предлог, который передаёт то же значение. Иногда предлог вообще не нужен.',
         },
       },
       {
@@ -66,13 +72,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Acento y entonación: el español es musical',
         bloque: 0,
         content: {
-          explanation:
-            'El español tiene un ritmo silábico — todas las sílabas duran aproximadamente lo mismo. El ruso tiene ritmo acentual, con sílabas tónicas más largas y átonas muy reducidas.',
-          rule: 'El acento en español está indicado por tilde (´) cuando no sigue las reglas generales. Las palabras llanas (acento en penúltima sílaba) son las más comunes y no llevan tilde si terminan en vocal, n o s.',
+          explanation: 'El español tiene un ritmo silábico — todas las sílabas duran aproximadamente lo mismo. El ruso tiene ritmo acentual, con sílabas tónicas más largas y átonas muy reducidas.',
+          explanation_ru: 'Испанский язык имеет слоговой ритм — все слоги длятся примерно одинаково. Русский язык имеет ударный ритм: ударные слоги длиннее, безударные сильно сокращаются.',
+          rule: 'El acento en español está indicado por tilde (´) cuando no sigue las reglas generales. Las palabras llanas (acento en penúltima sílaba) son las más comunes.',
+          rule_ru: 'Ударение в испанском обозначается знаком тильды (´), когда слово не следует общим правилам. Самый распространённый тип — слова с ударением на предпоследнем слоге (palabras llanas).',
           examples: [
-            { es: 'caSA, meSA, liBRO (llanas, sin tilde)', ru: 'ударение на предпоследнем слоге' },
+            { es: 'caSA, meSA, liBRO (llanas, sin tilde)', ru: 'ударение на предпоследнем слоге — тильда не нужна' },
             { es: 'caFÉ, mamá, sofÁ (agudas, con tilde)', ru: 'ударение на последнем слоге — тильда обязательна' },
-            { es: 'MÚsica, télefono (esdrújulas, siempre tilde)', ru: 'ударение на третьем слоге — всегда с тильдой' },
+            { es: 'MÚsica, télefono (esdrújulas, siempre tilde)', ru: 'ударение на третьем слоге — тильда всегда' },
           ],
         },
       },
@@ -81,15 +88,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Cómo leer fonética española',
         bloque: 0,
         content: {
-          explanation:
-            'El español es muy fonético: casi siempre se escribe como se pronuncia. Los pocos sonidos que no existen en ruso se aprenden rápido.',
-          rule: 'Sonidos clave: la "j" y "g" (ante e/i) suenan como la х rusa pero más suave. La "r" simple es como la "р" rusa entre vocales. La "rr" y la "r" al inicio es vibrante múltiple.',
+          explanation: 'El español es muy fonético: casi siempre se escribe como se pronuncia. Los pocos sonidos que no existen en ruso se aprenden rápido.',
+          explanation_ru: 'Испанский очень фонетичен: почти всегда пишется так, как произносится. Немногочисленные звуки, которых нет в русском, осваиваются быстро.',
+          rule: 'Sonidos clave: la "j" y "g" (ante e/i) suenan como х rusa pero más suave. La "r" simple es vibración única entre vocales. La "rr" y "r" inicial es vibración múltiple.',
+          rule_ru: 'Ключевые звуки: "j" и "g" (перед e/i) звучат как русское "х", но мягче. Одиночная "r" — это один удар кончика языка. "rr" и "r" в начале слова — раскатистая вибрация.',
           examples: [
-            { es: 'jardín [xardín]', ru: 'как "х" в слове "хорошо" — jardín' },
-            { es: 'pero [péɾo] vs perro [péro]', ru: '"р" одиночная vs "рр" раскатистая' },
-            { es: 'ciudad [θjuðáð] (España) / [sjuðáð] (Latinoamérica)', ru: '"с" в Латинской Америке, "θ" как в английском "think" в Испании' },
+            { es: 'jardín [xardín]', ru: 'как "х" в "хорошо", но мягче' },
+            { es: 'pero [péɾo] vs perro [péro]', ru: '"р" одиночная (один удар) vs "рр" раскатистая' },
+            { es: 'v y b suenan igual: vino = bino', ru: '"в" и "б" не различаются — оба звучат как "б"' },
           ],
-          note: 'La "v" y la "b" suenan igual en español moderno. No hay diferencia: vino y bino suenan idéntico. Para el ruso hablante esto puede ser raro al principio.',
+          note_ru: 'Буквы "v" и "b" в современном испанском звучат одинаково. Это непривычно для русского уха, но не влияет на понимание.',
         },
       },
     ],
@@ -104,15 +112,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Género masculino y femenino',
         bloque: 1,
         content: {
-          explanation:
-            'El español solo tiene dos géneros: masculino y femenino. El ruso tiene tres (masculino, femenino, neutro). En español todos los objetos son "él" o "ella" — no existe el neutro para sustantivos comunes.',
+          explanation: 'El español solo tiene dos géneros: masculino y femenino. El ruso tiene tres (masculino, femenino, neutro). En español todos los objetos son "él" o "ella" — no existe el neutro para sustantivos comunes.',
+          explanation_ru: 'В испанском только два рода: мужской и женский. В русском три (м., ж., ср.). В испанском все предметы — либо "он", либо "она". Среднего рода для обычных существительных нет.',
           rule: 'Regla general: palabras terminadas en -o → masculino; en -a → femenino. Hay muchas excepciones importantes que hay que memorizar.',
+          rule_ru: 'Общее правило: слова на -o → мужской род; на -a → женский род. Важных исключений много — их надо запоминать. Лучшая стратегия: учить слово сразу с артиклем.',
           examples: [
-            { es: 'el libro (m), la mesa (f)', ru: 'книга (ж), стол (м) — в испанском наоборот для "стол"!' },
+            { es: 'el libro (m), la mesa (f)', ru: 'книга (ж.), стол (м.) — в испанском стол тоже м.р.' },
             { es: 'el problema, el mapa, el día', ru: 'исключения: слова на -а, но мужского рода' },
             { es: 'la mano, la foto, la radio', ru: 'исключения: слова на -о, но женского рода' },
           ],
-          note: 'En ruso el género suele deducirse de la terminación con mucha precisión. En español también, pero hay más excepciones. Lo mejor es aprender el artículo junto con cada sustantivo nuevo: no "libro" sino "el libro".',
+          note_ru: 'В русском род обычно угадывается по окончанию достаточно точно. В испанском исключений больше. Золотое правило: учи не "libro", а "el libro" — артикль покажет род.',
         },
       },
       {
@@ -120,15 +129,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Artículos determinados: el, la, los, las',
         bloque: 1,
         content: {
-          explanation:
-            'El artículo determinado equivale al concepto de "ese específico" o "ya sabemos de cuál hablamos". En ruso NO existe este concepto gramatical — es uno de los mayores retos para rusohablantes.',
-          rule: 'el (m. singular), la (f. singular), los (m. plural), las (f. plural). Se usa cuando el hablante y el oyente saben de qué objeto concreto se habla.',
+          explanation: 'El artículo determinado equivale al concepto de "ese específico" o "ya sabemos de cuál hablamos". En ruso NO existe este concepto gramatical — es uno de los mayores retos para rusohablantes.',
+          explanation_ru: 'Определённый артикль — это способ сказать "тот самый, конкретный, о котором уже знаем". В русском языке этой грамматической категории НЕТ — это одна из главных трудностей для русскоговорящих.',
+          rule: 'el (m. sg.), la (f. sg.), los (m. pl.), las (f. pl.). Используется когда говорящий и слушающий знают, о каком конкретном предмете речь.',
+          rule_ru: 'el (м. ед.ч.), la (ж. ед.ч.), los (м. мн.ч.), las (ж. мн.ч.). Используется, когда и говорящий, и слушающий понимают, о каком конкретном предмете идёт речь.',
           examples: [
-            { es: '¿Dónde está el baño?', ru: 'Где туалет? (конкретный, единственный в контексте)' },
+            { es: '¿Dónde está el baño?', ru: 'Где туалет? — конкретный, единственный в контексте' },
             { es: 'Me gusta la música.', ru: 'Мне нравится музыка (музыка вообще, как категория)' },
-            { es: 'Los estudiantes llegaron tarde.', ru: 'Студенты опоздали (все, о ком шла речь)' },
+            { es: 'Los estudiantes llegaron tarde.', ru: 'Студенты опоздали (те самые, о ком шла речь)' },
           ],
-          note: 'En ruso no hay artículos y el contexto lo hace todo. En español tienes que elegir: el/la (determinado), un/una (indeterminado) o nada. Al principio parecerá arbitrario — con el tiempo se vuelve intuitivo.',
+          note_ru: 'В русском контекст всё объясняет без артиклей. В испанском нужно выбрать: el/la (определённый), un/una (неопределённый) или ничего. Сначала кажется произвольным — с практикой станет инстинктивным.',
         },
         exerciseLink: '/practica',
       },
@@ -137,13 +147,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Artículos indeterminados: un, una, unos, unas',
         bloque: 1,
         content: {
-          explanation:
-            'El artículo indeterminado introduce algo nuevo en la conversación, algo que el oyente no conoce todavía, equivalente al concepto "un cierto, algún".',
-          rule: 'un (m. singular), una (f. singular), unos (m. plural), unas (f. plural). Se usa la primera vez que mencionamos algo, o cuando es uno entre muchos posibles.',
+          explanation: 'El artículo indeterminado introduce algo nuevo en la conversación, algo que el oyente no conoce todavía. Equivale al concepto "algún, cierto".',
+          explanation_ru: 'Неопределённый артикль вводит что-то новое в разговор — то, о чём слушатель ещё не знает. Примерно соответствует русскому "какой-то, некий, один".',
+          rule: 'un (m. sg.), una (f. sg.), unos (m. pl.), unas (f. pl.). Se usa la primera vez que mencionamos algo, o cuando es uno entre muchos posibles.',
+          rule_ru: 'un (м. ед.ч.), una (ж. ед.ч.), unos (м. мн.ч.), unas (ж. мн.ч.). Используется при первом упоминании предмета или когда имеется в виду любой из многих.',
           examples: [
-            { es: 'Tengo un perro.', ru: 'У меня есть собака (первое упоминание, неизвестная читателю)' },
-            { es: 'Busco un apartamento.', ru: 'Я ищу квартиру (любую, не конкретную)' },
-            { es: 'Compré unas naranjas.', ru: 'Я купил апельсины (несколько, не конкретных)' },
+            { es: 'Tengo un perro.', ru: 'У меня есть собака (первое упоминание, неизвестная слушателю)' },
+            { es: 'Busco un apartamento.', ru: 'Я ищу квартиру (любую подходящую)' },
+            { es: 'Compré unas naranjas.', ru: 'Я купил апельсины (несколько штук, не конкретных)' },
           ],
         },
       },
@@ -152,15 +163,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Cuándo NO usar artículo',
         bloque: 1,
         content: {
-          explanation:
-            'No siempre se usa artículo. Hay contextos claros donde se omite, y aprenderlos evita el error de "sobrearticular".',
-          rule: 'No se usa artículo con: profesiones tras ser/estar, días de la semana con expresiones habituales, meses, nacionalidades como adjetivo, y tras la preposición "de" en muchas expresiones.',
+          explanation: 'No siempre se usa artículo. Hay contextos donde se omite, y aprenderlos evita el error de "sobrearticular".',
+          explanation_ru: 'Артикль используется не всегда. Есть чёткие ситуации, когда его нет. Зная их, избежишь ошибки "лишнего артикля".',
+          rule: 'No se usa artículo con: profesiones tras ser/estar, días de la semana en expresiones habituales, meses, y tras la preposición "de" en muchas expresiones.',
+          rule_ru: 'Артикль НЕ используется: с профессиями после ser (Soy médico), с днями недели в обычных выражениях (los lunes), после предлога "de" во многих выражениях (un vaso de agua).',
           examples: [
-            { es: 'Soy médico. (profesión)', ru: 'Я врач — без артикля после ser' },
+            { es: 'Soy médico. (profesión)', ru: 'Я врач — после ser с профессией артикль не нужен' },
             { es: 'Trabajo los lunes. (hábito)', ru: 'Я работаю по понедельникам' },
-            { es: 'un vaso de agua (partitivo)', ru: 'стакан воды — de + sustantivo sin artículo' },
+            { es: 'un vaso de agua (partitivo)', ru: 'стакан воды — de + существительное без артикля' },
           ],
-          note: 'En ruso nunca hay artículo, así que el error más común del rusohablante es omitirlo cuando sí hace falta, no el contrario. Aunque también existe el error de añadirlo donde no va (con profesiones).',
+          note_ru: 'Типичная ошибка русскоязычных — добавлять артикль с профессиями: "Soy UN médico" — неверно! После ser/estar + профессия артикль опускается.',
         },
       },
       {
@@ -168,12 +180,13 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Plural: reglas y excepciones',
         bloque: 1,
         content: {
-          explanation:
-            'El plural en español es mucho más simple que en ruso. En ruso el plural cambia según el caso y el género. En español hay dos reglas principales.',
-          rule: 'Palabras terminadas en vocal → añade -s. Palabras terminadas en consonante → añade -es. Palabras terminadas en -z → cambia -z por -ces.',
+          explanation: 'El plural en español es mucho más simple que en ruso. En ruso el plural cambia según el caso y el género. En español hay dos reglas principales.',
+          explanation_ru: 'Множественное число в испанском намного проще, чем в русском. В русском оно зависит от падежа и рода. В испанском всего два основных правила.',
+          rule: 'Palabras en vocal → añade -s. Palabras en consonante → añade -es. Palabras en -z → cambia -z por -ces.',
+          rule_ru: 'Слова на гласную → добавь -s. Слова на согласную → добавь -es. Слова на -z → замени -z на -ces.',
           examples: [
             { es: 'libro → libros, mesa → mesas', ru: 'книга → книги (просто + s)' },
-            { es: 'ciudad → ciudades, papel → papeles', ru: 'город → города (+ es tras согласной)' },
+            { es: 'ciudad → ciudades, papel → papeles', ru: 'город → города (+ es после согласной)' },
             { es: 'lápiz → lápices, vez → veces', ru: 'карандаш → карандаши (-z → -ces)' },
           ],
         },
@@ -190,15 +203,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pronombres personales sujeto',
         bloque: 2,
         content: {
-          explanation:
-            'En español, los pronombres sujeto (yo, tú, él…) son opcionales porque la terminación del verbo ya indica la persona. En ruso también se omiten, pero por razones ligeramente distintas.',
+          explanation: 'En español, los pronombres sujeto son opcionales porque la terminación del verbo ya indica la persona. En ruso también se omiten, pero por razones ligeramente distintas.',
+          explanation_ru: 'В испанском местоимения-подлежащие (я, ты, он...) необязательны — окончание глагола уже указывает на лицо. В русском их тоже опускают, но по немного другим причинам.',
           rule: 'yo, tú, él/ella/usted, nosotros/as, vosotros/as, ellos/ellas/ustedes. Se usan para énfasis o para evitar ambigüedad, no de forma obligatoria.',
+          rule_ru: 'yo (я), tú (ты), él/ella/usted (он/она/Вы), nosotros (мы), vosotros (вы), ellos/ellas/ustedes (они/вы). Употребляются для акцента или во избежание путаницы — не обязательно.',
           examples: [
-            { es: 'Hablo español. (sin pronombre, normal)', ru: 'Я говорю по-испански (pronombre opcional)' },
-            { es: 'YO no lo sé, pero ÉL sí. (énfasis)', ru: 'Я не знаю, а он знает (противопоставление)' },
-            { es: 'Usted habla muy bien. (formal)', ru: '"Вы" formal — se usa siempre en contextos formales' },
+            { es: 'Hablo español. (sin pronombre, normal)', ru: 'Говорю по-испански — местоимение не нужно' },
+            { es: 'YO no lo sé, pero ÉL sí. (énfasis)', ru: 'Я не знаю, а он знает — противопоставление' },
+            { es: 'Usted habla muy bien. (formal)', ru: '"Usted" = вежливое "Вы" в единственном числе' },
           ],
-          note: '"Usted" es la forma de cortesía singular (como el "Вы" ruso). En plural es "ustedes". En España también existe "vosotros" para el plural informal, pero en Latinoamérica se usa "ustedes" para todo.',
+          note_ru: '"Usted" — это вежливое "Вы" (ед.ч.), глагол при нём стоит в форме 3-го лица. В Испании также есть "vosotros" (вы, мн.ч. неформальное), в Латинской Америке — только "ustedes" для всех случаев мн.ч.',
         },
       },
       {
@@ -206,15 +220,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pronombres de objeto directo',
         bloque: 2,
         content: {
-          explanation:
-            'Los pronombres de objeto directo reemplazan al sustantivo que recibe directamente la acción del verbo. En ruso esto se expresa con el caso acusativo.',
+          explanation: 'Los pronombres de objeto directo reemplazan al sustantivo que recibe directamente la acción del verbo. En ruso esto se expresa con el caso acusativo.',
+          explanation_ru: 'Местоимения прямого дополнения заменяют существительное, которое непосредственно получает действие глагола. В русском это выражается винительным падежом.',
           rule: 'me, te, lo/la, nos, os, los/las. Van ANTES del verbo conjugado. Con infinitivo o gerundio pueden ir también después (enclíticos).',
+          rule_ru: 'me (меня), te (тебя), lo/la (его/её), nos (нас), os (вас), los/las (их). Ставятся ПЕРЕД спрягаемым глаголом. При инфинитиве или герундии могут стоять после (присоединяются к концу).',
           examples: [
-            { es: '¿Ves el libro? Sí, lo veo.', ru: 'Ты видишь книгу? Да, я её вижу.' },
-            { es: '¿Llamas a María? Sí, la llamo.', ru: 'Ты звонишь Марии? Да, я ей звоню.' },
-            { es: 'Quiero verlo. / Lo quiero ver.', ru: 'Я хочу его увидеть (dos posiciones posibles)' },
+            { es: '¿Ves el libro? Sí, lo veo.', ru: 'Видишь книгу? Да, я её вижу. (lo = el libro)' },
+            { es: '¿Llamas a María? Sí, la llamo.', ru: 'Ты звонишь Марии? Да, звоню. (la = María)' },
+            { es: 'Quiero verlo. / Lo quiero ver.', ru: 'Хочу его увидеть — два варианта позиции' },
           ],
-          note: 'En español hay una distinción lo (m) / la (f) que en ruso corresponde al género del sustantivo reemplazado. Presta atención al género del objeto.',
+          note_ru: 'В испанском есть различие lo (м.р.) / la (ж.р.) — соответствует роду заменяемого существительного. Следи за родом!',
         },
       },
       {
@@ -222,13 +237,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pronombres de objeto indirecto',
         bloque: 2,
         content: {
-          explanation:
-            'Los pronombres de objeto indirecto indican a quién va dirigida la acción. En ruso se expresa con el dativo.',
-          rule: 'me, te, le, nos, os, les. Van antes del verbo. Cuando van con objeto directo de 3ª persona, "le/les" se convierte en "se" (para evitar la secuencia le lo).',
+          explanation: 'Los pronombres de objeto indirecto indican a quién va dirigida la acción. En ruso se expresa con el dativo.',
+          explanation_ru: 'Местоимения косвенного дополнения указывают, кому адресовано действие. В русском это дательный падеж.',
+          rule: 'me, te, le, nos, os, les. Van antes del verbo. Cuando van con objeto directo de 3ª persona, "le/les" se convierte en "se" (para evitar le lo, que suena mal).',
+          rule_ru: 'me (мне), te (тебе), le (ему/ей), nos (нам), os (вам), les (им). Стоят перед глаголом. Когда рядом стоит местоимение прямого дополнения 3-го лица, "le/les" меняется на "se".',
           examples: [
-            { es: 'Te doy el libro.', ru: 'Я тебе даю книгу (dativo: тебе)' },
-            { es: 'Le hablo a ella.', ru: 'Я говорю ей (dativo: ей)' },
-            { es: 'Se lo doy. (= Le lo doy, incorrecto)', ru: 'Я ему/ей это даю (le → se antes de lo/la)' },
+            { es: 'Te doy el libro.', ru: 'Я тебе даю книгу (тебе = дательный)' },
+            { es: 'Le hablo a ella.', ru: 'Я говорю ей (ей = дательный)' },
+            { es: 'Se lo doy. (= Le lo → incorrecto)', ru: 'Я ему/ей это даю: le + lo → se + lo' },
           ],
         },
       },
@@ -237,15 +253,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pronombres reflexivos',
         bloque: 2,
         content: {
-          explanation:
-            'Los pronombres reflexivos indican que la acción recae sobre el mismo sujeto. En ruso existe el sufijo -ся/-сь para verbos reflexivos.',
+          explanation: 'Los pronombres reflexivos indican que la acción recae sobre el mismo sujeto. En ruso existe el sufijo -ся/-сь para verbos reflexivos.',
+          explanation_ru: 'Возвратные местоимения показывают, что действие направлено на самого субъекта. В русском это аналог суффикса -ся/-сь у возвратных глаголов.',
           rule: 'me, te, se, nos, os, se. Equivalen al -ся ruso en muchos verbos. Van antes del verbo conjugado.',
+          rule_ru: 'me (для yo), te (для tú), se (для él/ella/usted, ellos, ustedes), nos (для nosotros), os (для vosotros). Стоят перед спрягаемым глаголом.',
           examples: [
-            { es: 'Me llamo Ana.', ru: 'Меня зовут Аня (llamarse → звать + ся)' },
-            { es: 'Me ducho por la mañana.', ru: 'Я принимаю душ утром (ducharse → мыться)' },
-            { es: 'Nos levantamos a las 7.', ru: 'Мы встаём в 7 (levantarse → вставать)' },
+            { es: 'Me llamo Ana. (llamarse)', ru: 'Меня зовут Аня (звать + ся)' },
+            { es: 'Me ducho por la mañana. (ducharse)', ru: 'Я принимаю душ утром (мыться)' },
+            { es: 'Nos levantamos a las 7. (levantarse)', ru: 'Мы встаём в 7 (вставать)' },
           ],
-          note: 'No todos los verbos reflexivos en español corresponden a verbos con -ся en ruso y viceversa. Por ejemplo, "me gusta" no es reflexivo en sentido estricto, pero usa el pronombre de dativo.',
+          note_ru: 'Не все испанские возвратные глаголы соответствуют глаголам с -ся в русском, и наоборот. Например, "me gusta" (мне нравится) — не возвратный, но использует местоимение дательного падежа.',
         },
         exerciseLink: '/practica',
       },
@@ -254,13 +271,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pronombres posesivos',
         bloque: 2,
         content: {
-          explanation:
-            'Los posesivos en español tienen dos formas: los átonos (antes del sustantivo) y los tónicos (después o solos). En ruso solo hay una forma que concuerda con el sustantivo.',
+          explanation: 'Los posesivos en español tienen dos formas: los átonos (antes del sustantivo) y los tónicos (después o solos). En ruso solo hay una forma que concuerda con el sustantivo.',
+          explanation_ru: 'Притяжательные местоимения в испанском имеют две формы: безударные (перед существительным) и ударные (после или самостоятельно). В русском одна форма, согласующаяся с существительным.',
           rule: 'Átonos: mi/mis, tu/tus, su/sus, nuestro/a/os/as, vuestro/a/os/as, su/sus. Tónicos: mío/a/os/as, tuyo/a/os/as, suyo/a/os/as…',
+          rule_ru: 'Безударные: mi/mis (мой/мои), tu/tus (твой/твои), su/sus (его/её/их). Ударные: mío/a (мой/моя), tuyo/a (твой/твоя)... Согласуются в роде и числе с предметом, которым владеют.',
           examples: [
-            { es: 'mi libro / el libro mío', ru: 'моя книга (ambas formas son posibles)' },
-            { es: 'Esta mesa es tuya.', ru: 'Этот стол твой (tónico después del verbo ser)' },
-            { es: 'nuestros amigos', ru: 'наши друзья (concuerda en género y número)' },
+            { es: 'mi libro / el libro mío', ru: 'моя книга / книга моя (обе формы возможны)' },
+            { es: 'Esta mesa es tuya.', ru: 'Этот стол твой (ударная форма после глагола ser)' },
+            { es: 'nuestros amigos', ru: 'наши друзья (согласуется в роде и числе)' },
           ],
         },
       },
@@ -269,13 +287,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pronombres demostrativos',
         bloque: 2,
         content: {
-          explanation:
-            'Los demostrativos señalan la distancia entre el objeto y el hablante. El español tiene tres niveles de distancia; el ruso moderno solo usa dos (этот/тот).',
+          explanation: 'Los demostrativos señalan la distancia entre el objeto y el hablante. El español tiene tres niveles de distancia; el ruso moderno solo usa dos (этот/тот).',
+          explanation_ru: 'Указательные местоимения показывают расстояние между предметом и говорящим. В испанском три степени расстояния; в современном русском две (этот/тот).',
           rule: 'este/esta/estos/estas (cerca del hablante), ese/esa/esos/esas (cerca del oyente o distancia media), aquel/aquella/aquellos/aquellas (lejos de ambos).',
+          rule_ru: 'este/esta (этот/эта — рядом со мной), ese/esa (тот/та — рядом с тобой или на средней дистанции), aquel/aquella (вон тот/та — далеко от обоих). Согласуются с родом существительного.',
           examples: [
             { es: 'Este libro es mío. (aquí, conmigo)', ru: 'Эта книга моя (рядом со мной)' },
             { es: 'Ese coche es tuyo. (ahí, contigo)', ru: 'Та машина твоя (рядом с тобой)' },
-            { es: 'Aquel edificio es muy antiguo. (allí, lejos)', ru: 'Вон то здание очень старое (далеко)' },
+            { es: 'Aquel edificio es muy antiguo.', ru: 'Вон то здание очень старое (далеко)' },
           ],
         },
       },
@@ -291,13 +310,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Conjugación regular: -AR, -ER, -IR',
         bloque: 3,
         content: {
-          explanation:
-            'Los verbos regulares siguen patrones fijos según su terminación en infinitivo. En español, la terminación del verbo indica la persona — no se necesita el pronombre sujeto.',
+          explanation: 'Los verbos regulares siguen patrones fijos según su terminación en infinitivo. La terminación del verbo indica la persona — no se necesita el pronombre sujeto.',
+          explanation_ru: 'Правильные глаголы следуют фиксированным образцам в зависимости от окончания инфинитива (-AR, -ER, -IR). Окончание глагола указывает на лицо — местоимение-подлежащее не нужно.',
           rule: '-AR: hablo, hablas, habla, hablamos, habláis, hablan. -ER: como, comes, come, comemos, coméis, comen. -IR: vivo, vives, vive, vivimos, vivís, viven.',
+          rule_ru: '-AR: hablo, hablas, habla, hablamos, habláis, hablan (-o/-as/-a/-amos/-áis/-an). -ER: como, comes, come, comemos, coméis, comen (-o/-es/-e/-emos/-éis/-en). -IR: vivo, vives, vive, vivimos, vivís, viven (-o/-es/-e/-imos/-ís/-en).',
           examples: [
-            { es: 'hablar → hablo, hablas, habla…', ru: 'говорить — hablar, окончания -o/-as/-a/-amos/-áis/-an' },
-            { es: 'comer → como, comes, come…', ru: 'есть (кушать) — comer, окончания -o/-es/-e/-emos/-éis/-en' },
-            { es: 'vivir → vivo, vives, vive…', ru: 'жить — vivir, окончания -o/-es/-e/-imos/-ís/-en' },
+            { es: 'hablar → hablo, hablas, habla…', ru: 'говорить — окончания -o/-as/-a/-amos/-áis/-an' },
+            { es: 'comer → como, comes, come…', ru: 'есть (кушать) — окончания -o/-es/-e/-emos/-éis/-en' },
+            { es: 'vivir → vivo, vives, vive…', ru: 'жить — окончания -o/-es/-e/-imos/-ís/-en' },
           ],
         },
         exerciseLink: '/arcade',
@@ -307,13 +327,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Los verbos irregulares más frecuentes',
         bloque: 3,
         content: {
-          explanation:
-            'Hay verbos muy usados que no siguen los patrones regulares. Son irregulares en la 1ª persona singular o en todas las personas. Hay que memorizarlos.',
-          rule: 'Los más importantes: ser (soy, eres, es…), estar (estoy, estás, está…), ir (voy, vas, va…), tener (tengo, tienes…), hacer (hago, haces…), poder (puedo, puedes…), querer (quiero, quieres…).',
+          explanation: 'Hay verbos muy usados que no siguen los patrones regulares. Son irregulares en la 1ª persona singular o en todas las personas. Hay que memorizarlos.',
+          explanation_ru: 'Самые употребительные глаголы нередко неправильные — не следуют общим правилам. Неправильность либо только в 1-м лице ед.ч., либо во всех формах. Их надо заучить.',
+          rule: 'ser (soy, eres, es…), estar (estoy, estás, está…), ir (voy, vas, va…), tener (tengo, tienes…), hacer (hago, haces…), poder (puedo, puedes…), querer (quiero, quieres…)',
+          rule_ru: 'ser: soy/eres/es/somos/sois/son. estar: estoy/estás/está/estamos/estáis/están. ir: voy/vas/va/vamos/vais/van. tener: tengo/tienes/tiene... hacer: hago/haces/hace...',
           examples: [
-            { es: 'ser: soy / eres / es / somos / sois / son', ru: 'быть (постоянное): я есть/являюсь...' },
-            { es: 'ir: voy / vas / va / vamos / vais / van', ru: 'идти/ехать: iду → voy (totalmente irregular)' },
-            { es: 'tener: tengo / tienes / tiene / tenemos…', ru: 'иметь: tengo (1ª persona irregular)' },
+            { es: 'ser: soy / eres / es / somos / sois / son', ru: 'быть (постоянное): я/ты/он/мы/вы/они' },
+            { es: 'ir: voy / vas / va / vamos / vais / van', ru: 'идти/ехать — полностью неправильный' },
+            { es: 'tener: tengo / tienes / tiene / tenemos…', ru: 'иметь: 1-е лицо неправильное (tengo)' },
           ],
         },
         exerciseLink: '/arcade',
@@ -323,15 +344,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'SER vs ESTAR',
         bloque: 3,
         content: {
-          explanation:
-            'Este es el error más común para rusohablantes. El ruso usa una sola cópula (быть, que se omite en presente). El español tiene DOS verbos: ser y estar, con usos bien diferenciados.',
-          rule: 'SER: identidad permanente o inherente (origen, nacionalidad, profesión, material, hora, eventos). ESTAR: estados temporales, ubicación, resultados de cambio.',
+          explanation: 'Это самая известная ошибка русскоязычных. В русском — одно слово "быть" (опускается в настоящем). В испанском ДВА глагола: ser и estar с чёткими различиями.',
+          explanation_ru: 'Это самая известная ошибка русскоязычных. В русском — одно слово "быть" (опускается в настоящем). В испанском ДВА глагола: ser и estar — с совершенно разными функциями.',
+          rule: 'SER: identidad permanente o inherente (origen, profesión, material, hora, eventos). ESTAR: estados temporales, ubicación, resultado de un cambio.',
+          rule_ru: 'SER — постоянное, определяющее: происхождение, профессия, материал, время, мероприятия. ESTAR — временное состояние, местоположение, результат изменения.',
           examples: [
-            { es: 'Soy ruso. (origen/nacionalidad — ser)', ru: 'Я русский — идентичность, постоянно' },
-            { es: 'Estoy cansado. (estado temporal — estar)', ru: 'Я устал — временное состояние' },
-            { es: 'El café es caliente. / El café está caliente.', ru: 'Кофе горячий (característica vs. estado actual)' },
+            { es: 'Soy ruso. (origen/nacionalidad — ser)', ru: 'Я русский — идентичность, постоянно → SER' },
+            { es: 'Estoy cansado. (estado temporal — estar)', ru: 'Я устал — временное состояние → ESTAR' },
+            { es: 'El café es caliente. / El café está caliente.', ru: 'Кофе горячий (свойство) vs кофе горячий (сейчас)' },
           ],
-          note: 'En ruso быть se omite en presente: "Я врач", "Он здесь". En español SIEMPRE hay verbo: "Soy médico" (ser), "Está aquí" (estar). La ubicación siempre usa ESTAR (excepto eventos: "La fiesta es en mi casa").',
+          note_ru: 'В русском "быть" опускается: "Я врач", "Он здесь". В испанском глагол ВСЕГДА есть: "Soy médico" (ser), "Está aquí" (estar). Местоположение — ВСЕГДА estar (кроме мероприятий: "La fiesta es en mi casa").',
         },
         exerciseLink: '/practica',
       },
@@ -340,13 +362,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Verbos reflexivos',
         bloque: 3,
         content: {
-          explanation:
-            'Los verbos reflexivos llevan siempre el pronombre reflexivo (me, te, se…). Son muy frecuentes en el vocabulario de rutinas diarias.',
+          explanation: 'Los verbos reflexivos llevan siempre el pronombre reflexivo (me, te, se…). Son muy frecuentes en el vocabulario de rutinas diarias.',
+          explanation_ru: 'Возвратные глаголы всегда употребляются с возвратным местоимением (me, te, se…). Очень часто встречаются при описании распорядка дня.',
           rule: 'El pronombre reflexivo va antes del verbo conjugado y concuerda con el sujeto: yo me lavo, tú te lavas, él se lava, nosotros nos lavamos…',
+          rule_ru: 'Возвратное местоимение стоит ПЕРЕД спрягаемым глаголом и согласуется с подлежащим: yo me lavo, tú te lavas, él se lava, nosotros nos lavamos…',
           examples: [
             { es: 'levantarse: me levanto, te levantas, se levanta…', ru: 'вставать: я встаю, ты встаёшь...' },
             { es: 'Me ducho a las 8.', ru: 'Я принимаю душ в 8' },
-            { es: '¿Cómo te llamas?', ru: 'Как тебя зовут? (llamarse → звать + ся)' },
+            { es: '¿Cómo te llamas?', ru: 'Как тебя зовут? (llamarse = звать+ся)' },
           ],
         },
       },
@@ -355,13 +378,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Verbos con cambio vocálico',
         bloque: 3,
         content: {
-          explanation:
-            'Muchos verbos cambian la vocal de la raíz en las formas tónicas (yo, tú, él, ellos). Este cambio ocurre solo cuando el acento cae en la raíz.',
-          rule: 'e → ie: querer, entender, empezar. o → ue: poder, volver, dormir. e → i: pedir, servir, seguir. NO cambia en nosotros/vosotros.',
+          explanation: 'Muchos verbos cambian la vocal de la raíz en las formas tónicas (yo, tú, él, ellos). Este cambio ocurre solo cuando el acento cae en la raíz.',
+          explanation_ru: 'Многие глаголы изменяют гласную корня в ударных формах (yo, tú, él, ellos). Изменение происходит только когда ударение падает на корень.',
+          rule: 'e → ie: querer, entender, empezar. o → ue: poder, volver, dormir. e → i: pedir, servir, seguir. НЕ меняется в nosotros/vosotros.',
+          rule_ru: 'e → ie: querer (хотеть), entender (понимать). o → ue: poder (мочь), dormir (спать). e → i: pedir (просить). В nosotros/vosotros изменения НЕТ.',
           examples: [
-            { es: 'querer: quiero / quieres / quiere / queremos / queréis / quieren', ru: 'хотеть: e→ie en formas tónicas' },
-            { es: 'poder: puedo / puedes / puede / podemos / podéis / pueden', ru: 'мочь: o→ue en formas tónicas' },
-            { es: 'pedir: pido / pides / pide / pedimos / pedís / piden', ru: 'просить: e→i en formas tónicas' },
+            { es: 'querer: quiero / quieres / quiere / queremos / queréis / quieren', ru: 'хотеть: e→ie в ударных формах, кроме мы/вы' },
+            { es: 'poder: puedo / puedes / puede / podemos / podéis / pueden', ru: 'мочь: o→ue в ударных формах' },
+            { es: 'pedir: pido / pides / pide / pedimos / pedís / piden', ru: 'просить: e→i в ударных формах' },
           ],
         },
         exerciseLink: '/arcade',
@@ -371,15 +395,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Hay vs. Está / Están',
         bloque: 3,
         content: {
-          explanation:
-            'Otro error clásico del rusohablante. El ruso usa "есть" (или omite) para ambos conceptos. El español distingue existencia (hay) de ubicación de algo concreto (está/están).',
+          explanation: 'Otro error clásico del rusohablante. El ruso usa "есть" (o lo omite) para ambos conceptos. El español distingue existencia (hay) de ubicación de algo concreto (está/están).',
+          explanation_ru: 'Ещё одна классическая ошибка. В русском "есть" (или ничего) для обоих случаев. В испанском: существование → hay; местоположение конкретного предмета → está/están.',
           rule: 'HAY: existencia impersonal ("existe"). No varía en número. ESTÁ/ESTÁN: ubicación de algo ya identificado.',
+          rule_ru: 'HAY = существование (есть, имеется) — не изменяется по числу. ESTÁ/ESTÁN = местонахождение уже известного предмета (находится, стоит).',
           examples: [
-            { es: 'Hay un banco en esta calle.', ru: 'На этой улице есть банк (existencia, nuevo)' },
-            { es: 'El banco está en la esquina.', ru: 'Банк находится на углу (ubicación, ya sabemos cuál)' },
+            { es: 'Hay un banco en esta calle.', ru: 'На этой улице есть банк (существование) → HAY' },
+            { es: 'El banco está en la esquina.', ru: 'Банк находится на углу (место конкретного) → ESTÁ' },
             { es: '¿Hay leche? — Sí, está en la nevera.', ru: 'Есть молоко? — Да, оно в холодильнике.' },
           ],
-          note: '"Hay" es SIEMPRE invariable: hay una persona, hay dos personas (no "están dos personas" para existencia). La confusión típica es decir "está un banco" cuando debería ser "hay un banco".',
+          note_ru: '"Hay" ВСЕГДА неизменно: hay una persona, hay dos personas — во множественном числе форма не меняется. Типичная ошибка: "Están dos personas" вместо "Hay dos personas" (существование).',
         },
       },
     ],
@@ -394,15 +419,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pretérito Indefinido: verbos regulares',
         bloque: 4,
         content: {
-          explanation:
-            'El Pretérito Indefinido (también llamado Pretérito Simple) expresa acciones completadas en el pasado, con un tiempo definido o visto como concluido.',
+          explanation: 'El Pretérito Indefinido expresa acciones completadas en el pasado, con un tiempo definido o visto como concluido.',
+          explanation_ru: 'Pretérito Indefinido (он же Pretérito Simple) выражает завершённые действия в прошлом — с конкретным временем или воспринимаемые как законченные.',
           rule: '-AR: hablé, hablaste, habló, hablamos, hablasteis, hablaron. -ER/-IR: comí, comiste, comió, comimos, comisteis, comieron.',
+          rule_ru: '-AR: hablé (я), hablaste (ты), habló (он), hablamos (мы), hablasteis (вы), hablaron (они). -ER/-IR: comí, comiste, comió, comimos, comisteis, comieron.',
           examples: [
-            { es: 'Ayer hablé con mi madre.', ru: 'Вчера я поговорил с мамой (завершённое действие)' },
+            { es: 'Ayer hablé con mi madre.', ru: 'Вчера я поговорил с мамой (завершённое)' },
             { es: 'El año pasado viví en Madrid.', ru: 'В прошлом году я жил в Мадриде' },
             { es: '¿Comiste ya?', ru: 'Ты уже поел?' },
           ],
-          note: 'El español tiene DOS pasados narrativos principales: Indefinido e Imperfecto. El ruso los distingue con el aspecto perfectivo/imperfectivo. En español la distinción es diferente — ver lección 4.4.',
+          note_ru: 'В испанском ДВА основных прошедших времени: Indefinido и Imperfecto. В русском их различие передаётся через вид глагола (совершенный/несовершенный). В испанском механизм другой — см. урок 4.4.',
         },
         exerciseLink: '/arcade',
       },
@@ -411,15 +437,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pretérito Indefinido: irregulares frecuentes',
         bloque: 4,
         content: {
-          explanation:
-            'Los verbos más usados tienen formas irregulares en el Indefinido. Los irregulares "fuertes" tienen acento en la raíz (no en la terminación) en yo y él.',
-          rule: 'ser/ir: fui, fuiste, fue, fuimos, fuisteis, fueron. tener: tuve, tuviste, tuvo… hacer: hice, hiciste, hizo… poder: pude, pudiste, pudo… venir: vine, viniste, vino…',
+          explanation: 'Los verbos más usados tienen formas irregulares en el Indefinido. Los irregulares "fuertes" tienen acento en la raíz en yo y él.',
+          explanation_ru: 'Самые употребительные глаголы имеют неправильные формы в Indefinido. У "сильных" неправильных глаголов ударение в формах yo и él падает на корень, а не на окончание.',
+          rule: 'ser/ir: fui, fuiste, fue, fuimos, fuisteis, fueron. tener: tuve, tuviste, tuvo… hacer: hice, hiciste, hizo… poder: pude… venir: vine…',
+          rule_ru: 'ser/ir (одинаковые формы!): fui/fuiste/fue/fuimos/fuisteis/fueron. tener: tuve/tuviste/tuvo... hacer: hice/hiciste/hizo... poder: pude... venir: vine...',
           examples: [
             { es: 'Fui al médico ayer. (ir)', ru: 'Вчера я ходил к врачу' },
             { es: 'Hice los deberes. (hacer)', ru: 'Я сделал домашнее задание' },
             { es: 'Tuve un problema. (tener)', ru: 'У меня возникла проблема' },
           ],
-          note: 'Ser e Ir tienen las MISMAS formas en Indefinido: "fui". Solo el contexto distingue "fui al cine" (ir) de "fui presidente" (ser).',
+          note_ru: 'Ser и Ir имеют ОДИНАКОВЫЕ формы в Indefinido: "fui". Только контекст помогает различить: "fui al cine" (ir — пошёл) vs "fui presidente" (ser — был).',
         },
         exerciseLink: '/arcade',
       },
@@ -428,9 +455,10 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pretérito Imperfecto: usos y conjugación',
         bloque: 4,
         content: {
-          explanation:
-            'El Imperfecto describe situaciones en el pasado: hábitos pasados, descripciones, acciones en curso cuando otra cosa ocurrió, y estados mentales o físicos en el pasado.',
+          explanation: 'El Imperfecto describe situaciones en el pasado: hábitos pasados, descripciones, acciones en curso cuando otra cosa ocurrió, y estados mentales o físicos.',
+          explanation_ru: 'Imperfecto описывает ситуации в прошлом: прошлые привычки, описания, действия в процессе, когда произошло другое событие, и ментальные/физические состояния.',
           rule: '-AR: hablaba, hablabas, hablaba, hablábamos, hablabais, hablaban. -ER/-IR: comía, comías, comía, comíamos, comíais, comían. Solo 3 irregulares: ser (era), ir (iba), ver (veía).',
+          rule_ru: '-AR: hablaba/hablabas/hablaba/hablábamos/hablabais/hablaban. -ER/-IR: comía/comías/comía... Только 3 неправильных: ser → era, ir → iba, ver → veía.',
           examples: [
             { es: 'Cuando era niño, vivía en Moscú. (hábito/estado)', ru: 'Когда я был ребёнком, жил в Москве' },
             { es: 'Llovía cuando salí. (acción en curso)', ru: 'Шёл дождь, когда я вышел' },
@@ -443,15 +471,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Indefinido vs Imperfecto',
         bloque: 4,
         content: {
-          explanation:
-            'Esta distinción es difícil para rusohablantes porque el ruso la resuelve con el aspecto verbal (perfectivo vs imperfectivo), que es un mecanismo diferente aunque con cierto paralelismo.',
-          rule: 'INDEFINIDO: acción concluida, puntual, que avanza la narración. IMPERFECTO: descripción del fondo, hábito, estado, acción en curso interrumpida.',
+          explanation: 'Esta distinción es difícil para rusohablantes porque el ruso la resuelve con el aspecto verbal (perfectivo vs imperfectivo), que es un mecanismo diferente aunque con cierto paralelismo.',
+          explanation_ru: 'Это различие трудно для русскоязычных, потому что русский решает ту же задачу через вид глагола (сов./несов.) — механизм похожий, но не идентичный.',
+          rule: 'INDEFINIDO: acción concluida, puntual, que avanza la narración. IMPERFECTO: descripción del fondo, hábito, estado, acción en proceso que fue interrumpida.',
+          rule_ru: 'INDEFINIDO — завершённое, точечное действие, двигающее повествование вперёд. IMPERFECTO — фон, описание, привычка, состояние, процесс, прерванный другим событием.',
           examples: [
-            { es: 'Vivía en Madrid cuando conocí a Ana.', ru: 'Жил (imperfecto) en Madrid cuando conocí (indefinido) — процесс прерван событием' },
-            { es: 'De niño jugaba al fútbol todos los días.', ru: 'В детстве я каждый день играл в футбол (хабitual)' },
-            { es: 'Ayer jugué al fútbol una hora.', ru: 'Вчера я поиграл в футбол час (один раз, завершено)' },
+            { es: 'Vivía en Madrid cuando conocí a Ana.', ru: 'Жил (фон, imperfecto) в Мадриде, когда познакомился (событие, indefinido) с Аней.' },
+            { es: 'De niño jugaba al fútbol todos los días.', ru: 'В детстве я каждый день играл в футбол (привычка → imperfecto)' },
+            { es: 'Ayer jugué al fútbol una hora.', ru: 'Вчера я сыграл в футбол час (один раз, завершено → indefinido)' },
           ],
-          note: 'Paralelismo aproximado con el ruso: Imperfecto ≈ aspecto imperfectivo (играл, жил). Indefinido ≈ aspecto perfectivo (сыграл, прожил). Pero NO es una equivalencia exacta — hay diferencias importantes.',
+          note_ru: 'Приблизительная аналогия: Imperfecto ≈ несовершенный вид (играл, жил). Indefinido ≈ совершенный вид (сыграл, прожил). Но это НЕ точное соответствие — есть важные различия.',
         },
         exerciseLink: '/practica',
       },
@@ -460,15 +489,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Pretérito Perfecto: he comido',
         bloque: 4,
         content: {
-          explanation:
-            'El Pretérito Perfecto (he/has/ha + participio) se usa en España para acciones pasadas recientes o conectadas al presente. En Latinoamérica su uso varía mucho.',
+          explanation: 'El Pretérito Perfecto (he/has/ha + participio) se usa en España para acciones pasadas recientes o conectadas al presente.',
+          explanation_ru: 'Pretérito Perfecto (he/has/ha + причастие) используется в Испании для недавно завершённых действий или действий, связанных с настоящим моментом.',
           rule: 'Se forma con el presente de HABER + participio (-ado/-ido). El participio es invariable. Marcadores: hoy, esta semana, este mes, ya, todavía no, alguna vez.',
+          rule_ru: 'Образуется: настоящее время HABER + причастие (-ado/-ido). Причастие не изменяется. Маркеры: hoy (сегодня), esta semana (на этой неделе), ya (уже), todavía no (ещё нет), alguna vez (когда-либо).',
           examples: [
-            { es: 'Hoy he comido paella.', ru: 'Сегодня я ел паэлью (hoy → Perfecto en España)' },
-            { es: '¿Has estado en Madrid?', ru: 'Ты был в Мадриде? (experiencia de vida)' },
-            { es: 'Todavía no he terminado.', ru: 'Я ещё не закончил (relevante para el presente)' },
+            { es: 'Hoy he comido paella.', ru: 'Сегодня я ел паэлью (hoy → Perfecto в Испании)' },
+            { es: '¿Has estado en Madrid?', ru: 'Ты был в Мадриде? (жизненный опыт)' },
+            { es: 'Todavía no he terminado.', ru: 'Я ещё не закончил (актуально для настоящего)' },
           ],
-          note: 'En Latinoamérica y en muchas partes de España informal, se usa el Indefinido en todos estos contextos: "Hoy comí paella". Para el DELE A2, aprende a reconocer ambos.',
+          note_ru: 'В Латинской Америке и во многих разговорных ситуациях в Испании используется Indefinido там, где в Испании был бы Perfecto: "Hoy comí paella". Для DELE A2 нужно уметь распознавать оба варианта.',
         },
       },
     ],
@@ -483,13 +513,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Futuro inmediato: ir a + infinitivo',
         bloque: 5,
         content: {
-          explanation:
-            'La forma más común para hablar del futuro en español cotidiano es ir a + infinitivo. Es equivalente al inglés "going to" y al ruso собираться + инфинитив.',
+          explanation: 'La forma más común para hablar del futuro en el español cotidiano es ir a + infinitivo. Es equivalente al inglés "going to" y al русскому "собираться + инфинитив".',
+          explanation_ru: 'Самый распространённый способ говорить о будущем в разговорном испанском — ir a + инфинитив. Аналог русского "собираться + инфинитив" или "буду делать".',
           rule: 'PRESENTE de IR + a + INFINITIVO. Expresa planes, intenciones o predicciones basadas en evidencias presentes.',
+          rule_ru: 'Настоящее время IR + a + ИНФИНИТИВ. Выражает планы, намерения или предсказания, основанные на очевидных признаках в настоящем.',
           examples: [
             { es: 'Voy a estudiar esta tarde.', ru: 'Я собираюсь учиться сегодня вечером' },
             { es: '¿Qué vas a hacer el fin de semana?', ru: 'Что ты собираешься делать на выходных?' },
-            { es: 'Va a llover — mira las nubes.', ru: 'Сейчас пойдёт дождь — смотри на тучи (evidencia)' },
+            { es: 'Va a llover — mira las nubes.', ru: 'Сейчас пойдёт дождь — смотри на тучи (очевидный признак)' },
           ],
         },
       },
@@ -498,15 +529,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Futuro simple: conjugación y uso',
         bloque: 5,
         content: {
-          explanation:
-            'El Futuro Simple tiene sus propias terminaciones que se añaden directamente al infinitivo (para regulares). Se usa para predicciones más generales y promesas.',
-          rule: 'Infinitivo + -é, -ás, -á, -emos, -éis, -án. Irregulares frecuentes: tener → tendr-, poder → podr-, hacer → har-, venir → vendr-, decir → dir-.',
+          explanation: 'El Futuro Simple tiene sus propias terminaciones que se añaden directamente al infinitivo (para regulares). Se usa para predicciones más generales y promesas.',
+          explanation_ru: 'Futuro Simple имеет собственные окончания, которые добавляются прямо к инфинитиву (для правильных глаголов). Используется для общих предсказаний и обещаний.',
+          rule: 'Infinitivo + -é, -ás, -á, -emos, -éis, -án. Irregulares: tener → tendr-, poder → podr-, hacer → har-, venir → vendr-, decir → dir-.',
+          rule_ru: 'Инфинитив + -é/-ás/-á/-emos/-éis/-án. Неправильные: tener → tendr-, poder → podr-, hacer → har-, venir → vendr-, decir → dir- (+ те же окончания).',
           examples: [
             { es: 'Mañana hablaré con el director.', ru: 'Завтра я поговорю с директором' },
             { es: 'Tendrás noticias pronto.', ru: 'Скоро получишь новости' },
-            { es: '¿Qué hora será? (probabilidad)', ru: 'Интересно, сколько сейчас времени? (предположение)' },
+            { es: '¿Qué hora será? (probabilidad)', ru: 'Интересно, сколько сейчас времени? (предположение в настоящем)' },
           ],
-          note: 'El futuro simple también expresa probabilidad en el presente: "Tendrá unos 30 años" = Ему, наверное, около 30 лет.',
+          note_ru: 'Futuro Simple также выражает предположение о настоящем: "Tendrá unos 30 años" = Ему, наверное, лет 30.',
         },
       },
       {
@@ -514,13 +546,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'El condicional básico',
         bloque: 5,
         content: {
-          explanation:
-            'El condicional expresa hipótesis, deseos corteses y la consecuencia de algo irreal. Es muy útil para "suavizar" peticiones (equivale al "бы" ruso).',
+          explanation: 'El condicional expresa hipótesis, deseos corteses y la consecuencia de algo irreal. Es muy útil para "suavizar" peticiones.',
+          explanation_ru: 'Кондиционал выражает гипотезы, вежливые пожелания и следствие нереального условия. Очень полезен для смягчения просьб — аналог конструкции с "бы" в русском.',
           rule: 'Infinitivo + -ía, -ías, -ía, -íamos, -íais, -ían. Mismas irregularidades que el futuro: tendr-ía, podr-ía, har-ía…',
+          rule_ru: 'Инфинитив + -ía/-ías/-ía/-íamos/-íais/-ían. Те же неправильные корни, что и в будущем времени: tendr-ía, podr-ía, har-ía…',
           examples: [
-            { es: '¿Podrías ayudarme? (petición cortés)', ru: 'Не мог бы ты помочь мне? (бы + глагол)' },
+            { es: '¿Podrías ayudarme? (petición cortés)', ru: 'Не мог бы ты мне помочь? (бы + глагол)' },
             { es: 'Me gustaría viajar a Japón.', ru: 'Мне хотелось бы поехать в Японию' },
-            { es: 'Si tuviera dinero, viajaría. (hipótesis)', ru: 'Если бы у меня были деньги, я бы поехал' },
+            { es: 'Si tuviera dinero, viajaría. (hipótesis)', ru: 'Если бы были деньги, я бы поехал' },
           ],
         },
       },
@@ -536,15 +569,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Orden de palabras: SVO',
         bloque: 6,
         content: {
-          explanation:
-            'El español tiene un orden básico Sujeto-Verbo-Objeto, pero es más flexible que el inglés. El ruso, gracias a los casos, permite casi cualquier orden. En español el orden transmite énfasis.',
-          rule: 'Orden neutro: Sujeto + Verbo + Objeto. El orden puede variar para énfasis o en preguntas, pero el OVS o VSO marcado expresa énfasis, no es el orden por defecto.',
+          explanation: 'El español tiene un orden básico Sujeto-Verbo-Objeto. El ruso, gracias a los casos, permite casi cualquier orden. En español el orden transmite énfasis.',
+          explanation_ru: 'В испанском базовый порядок слов: Подлежащее-Глагол-Дополнение (SVO). В русском, благодаря падежам, порядок почти свободный. В испанском порядок слов передаёт акцент.',
+          rule: 'Orden neutro: Sujeto + Verbo + Objeto. El orden puede variar para énfasis, pero el cambio añade una carga expresiva que no existe en el orden neutro del ruso.',
+          rule_ru: 'Нейтральный порядок: Подлежащее + Глагол + Дополнение. Порядок можно менять для акцента, но изменённый порядок несёт экспрессивную нагрузку, которой нет в нейтральном варианте.',
           examples: [
             { es: 'Ana come manzanas. (SVO neutro)', ru: 'Аня ест яблоки (нейтральный порядок)' },
-            { es: 'Manzanas come Ana. (énfasis en objeto)', ru: 'Яблоки ест Аня (порядок слов выражает акцент)' },
-            { es: '¿Qué come Ana? (pregunta, SVO)', ru: 'Что Аня ест? (порядок в вопросах)' },
+            { es: 'Manzanas come Ana. (énfasis en objeto)', ru: 'Яблоки ест Аня (акцент — необычно для испанского)' },
+            { es: '¿Qué come Ana? (pregunta, SVO)', ru: 'Что Аня ест? (порядок в вопросах тот же)' },
           ],
-          note: 'En ruso los casos permiten cambiar el orden libremente sin cambiar el significado básico. En español el orden cambiado SÍ añade énfasis o puede crear ambigüedad sin los casos.',
+          note_ru: 'В русском падежи позволяют менять порядок слов без изменения смысла: "Аня ест яблоки" = "Яблоки ест Аня" = "Яблоки Аня ест" — одно и то же. В испанском изменённый порядок добавляет акцент или может создать двусмысленность.',
         },
       },
       {
@@ -552,15 +586,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'La negación: no + verbo',
         bloque: 6,
         content: {
-          explanation:
-            'La negación básica en español es más simple que en ruso: solo se añade "no" antes del verbo. En ruso se usa "не" antes del verbo, que es similar.',
-          rule: '"No" va siempre INMEDIATAMENTE antes del verbo (o del pronombre objeto si lo hay). La doble negación es gramaticalmente correcta en español.',
+          explanation: 'La negación básica en español es simple: solo se añade "no" antes del verbo. En ruso se usa "не" antes del verbo — es muy similar.',
+          explanation_ru: 'Основное отрицание в испанском простое: "no" ставится перед глаголом. В русском "не" — аналогично. Отличие: в испанском двойное отрицание ГРАММАТИЧЕСКИ ПРАВИЛЬНО.',
+          rule: '"No" va siempre INMEDIATAMENTE antes del verbo (o del pronombre objeto). La doble negación es gramaticalmente correcta en español.',
+          rule_ru: '"No" ставится НЕПОСРЕДСТВЕННО перед глаголом (или перед местоимением-дополнением, если оно есть). Двойное отрицание ("No veo nada") — грамматически ПРАВИЛЬНО.',
           examples: [
             { es: 'No hablo ruso.', ru: 'Я не говорю по-русски' },
-            { es: 'No lo veo.', ru: 'Я его не вижу (no + pronombre + verbo)' },
-            { es: 'No veo nada. / No veo ningún libro.', ru: 'Я ничего не вижу (doble negación: normal en español)' },
+            { es: 'No lo veo.', ru: 'Я его не вижу (no + местоимение + глагол)' },
+            { es: 'No veo nada. / No viene nadie.', ru: 'Я ничего не вижу / Никто не приходит (двойное отрицание — норма)' },
           ],
-          note: 'La doble negación ("No veo nada", "No viene nadie") es CORRECTA en español — todo lo contrario que en inglés. En ruso también existe: "Я ничего не вижу".',
+          note_ru: 'Двойное отрицание ("No veo nada", "No viene nadie") — ПРАВИЛЬНО в испанском, в отличие от английского. Как в русском: "Я ничего не вижу".',
         },
       },
       {
@@ -568,9 +603,10 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Preguntas: entonación y partículas',
         bloque: 6,
         content: {
-          explanation:
-            'Las preguntas en español se forman subiendo la entonación al final (como en ruso) o usando pronombres interrogativos. En español escrito, las preguntas se marcan con ¿ al inicio.',
+          explanation: 'Las preguntas en español se forman con entonación ascendente al final (como en ruso) o usando pronombres interrogativos. En español escrito, las preguntas se marcan con ¿ al inicio.',
+          explanation_ru: 'Вопросы в испанском образуются с повышением интонации в конце (как в русском) или с помощью вопросительных местоимений. На письме вопрос отмечается знаком ¿ в начале.',
           rule: 'Pronombres interrogativos: qué, quién/quiénes, cuál/cuáles, cómo, dónde, cuándo, cuánto/a/os/as, por qué. TODOS llevan tilde cuando son interrogativos.',
+          rule_ru: 'Вопросительные слова: qué (что/какой), quién (кто), cuál (который/какой), cómo (как), dónde (где), cuándo (когда), cuánto (сколько), por qué (почему). ВСЕ пишутся с тильдой в вопросах.',
           examples: [
             { es: '¿Cómo te llamas?', ru: 'Как тебя зовут?' },
             { es: '¿Dónde vives?', ru: 'Где ты живёшь?' },
@@ -583,15 +619,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Las preposiciones más usadas',
         bloque: 6,
         content: {
-          explanation:
-            'Las preposiciones en español hacen el trabajo que los casos hacen en ruso. No hay una equivalencia 1:1 — cada preposición española tiene varios usos.',
-          rule: 'Las principales: a (dirección, OD personas, hora), de (posesión, origen, material), en (lugar, tiempo), con (compañía, instrumento), por (causa, a favor, duración), para (finalidad, destinatario).',
+          explanation: 'Las preposiciones en español hacen el trabajo que los casos hacen en ruso. No hay una equivalencia 1:1 — cada preposición española tiene varios usos.',
+          explanation_ru: 'Испанские предлоги делают то, что в русском делают падежи. Нет соответствия 1:1 — у каждого испанского предлога несколько значений.',
+          rule: 'Principales: a (направление, время, ОД с людьми), de (владение, происхождение, материал), en (место, время), con (компания, инструмент), por (причина, продолжительность), para (цель, получатель).',
+          rule_ru: 'Основные: a (направление, время, при одушевлённом ОД), de (владение, происхождение, материал), en (место, время), con (компания, инструмент), por (причина, время), para (цель, получатель).',
           examples: [
             { es: 'Voy a Madrid. / Llego a las 3.', ru: 'Еду в Мадрид. / Приеду в 3 часа.' },
             { es: 'Es el libro de Ana. / Soy de Rusia.', ru: 'Это книга Ани. / Я из России.' },
-            { es: 'Trabajo con mi hermano.', ru: 'Я работаю с братом (творительный падеж → con)' },
+            { es: 'Trabajo con mi hermano.', ru: 'Я работаю с братом (творительный → con)' },
           ],
-          note: 'El ruso usa el caso instrumental donde el español usa "con". El genitivo ruso corresponde a "de". El dativo a "a". Pero estas equivalencias tienen excepciones — no traduzcas mecánicamente.',
+          note_ru: 'Русский творительный → испанский "con". Родительный → часто "de". Дательный → "a". Но это приблизительные соответствия с исключениями — не переводи падеж механически.',
         },
       },
       {
@@ -599,15 +636,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Por vs. Para',
         bloque: 6,
         content: {
-          explanation:
-            'La distinción por/para es difícil para todos los estudiantes de español. Ambas se traducen al ruso como "за", "для", "по", "через", "из-за"… según el contexto.',
-          rule: 'POR: causa/motivo, duración, medio, intercambio, a favor de, por donde. PARA: finalidad/objetivo, destinatario, opinión, fecha límite, contraste.',
+          explanation: 'La distinción por/para es difícil para todos los estudiantes. Ambas se traducen al ruso como "за", "для", "по", "через", "из-за"… según el contexto.',
+          explanation_ru: 'Por/para — сложность для всех студентов без исключения. Оба переводятся на русский по-разному: "за", "для", "по", "через", "из-за", "к"... зависит от контекста.',
+          rule: 'POR: causa/motivo, duración, medio, intercambio, a favor de, por donde. PARA: finalidad/objetivo, destinatario, opinión, fecha límite.',
+          rule_ru: 'POR: причина, продолжительность, средство, обмен, в пользу, маршрут. PARA: цель/назначение, получатель, мнение, срок (к какому числу).',
           examples: [
-            { es: 'Lo hago por ti. (causa/a favor)', ru: 'Я делаю это из-за тебя / ради тебя' },
-            { es: 'Lo hago para ti. (destinatario)', ru: 'Я делаю это для тебя' },
-            { es: 'Estudio por las noches. (tiempo) / El regalo es para el lunes. (fecha)', ru: 'Учусь по ночам / Подарок к понедельнику' },
+            { es: 'Lo hago por ti. (causa/motivación)', ru: 'Делаю это из-за тебя / ради тебя' },
+            { es: 'Lo hago para ti. (destinatario)', ru: 'Делаю это для тебя' },
+            { es: 'Trabajo por las noches. / El regalo es para el lunes.', ru: 'Работаю по ночам / Подарок к понедельнику' },
           ],
-          note: 'Un truco: PARA señala hacia adelante (objetivo, futuro, destinatario). POR mira hacia atrás o al entorno (causa, motivo, a cambio de).',
+          note_ru: 'Подсказка: PARA смотрит вперёд (цель, будущее, получатель). POR смотрит назад или вокруг (причина, мотив, обмен). "Lo hago por amor" (мотив) vs "Lo hago para el amor" (ради цели — необычно).',
         },
         exerciseLink: '/practica',
       },
@@ -623,15 +661,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Concordancia de género y número',
         bloque: 7,
         content: {
-          explanation:
-            'En español, el adjetivo concuerda en género (m/f) y número (sg/pl) con el sustantivo que modifica. En ruso también hay concordancia, pero con 3 géneros y 6 casos.',
-          rule: 'Adjetivos en -o: cambian -o → -a para femenino. Adjetivos en -e o consonante: misma forma para m/f (solo cambia el plural). Plural: -os/-as según género.',
+          explanation: 'En español, el adjetivo concuerda en género (m/f) y número (sg/pl) con el sustantivo. En ruso también hay concordancia, pero con 3 géneros y 6 casos.',
+          explanation_ru: 'В испанском прилагательное согласуется в роде (м/ж) и числе (ед./мн.) с существительным. В русском тоже есть согласование, но с 3 родами и 6 падежами.',
+          rule: 'Adjetivos en -o: cambian -o → -a para femenino. Adjetivos en -e o consonante: misma forma para m/f. Plural: -os/-as según género.',
+          rule_ru: 'Прилагательные на -o: меняют -o → -a для женского рода. Прилагательные на -e или согласную: одна форма для м. и ж. рода. Множественное число: -os/-as в зависимости от рода.',
           examples: [
-            { es: 'un chico alto / una chica alta', ru: 'высокий парень / высокая девушка (согласование)' },
-            { es: 'un hombre inteligente / una mujer inteligente', ru: 'умный мужчина / умная женщина (misma forma)' },
-            { es: 'libros interesantes / revistas interesantes', ru: 'интересные книги (plural en -es)' },
+            { es: 'un chico alto / una chica alta', ru: 'высокий парень / высокая девушка' },
+            { es: 'un hombre inteligente / una mujer inteligente', ru: 'умный мужчина / умная женщина (одна форма)' },
+            { es: 'libros interesantes / revistas interesantes', ru: 'интересные книги / интересные журналы' },
           ],
-          note: 'Para el rusohablante la concordancia en género/número es familiar, aunque en ruso hay 3 géneros y los adjetivos también varían por caso. En español es más simple: solo género y número, sin casos.',
+          note_ru: 'Для русскоязычных согласование в роде/числе знакомо. В испанском проще: нет падежных форм прилагательного. Только род и число.',
         },
       },
       {
@@ -639,13 +678,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Posición del adjetivo',
         bloque: 7,
         content: {
-          explanation:
-            'En español el adjetivo puede ir antes o después del sustantivo, y la posición puede cambiar el significado. En ruso suele ir antes del sustantivo.',
-          rule: 'DESPUÉS del sustantivo: adjetivos descriptivos (clasifican, distinguen). ANTES: adjetivos de valoración subjetiva o con significado ya conocido. Algunos adjetivos cambian de significado según posición.',
+          explanation: 'En español el adjetivo puede ir antes o después del sustantivo, y la posición puede cambiar el significado. En ruso suele ir antes del sustantivo.',
+          explanation_ru: 'В испанском прилагательное может стоять до или после существительного — и позиция может менять смысл. В русском прилагательное обычно предшествует существительному.',
+          rule: 'DESPUÉS del sustantivo: adjetivos descriptivos que distinguen. ANTES: valoración subjetiva o énfasis. Algunos adjetivos cambian de significado según posición.',
+          rule_ru: 'ПОСЛЕ существительного: описательные прилагательные, которые различают (объективная характеристика). ПЕРЕД: субъективная оценка или акцент. Некоторые прилагательные меняют значение в зависимости от позиции.',
           examples: [
-            { es: 'un coche rojo (descripción objetiva)', ru: 'красная машина (описание)' },
-            { es: 'un gran hombre (valoración: "gran" = importante)', ru: 'великий человек (перед сущ. = "великий")' },
-            { es: 'un hombre grande (descripción: tamaño)', ru: 'большой человек (después = descripción física)' },
+            { es: 'un coche rojo (descripción objetiva)', ru: 'красная машина (объективное описание)' },
+            { es: 'un gran hombre (valoración: gran = importante)', ru: 'великий человек (перед сущ. = "великий")' },
+            { es: 'un hombre grande (descripción: tamaño)', ru: 'большой человек (после сущ. = физически большой)' },
           ],
         },
       },
@@ -654,13 +694,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Comparativos',
         bloque: 7,
         content: {
-          explanation:
-            'El español usa una estructura analítica (más/menos + adjetivo + que) para los comparativos. En ruso existen formas sintéticas (-ee, -ше) y analíticas (более/менее).',
-          rule: 'Superioridad: más + adj + que. Inferioridad: menos + adj + que. Igualdad: tan + adj + como. Irregulares: bueno → mejor, malo → peor, grande → mayor, pequeño → menor.',
+          explanation: 'El español usa estructura analítica (más/menos + adjetivo + que) para comparativos. En ruso existen formas sintéticas (-ее, -ше) y analíticas (более/менее).',
+          explanation_ru: 'Испанский использует аналитическую структуру (más/menos + прилагательное + que) для сравнений. В русском есть и синтетические (-ее, -ше), и аналитические формы (более/менее).',
+          rule: 'Superioridad: más + adj + que. Inferioridad: menos + adj + que. Igualdad: tan + adj + como. Irregulares: bueno→mejor, malo→peor, grande→mayor, pequeño→menor.',
+          rule_ru: 'Превосходство: más + прил. + que (больше чем). Неполноценность: menos + прил. + que. Равенство: tan + прил. + como (так же... как). Неправильные: bueno→mejor (лучше), malo→peor (хуже).',
           examples: [
-            { es: 'Madrid es más grande que Sevilla.', ru: 'Мадрид больше Севильи (más grande = больше)' },
+            { es: 'Madrid es más grande que Sevilla.', ru: 'Мадрид больше Севильи' },
             { es: 'Este libro es tan interesante como ese.', ru: 'Эта книга так же интересна, как та' },
-            { es: 'Este hotel es mejor que aquel.', ru: 'Этот отель лучше того (mejor = лучше, irregular)' },
+            { es: 'Este hotel es mejor que aquel.', ru: 'Этот отель лучше того (mejor = лучше, неправильное)' },
           ],
         },
       },
@@ -669,9 +710,10 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Superlativos',
         bloque: 7,
         content: {
-          explanation:
-            'El superlativo expresa el grado máximo. El español tiene dos formas: relativa (el más…) y absoluta (-ísimo). En ruso: самый + adjetivo o forma en -айший/-ейший.',
-          rule: 'Superlativo relativo: el/la/los/las + más/menos + adjetivo (+ de). Superlativo absoluto: adjetivo + -ísimo/a (quita la última vocal si la hay).',
+          explanation: 'El superlativo expresa el grado máximo. El español tiene dos formas: relativa (el más…) y absoluta (-ísimo). En ruso: самый + прилагательное.',
+          explanation_ru: 'Превосходная степень выражает максимальную степень качества. В испанском две формы: относительная (el más...) и абсолютная (-ísimo). В русском: "самый + прилагательное".',
+          rule: 'Relativo: el/la/los/las + más/menos + adj (+ de). Absoluto: adj + -ísimo/a (quita la última vocal). Significa "muy, extremadamente".',
+          rule_ru: 'Относительный: el/la/los/las + más/menos + прил. (+ de = среди чего). Абсолютный: прил. + -ísimo/a (убираем последнюю гласную). Значит "очень, крайне".',
           examples: [
             { es: 'Es el estudiante más trabajador de la clase.', ru: 'Он самый трудолюбивый студент в классе' },
             { es: 'Esta paella está buenísima.', ru: 'Эта паэлья просто восхитительна! (-ísimo = очень)' },
@@ -692,7 +734,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Vocabulario esencial para hablar de uno mismo: nombre, origen, edad, estado civil, estudios y trabajo.',
+          explanation_ru: 'Основная лексика для рассказа о себе: имя, происхождение, возраст, семейное положение, учёба и работа.',
           rule: 'Frases clave: Me llamo… / Soy de… / Tengo X años / Vivo en… / Trabajo de… / Estudio…',
+          rule_ru: 'Ключевые фразы: Me llamo… (Меня зовут…) / Soy de… (Я из…) / Tengo X años (Мне X лет) / Vivo en… (Я живу в…) / Trabajo de… (Работаю кем-то) / Estudio… (Учусь на…)',
           examples: [
             { es: 'Me llamo Iván. Soy de Moscú.', ru: 'Меня зовут Иван. Я из Москвы.' },
             { es: 'Tengo 30 años. Soy casado.', ru: 'Мне 30 лет. Я женат.' },
@@ -707,7 +751,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Vocabulario de parentesco y relaciones personales.',
+          explanation_ru: 'Лексика для описания родственных и личных отношений.',
           rule: 'madre, padre, hermano/a, hijo/a, abuelo/a, tío/a, primo/a, marido/esposo, mujer/esposa, novio/a, amigo/a.',
+          rule_ru: 'madre (мама), padre (папа), hermano/a (брат/сестра), hijo/a (сын/дочь), abuelo/a (дедушка/бабушка), tío/a (дядя/тётя), primo/a (двоюродный брат/сестра), marido/esposo (муж), mujer/esposa (жена), novio/a (парень/девушка).',
           examples: [
             { es: 'Mi madre se llama Elena.', ru: 'Мою маму зовут Елена.' },
             { es: 'Tengo dos hermanos y una hermana.', ru: 'У меня два брата и одна сестра.' },
@@ -721,7 +767,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Vocabulario del hogar para describir dónde vives y qué hay en tu casa.',
-          rule: 'Habitaciones: salón, cocina, dormitorio, baño, terraza. Objetos: sofá, mesa, silla, cama, armario, nevera, lavadora, espejo.',
+          explanation_ru: 'Лексика для описания жилья: комнаты, мебель и бытовые предметы.',
+          rule: 'Habitaciones: salón (гостиная), cocina (кухня), dormitorio (спальня), baño (ванная), terraza (терраса). Objetos: sofá, mesa, silla, cama, armario, nevera, lavadora.',
+          rule_ru: 'Комнаты: salón (гостиная), cocina (кухня), dormitorio (спальня), baño (ванная), terraza (терраса). Предметы: sofá (диван), mesa (стол), cama (кровать), armario (шкаф), nevera (холодильник), lavadora (стиралка).',
           examples: [
             { es: 'Mi piso tiene tres habitaciones.', ru: 'В моей квартире три комнаты.' },
             { es: 'El baño está al fondo del pasillo.', ru: 'Ванная в конце коридора.' },
@@ -735,7 +783,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Verbos y expresiones para hablar de lo que haces cada día y en tu tiempo libre.',
-          rule: 'levantarse, desayunar, trabajar, comer, cenar, acostarse. Ocio: ver la tele, leer, salir, hacer deporte, quedar con amigos.',
+          explanation_ru: 'Глаголы и выражения для описания распорядка дня и свободного времени.',
+          rule: 'levantarse (вставать), desayunar (завтракать), trabajar, comer (обедать), cenar (ужинать), acostarse (ложиться спать). Ocio: ver la tele, leer, salir, hacer deporte.',
+          rule_ru: 'levantarse (вставать), desayunar (завтракать), trabajar (работать), comer (обедать), cenar (ужинать), acostarse (ложиться спать). Досуг: ver la tele (смотреть ТВ), leer (читать), hacer deporte (заниматься спортом).',
           examples: [
             { es: 'Me levanto a las 7 y desayuno.', ru: 'Я встаю в 7 и завтракаю.' },
             { es: 'Los fines de semana hago deporte.', ru: 'По выходным я занимаюсь спортом.' },
@@ -750,7 +800,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Vocabulario para pedir en un restaurante, hablar de gustos gastronómicos y comprender menús.',
-          rule: 'Quería / Quisiera + plato. Me pone / Me trae… ¿Qué tiene de…? La cuenta, por favor. Primero, segundo, postre.',
+          explanation_ru: 'Лексика для заказа в ресторане, обсуждения вкусовых предпочтений и понимания меню.',
+          rule: 'Pedir: Quería / Quisiera + plato. ¿Me trae…? La cuenta, por favor. Partes del menú: primero (первое), segundo (второе), postre (десерт).',
+          rule_ru: 'Заказать: Quería / Quisiera + блюдо (Я бы хотел...). ¿Me trae…? (Принесите мне...?). La cuenta (счёт). Структура: primero (первое), segundo (второе), postre (десерт).',
           examples: [
             { es: 'Quería una paella de marisco, por favor.', ru: 'Я бы хотел паэлью с морепродуктами, пожалуйста.' },
             { es: '¿Me trae la carta/el menú?', ru: 'Принесите мне меню, пожалуйста.' },
@@ -764,7 +816,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Vocabulario para comprar ropa, preguntar precios y tallas.',
-          rule: '¿Cuánto cuesta/n? ¿Tiene en talla…? Me lo/la llevo. ¿Puedo probármelo/la? Está en oferta / rebajado.',
+          explanation_ru: 'Лексика для покупки одежды, вопросов о цене и размере.',
+          rule: '¿Cuánto cuesta/n? (Сколько стоит?) ¿Tiene en talla…? (Есть в размере...?) Me lo/la llevo. (Беру это.) ¿Puedo probármelo/la? (Можно примерить?)',
+          rule_ru: '¿Cuánto cuesta/n? (Сколько стоит/стоят?) ¿Tiene esta camisa en talla M? (Есть эта рубашка в размере M?) Me lo llevo. (Беру.) ¿Puedo probármelo? (Можно примерить?)',
           examples: [
             { es: '¿Tiene esta camisa en talla M?', ru: 'Есть ли эта рубашка в размере M?' },
             { es: '¿Cuánto cuesta este abrigo?', ru: 'Сколько стоит это пальто?' },
@@ -778,10 +832,12 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Vocabulario para moverse por la ciudad, preguntar direcciones y usar el transporte público.',
-          rule: 'gire a la derecha/izquierda, todo recto, coger el metro/autobús/tren, la parada, el andén, billete/ticket, ¿Cómo se va a…?',
+          explanation_ru: 'Лексика для передвижения по городу, вопросов о дороге и использования общественного транспорта.',
+          rule: 'Direcciones: gire a la derecha/izquierda (повернуть направо/налево), todo recto (прямо), a dos calles (в двух кварталах). Transporte: coger el metro/autobús/tren, la parada (остановка), billete (билет).',
+          rule_ru: 'Направления: gire a la derecha (направо), gire a la izquierda (налево), todo recto (прямо), a dos calles (в двух кварталах). Транспорт: metro (метро), autobús (автобус), la parada (остановка), billete (билет).',
           examples: [
             { es: '¿Cómo se va a la estación de metro?', ru: 'Как пройти к станции метро?' },
-            { es: 'Gire a la izquierda y todo recto.', ru: 'Поверните налево и прямо.' },
+            { es: 'Gire a la izquierda y todo recto.', ru: 'Повернуть налево и прямо.' },
             { es: 'Dos billetes para Madrid, por favor.', ru: 'Два билета до Мадрида, пожалуйста.' },
           ],
         },
@@ -792,7 +848,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Vocabulario para hablar de la vida profesional y académica.',
-          rule: 'trabajar de/como, estar en paro, buscar trabajo, el sueldo, el horario, estudiar, la carrera, el título, aprobar/suspender.',
+          explanation_ru: 'Лексика для обсуждения профессиональной и учебной жизни.',
+          rule: 'trabajar de/como (работать кем-то), estar en paro (быть безработным), buscar trabajo (искать работу), el sueldo (зарплата), el horario (расписание/график), la carrera (специальность в вузе).',
+          rule_ru: 'trabajar de/como + профессия (работать кем-то), estar en paro (быть безработным), buscar trabajo (искать работу), el sueldo (зарплата), el horario (график), aprobar (сдать), suspender (завалить).',
           examples: [
             { es: 'Trabajo de enfermera en un hospital.', ru: 'Я работаю медсестрой в больнице.' },
             { es: 'Estudio Ingeniería en la universidad.', ru: 'Я учусь на инженерном факультете.' },
@@ -806,7 +864,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Vocabulario para hablar de enfermedades, síntomas y visitas al médico.',
-          rule: 'Me duele/n + parte del cuerpo. Tener fiebre, tos, catarro. Ir al médico, la farmacia, la receta, el medicamento.',
+          explanation_ru: 'Лексика для описания болезней, симптомов и визита к врачу.',
+          rule: 'Me duele/n + parte del cuerpo (У меня болит...). Tener fiebre (температура), tos (кашель), catarro (насморк). Ir al médico (к врачу), la farmacia (аптека), la receta (рецепт).',
+          rule_ru: 'Me duele la cabeza (у меня болит голова). Me duelen los pies (у меня болят ноги). Tener fiebre (температура), tos (кашель), catarro (простуда). Ir al médico (к врачу), la farmacia (аптека).',
           examples: [
             { es: 'Me duele la cabeza / la garganta.', ru: 'У меня болит голова / горло.' },
             { es: 'Tengo fiebre y tos desde ayer.', ru: 'У меня жар и кашель со вчерашнего дня.' },
@@ -820,7 +880,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Vocabulario para hablar del tiempo y las condiciones atmosféricas.',
-          rule: 'Hacer + frío/calor/viento/sol. Estar + nublado/despejado. Llover (llueve), nevar (nieva), la temperatura.',
+          explanation_ru: 'Лексика для описания погоды и атмосферных условий.',
+          rule: 'Hace + frío/calor/viento/sol (холодно/жарко/ветрено/солнечно). Está + nublado/despejado (пасмурно/ясно). Llover: llueve (идёт дождь). Nevar: nieva (идёт снег).',
+          rule_ru: 'Hace + frío (холодно) / calor (жарко) / viento (ветрено) / sol (солнечно). Está + nublado (пасмурно) / despejado (ясно). Llueve (идёт дождь). Nieva (идёт снег).',
           examples: [
             { es: 'Hoy hace mucho calor, unos 35 grados.', ru: 'Сегодня очень жарко, около 35 градусов.' },
             { es: 'Está nublado y va a llover.', ru: 'Пасмурно и собирается дождь.' },
@@ -834,7 +896,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 8,
         content: {
           explanation: 'Los números, las fechas y la hora son fundamentales en cualquier interacción básica.',
+          explanation_ru: 'Числа, даты и время — основа любого базового общения.',
           rule: 'La hora: Es la una. Son las dos/tres… Son las X y media / y cuarto / menos cuarto. Fechas: el + número + de + mes. Años: dos mil veinticinco.',
+          rule_ru: 'Время: Es la una (час). Son las dos (два часа). Son las tres y media (половина четвёртого). Son las cuatro y cuarto (четверть пятого). Son las cinco menos cuarto (без четверти пять). Дата: el 15 de marzo.',
           examples: [
             { es: '¿Qué hora es? Son las tres y media.', ru: 'Который час? Половина четвёртого.' },
             { es: 'Nací el 15 de marzo de 1990.', ru: 'Я родился 15 марта 1990 года.' },
@@ -855,7 +919,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 9,
         content: {
           explanation: 'Fórmulas para solicitar y proporcionar información en contextos cotidianos.',
-          rule: 'Perdona/Perdone, ¿puede decirme…? ¿Sabe si…? ¿Me puede ayudar? Disculpe, ¿dónde está…?',
+          explanation_ru: 'Устойчивые формулы для запроса и предоставления информации в повседневных ситуациях.',
+          rule: 'Perdona/Perdone (неформально/формально), ¿puede decirme…? (не могли бы вы сказать?), ¿Sabe si…? (Вы знаете, есть ли…?), ¿Me puede ayudar? (Не могли бы вы помочь?)',
+          rule_ru: 'Perdona (извини, неформально) / Perdone (извините, формально). ¿Puede decirme…? (Не могли бы вы сказать…?). ¿Sabe si…? (Вы знаете, есть ли…?). ¿Me puede ayudar? (Не могли бы вы помочь?)',
           examples: [
             { es: 'Perdona, ¿sabes dónde está la biblioteca?', ru: 'Извини, ты знаешь, где библиотека?' },
             { es: '¿Me puede decir a qué hora abre el banco?', ru: 'Не могли бы вы сказать, во сколько открывается банк?' },
@@ -869,7 +935,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 9,
         content: {
           explanation: 'Cómo invitar a alguien, aceptar y declinar educadamente.',
-          rule: '¿Te apetece/Te gustaría + infinitivo? / ¿Quieres venir a…? Aceptar: ¡Claro que sí! / ¡Con mucho gusto! Rechazar: Lo siento, es que… / Me encantaría pero…',
+          explanation_ru: 'Как пригласить кого-то, принять приглашение и вежливо отказать.',
+          rule: '¿Te apetece/Te gustaría + inf? (Не хочешь...?). Aceptar: ¡Claro que sí! / ¡Con mucho gusto! Rechazar: Lo siento, es que… / Me encantaría pero…',
+          rule_ru: 'Пригласить: ¿Te apetece…? / ¿Te gustaría…? (Не хочешь...?). Принять: ¡Claro que sí! (Конечно!) / ¡Con mucho gusto! (С удовольствием!). Отказать: Lo siento, es que… (Извини, дело в том, что…) / Me encantaría pero… (Я бы с радостью, но…)',
           examples: [
             { es: '¿Te apetece venir a cenar el viernes?', ru: 'Не хочешь прийти на ужин в пятницу?' },
             { es: 'Me encantaría, pero tengo un compromiso.', ru: 'С удовольствием, но у меня другие планы.' },
@@ -882,15 +950,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Expresar gustos y preferencias',
         bloque: 9,
         content: {
-          explanation:
-            'La estructura gustar + verbo/sustantivo es peculiar: el sujeto gramatical es lo que gusta, no la persona. Es un error muy común del rusohablante.',
-          rule: 'Me gusta + sustantivo singular / infinitivo. Me gustan + sustantivo plural. Me encanta (mucho), me gusta (bastante), no me gusta (poco), no me gusta nada (nada).',
+          explanation: 'La estructura gustar es peculiar: el sujeto gramatical es lo que gusta, no la persona. Es un error muy común del rusohablante.',
+          explanation_ru: 'Конструкция с gustar необычна: грамматическое подлежащее — то, что нравится, а не человек. Это частая ошибка русскоязычных.',
+          rule: 'Me gusta + sustantivo singular / infinitivo. Me gustan + sustantivo plural. Gradación: me encanta (обожаю), me gusta (нравится), no me gusta (не нравится), no me gusta nada.',
+          rule_ru: 'Me gusta + существительное ед.ч. / инфинитив. Me gustan + существительное мн.ч. Степени: me encanta (обожаю), me gusta mucho (очень нравится), me gusta (нравится), no me gusta (не нравится), no me gusta nada (совсем не нравится).',
           examples: [
             { es: 'Me gusta el fútbol. / Me gustan los gatos.', ru: 'Мне нравится футбол. / Мне нравятся кошки.' },
             { es: 'Me encanta cocinar.', ru: 'Я обожаю готовить.' },
             { es: 'A mi hermano le gusta la música clásica.', ru: 'Моему брату нравится классическая музыка.' },
           ],
-          note: '"Me gusta" no es una estructura reflexiva. El pronombre "me" es de dativo ("a mí me gusta"). En ruso: "Мне нравится" — mismo caso dativo. El sujeto es "el fútbol", no "yo".',
+          note_ru: '"Me gusta" — это не возвратная конструкция. "Me" здесь — дательный падеж ("мне"). Подлежащее — "el fútbol", не "я". Отсюда: "Me gusta el fútbol" (ед.ч.) vs "Me GUSTAN los gatos" (мн.ч.) — глагол согласуется с тем, что нравится.',
         },
         exerciseLink: '/practica',
       },
@@ -900,7 +969,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 9,
         content: {
           explanation: 'Cómo hablar de intenciones, planes futuros y proyectos.',
-          rule: 'Ir a + infinitivo (plan concreto). Querer/pensar/tener intención de + infinitivo (intención). Esperar + infinitivo (esperanza).',
+          explanation_ru: 'Как говорить о намерениях, планах на будущее и проектах.',
+          rule: 'Ir a + inf (конкретный план). Querer/pensar/tener intención de + inf (намерение). Esperar + inf (надежда).',
+          rule_ru: 'Ir a + инфинитив (конкретный план). Querer + инфинитив (хотеть). Pensar + инфинитив (думать/планировать). Tener intención de + инфинитив (намереваться). Esperar + инфинитив (надеяться).',
           examples: [
             { es: 'Este verano voy a visitar Barcelona.', ru: 'Этим летом я собираюсь посетить Барселону.' },
             { es: 'Quiero aprender a cocinar paella.', ru: 'Я хочу научиться готовить паэлью.' },
@@ -914,7 +985,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 9,
         content: {
           explanation: 'Vocabulario y estructuras para hacer descripciones detalladas.',
-          rule: 'SER + adjetivo (características permanentes). ESTAR + adjetivo (estados). TENER + sustantivo (posesión de características). PARECER + adjetivo (apariencia).',
+          explanation_ru: 'Лексика и структуры для подробного описания людей, мест и предметов.',
+          rule: 'SER + adj (постоянные черты). ESTAR + adj (состояния). TENER + sustantivo (обладать чертой). PARECER + adj (выглядеть как).',
+          rule_ru: 'SER + прилагательное (постоянные черты: Es alto, Es simpático). ESTAR + прилагательное (состояния: Está cansado, Está limpio). TENER + существительное (Tiene los ojos azules). PARECER + прилагательное (Parece caro — выглядит дорогим).',
           examples: [
             { es: 'Mi amigo es alto, moreno y muy simpático.', ru: 'Мой друг высокий, смуглый и очень приятный.' },
             { es: 'La ciudad está muy limpia y bien organizada.', ru: 'Город очень чистый и хорошо организованный.' },
@@ -927,8 +1000,10 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Narrar en pasado',
         bloque: 9,
         content: {
-          explanation: 'Cómo contar una historia o anécdota combinando el Indefinido (acciones puntuales) y el Imperfecto (descripción del contexto).',
-          rule: 'Conectores narrativos: primero, luego, después, entonces, de repente, al final. Imperfecto para el fondo; Indefinido para los eventos.',
+          explanation: 'Cómo contar una historia combinando el Indefinido (acciones puntuales) y el Imperfecto (contexto y descripciones).',
+          explanation_ru: 'Как рассказать историю, сочетая Indefinido (точечные события) и Imperfecto (фон и описания).',
+          rule: 'Conectores narrativos: primero (сначала), luego/después (потом), entonces (тогда), de repente (вдруг), al final (в итоге). Imperfecto = фон; Indefinido = события.',
+          rule_ru: 'Связки: primero (сначала), luego/después (потом/затем), entonces (тогда/после этого), de repente (вдруг/внезапно), al final (в конце концов/в итоге). IMPERFECTO описывает фон; INDEFINIDO — сами события.',
           examples: [
             { es: 'Era una tarde tranquila cuando de repente sonó el teléfono.', ru: 'Был тихий вечер, когда вдруг зазвонил телефон.' },
             { es: 'Primero desayuné, luego fui al trabajo.', ru: 'Сначала я позавтракал, потом пошёл на работу.' },
@@ -942,7 +1017,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 9,
         content: {
           explanation: 'Fórmulas para dar tu opinión, estar de acuerdo y expresar duda.',
-          rule: 'Creo que… / Pienso que… / Para mí… / En mi opinión… / Me parece que… + indicativo. Estar de acuerdo: Tienes razón. No estar de acuerdo: No estoy de acuerdo porque…',
+          explanation_ru: 'Устойчивые формулы для выражения мнения, согласия и сомнения.',
+          rule: 'Creo que… / Pienso que… / Para mí… / En mi opinión… / Me parece que… + indicativo. Acuerdo: Tienes razón (Ты прав). Desacuerdo: No estoy de acuerdo porque…',
+          rule_ru: 'Creo que… (Я думаю, что…) / Pienso que… (Считаю, что…) / Para mí… (По-моему…) / En mi opinión… (По моему мнению…) / Me parece que… (Мне кажется, что…). Согласие: Tienes razón (Ты прав). Несогласие: No estoy de acuerdo (Я не согласен).',
           examples: [
             { es: 'Creo que el español es un idioma muy bonito.', ru: 'Я думаю, что испанский — очень красивый язык.' },
             { es: 'Para mí, lo más difícil es el subjuntivo.', ru: 'По-моему, самое сложное — это субхунтив.' },
@@ -956,7 +1033,9 @@ export const theoryBlocks: TheoryBlock[] = [
         bloque: 9,
         content: {
           explanation: 'Fórmulas de cortesía para transacciones cotidianas.',
-          rule: 'Quería / Quisiera / Me pone (barra) / Póngame (barra) + lo que quieres. ¿Me cobra? ¿Cuánto es? ¿Me da un recibo?',
+          explanation_ru: 'Вежливые формулы для повседневных бытовых ситуаций: магазин, транспорт, ресторан.',
+          rule: 'Quería / Quisiera / Me pone + lo que quieres (в баре). ¿Me cobra? (Можно рассчитаться?) ¿Cuánto es? (Сколько?) ¿Me da un recibo? (Дайте чек.)',
+          rule_ru: 'Quería / Quisiera (Я бы хотел...) — везде. Me pone / Póngame (Дайте/налейте мне...) — в баре. ¿Me cobra? (Можно рассчитаться?). ¿Cuánto es? (Сколько стоит?). La cuenta (счёт в ресторане).',
           examples: [
             { es: 'Quería un café con leche y una tostada.', ru: 'Я бы хотел кофе с молоком и тост.' },
             { es: 'Un billete de ida y vuelta a Sevilla.', ru: 'Билет туда и обратно до Севильи.' },
@@ -976,15 +1055,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Olvidar los artículos',
         bloque: 10,
         content: {
-          explanation:
-            'El error más frecuente y más fácil de cometer: omitir el artículo porque en ruso no existe esta categoría gramatical.',
-          rule: 'Siempre hay que decidir: ¿artículo determinado (el/la), indeterminado (un/una) o sin artículo? No existe la opción de "simplemente no poner nada" por defecto.',
+          explanation: 'El error más frecuente: omitir el artículo porque en ruso no existe esta categoría gramatical.',
+          explanation_ru: 'Самая частая ошибка: пропустить артикль, потому что в русском этой грамматической категории нет. Помни: в испанском ВСЕГДА нужно выбрать: el/la, un/una или ничего.',
+          rule: 'Siempre hay que decidir: ¿artículo determinado (el/la), indeterminado (un/una) o sin artículo? No existe la opción "simplemente no poner nada por defecto".',
+          rule_ru: 'Всегда нужно выбрать: определённый (el/la), неопределённый (un/una) или без артикля. Нейтрального варианта "просто ничего" не существует. Каждое существительное требует сознательного выбора.',
           examples: [
-            { es: '✗ Tengo perro. ✓ Tengo un perro.', ru: 'У меня есть собака → un perro (primera mención)' },
-            { es: '✗ Voy a mercado. ✓ Voy al mercado.', ru: 'Иду на рынок → al mercado (conocido)' },
-            { es: '✗ Me gusta música. ✓ Me gusta la música.', ru: 'Мне нравится музыка → la música (categoría general)' },
+            { es: '✗ Tengo perro. ✓ Tengo un perro.', ru: 'У меня есть собака → un perro (первое упоминание)' },
+            { es: '✗ Voy a mercado. ✓ Voy al mercado.', ru: 'Иду на рынок → al mercado (конкретный, известный)' },
+            { es: '✗ Me gusta música. ✓ Me gusta la música.', ru: 'Мне нравится музыка → la música (музыка как категория)' },
           ],
-          note: 'Truco: si en inglés usarías "the", en español probablemente sea "el/la". Si usarías "a/an", es "un/una". Si no usarías ninguno (profesiones, nacionalidades), tampoco en español.',
+          note_ru: 'Подсказка: если в английском было бы "the" → скорее всего el/la. "a/an" → un/una. Без артикля (профессии, национальности как прилагательные) → и в испанском тоже без.',
         },
       },
       {
@@ -992,13 +1072,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Confundir ser y estar',
         bloque: 10,
         content: {
-          explanation:
-            'Usar ser donde va estar y viceversa es uno de los errores más notorios. El rusohablante tiende a omitir el verbo o a usar siempre "ser" por ser más "permanente".',
+          explanation: 'Usar ser donde va estar y viceversa es uno de los errores más notorios.',
+          explanation_ru: 'Путаница ser/estar — одна из самых заметных ошибок. Русскоязычные склонны опускать глагол или всегда использовать ser ("более постоянный"), что неверно.',
           rule: 'ESTAR para estados, ubicación, resultados. SER para identidad, características inherentes, hora, eventos, material.',
+          rule_ru: 'ESTAR — для состояний, местоположения, результатов изменений. SER — для идентичности, постоянных характеристик, времени, мероприятий, материала.',
           examples: [
-            { es: '✗ Soy cansado. ✓ Estoy cansado.', ru: 'Я устал — estado temporal → ESTAR' },
-            { es: '✗ Estoy médico. ✓ Soy médico.', ru: 'Я врач — profesión → SER' },
-            { es: '✗ El museo es en el centro. ✓ El museo está en el centro.', ru: 'Музей в центре — ubicación → ESTAR' },
+            { es: '✗ Soy cansado. ✓ Estoy cansado.', ru: 'Я устал — временное состояние → ESTAR' },
+            { es: '✗ Estoy médico. ✓ Soy médico.', ru: 'Я врач — профессия → SER' },
+            { es: '✗ El museo es en el centro. ✓ El museo está en el centro.', ru: 'Музей в центре — местоположение → ESTAR' },
           ],
         },
         exerciseLink: '/practica',
@@ -1008,13 +1089,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Concordancia de género en adjetivos',
         bloque: 10,
         content: {
-          explanation:
-            'En ruso los adjetivos también concuerdan, pero como en español no hay casos que cambien la forma, el ruso-hablante a veces olvida al menos la concordancia de género.',
-          rule: 'El adjetivo SIEMPRE concuerda en género y número con el sustantivo. No existe el adjetivo "neutro" o invariable para sustantivos comunes.',
+          explanation: 'En ruso los adjetivos también concuerdan, pero a veces el rusohablante olvida la concordancia de género en español.',
+          explanation_ru: 'В русском прилагательные тоже согласуются, но иногда русскоязычные забывают про согласование в роде в испанском — особенно при словах-исключениях.',
+          rule: 'El adjetivo SIEMPRE concuerda en género y número. No existe forma "neutra". Presta atención especial a sustantivos con género no evidente.',
+          rule_ru: 'Прилагательное ВСЕГДА согласуется в роде и числе. Нейтральной формы нет. Особое внимание — к существительным с неочевидным родом (el problema, la mano).',
           examples: [
-            { es: '✗ Mi hermana es alto. ✓ Mi hermana es alta.', ru: 'Моя сестра высокая — femenino → alta' },
-            { es: '✗ Unos personas interesante. ✓ Unas personas interesantes.', ru: 'Несколько интересных людей — plural → interesantes' },
-            { es: '✗ El problema es serio y importante. ✓ (correcto, "problema" es masculino)', ru: '"Problema" es masculino en español (excepción)' },
+            { es: '✗ Mi hermana es alto. ✓ Mi hermana es alta.', ru: 'Моя сестра высокая — женский род → alta' },
+            { es: '✗ Unos personas interesante. ✓ Unas personas interesantes.', ru: 'Несколько интересных людей — мн.ч. → interesantes' },
+            { es: 'El problema es serio y complicado. (correcto)', ru: '"problema" — мужского рода (исключение!) → serio, complicado' },
           ],
         },
       },
@@ -1023,13 +1105,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Uso incorrecto de hay/está/están',
         bloque: 10,
         content: {
-          explanation:
-            'La confusión entre "hay" (existencia) y "está/están" (ubicación de algo concreto) es muy común para rusohablantes que usan "есть" o simplemente omiten el verbo.',
-          rule: 'HAY = existe (новый объект в разговоре). ESTÁ/ESTÁN = se encuentra/n (объект уже известен). Hay no cambia en plural: hay una, hay dos.',
+          explanation: 'La confusión entre "hay" y "está/están" es muy común para rusohablantes que usan "есть" o simplemente omiten el verbo.',
+          explanation_ru: 'Путаница между "hay" и "está/están" очень распространена среди русскоязычных, привыкших к "есть" или вообще к отсутствию глагола.',
+          rule: 'HAY = существование (есть/имеется) — неизменяемо. ESTÁ/ESTÁN = местонахождение уже известного предмета.',
+          rule_ru: 'HAY = существование нового объекта (есть, имеется) — форма НИКОГДА не меняется по числу. ESTÁ/ESTÁN = местонахождение уже упомянутого, конкретного предмета.',
           examples: [
-            { es: '✗ Está un supermercado aquí. ✓ Hay un supermercado aquí.', ru: 'Тут есть супермаркет (existencia) → HAY' },
-            { es: '✗ Hay el supermercado en la calle Mayor. ✓ El supermercado está en la calle Mayor.', ru: 'Супермаркет находится на улице Майор (ubicación) → ESTÁ' },
-            { es: '✗ Están mucha gente. ✓ Hay mucha gente.', ru: 'Много людей (existencia impersonal) → HAY' },
+            { es: '✗ Está un supermercado aquí. ✓ Hay un supermercado aquí.', ru: 'Тут есть супермаркет → HAY (существование)' },
+            { es: '✗ Hay el supermercado en la calle Mayor. ✓ El supermercado está en la calle Mayor.', ru: 'Супермаркет находится... → ESTÁ (известный объект)' },
+            { es: '✗ Están mucha gente. ✓ Hay mucha gente.', ru: 'Много людей → HAY (безличное существование)' },
           ],
         },
       },
@@ -1038,13 +1121,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Traducir literalmente desde el ruso (calcos)',
         bloque: 10,
         content: {
-          explanation:
-            'Los calcos son traducciones literales que suenan incorrectas. El ruso y el español estructuran algunas expresiones de forma muy diferente.',
+          explanation: 'Los calcos son traducciones literales que suenan incorrectas. El ruso y el español estructuran algunas expresiones de forma muy diferente.',
+          explanation_ru: 'Кальки — дословные переводы, которые звучат неправильно. Русский и испанский по-разному строят некоторые выражения.',
           rule: 'No traduzcas palabra por palabra. Aprende las expresiones como bloques fijos.',
+          rule_ru: 'Не переводи слово в слово. Учи выражения как готовые блоки.',
           examples: [
-            { es: '✗ Tengo X años de edad. ✓ Tengo X años. (edad)', ru: 'Мне X лет — "tener + años", no "ser + años"' },
-            { es: '✗ Estoy de acuerdo con eso que dices. ✓ Estoy de acuerdo contigo.', ru: 'Я согласен с тобой — contigo, no "con eso que dices"' },
-            { es: '✗ Me es difícil. ✓ Me resulta difícil. / Es difícil para mí.', ru: 'Мне трудно — no calco literal' },
+            { es: '✗ Tengo X años de edad. ✓ Tengo X años.', ru: 'Мне X лет → tener años (не "ser" и не "de edad")' },
+            { es: '✗ Estoy de acuerdo con eso que dices. ✓ Estoy de acuerdo contigo.', ru: 'Я согласен с тобой → contigo, не калька с "с тем что говоришь"' },
+            { es: '✗ Me es difícil. ✓ Me resulta difícil / Es difícil para mí.', ru: 'Мне трудно → resulta difícil, не дословный калькo' },
           ],
         },
       },
@@ -1053,15 +1137,16 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Falsos amigos ruso-español',
         bloque: 10,
         content: {
-          explanation:
-            'Palabras que se parecen en ruso y español pero tienen significados distintos. Pueden causar malentendidos graves.',
+          explanation: 'Palabras que se parecen en ruso y español pero tienen significados distintos. Pueden causar malentendidos graves.',
+          explanation_ru: 'Слова, которые похожи по звучанию в русском и испанском, но означают разное. Могут привести к серьёзным недоразумениям.',
           rule: 'Presta atención especial a palabras de origen latino o griego que existen en ambas lenguas pero con significados divergentes.',
+          rule_ru: 'Обращай особое внимание на слова латинского или греческого происхождения, которые есть в обоих языках, но с разным значением.',
           examples: [
-            { es: 'embarazada ≠ смущённая (avergonzada)', ru: '"Embarazada" = беременная, NO смущённая' },
-            { es: 'constipado ≠ запор', ru: '"Estar constipado" = estar resfriado (насморк, gripe)' },
-            { es: 'actual ≠ настоящий/реальный', ru: '"Actual" en español = actual/current (нынешний), no "real"' },
+            { es: 'embarazada = беременная (¡NO смущённая!)', ru: '"Estoy embarazada" — я беременна, НЕ "я смущена"' },
+            { es: 'constipado = простуженный (¡NO запор!)', ru: '"Estar constipado" = иметь насморк/простуду, НЕ запор' },
+            { es: 'actual = нынешний/текущий (¡NO настоящий в смысле "реальный"!)', ru: '"El presidente actual" = нынешний президент, НЕ "настоящий"' },
           ],
-          note: '"Estoy embarazada" en español significa "estoy embarazada" (беременна), NO "estoy avergonzada". Este error es famoso y puede crear situaciones muy incómodas.',
+          note_ru: '"Estoy embarazada" — означает "я беременна", а не "мне неловко". Это один из самых знаменитых ложных друзей переводчика. Запомни раз и навсегда!',
         },
       },
       {
@@ -1069,13 +1154,14 @@ export const theoryBlocks: TheoryBlock[] = [
         title: 'Omitir preposiciones o copiarlas del ruso',
         bloque: 10,
         content: {
-          explanation:
-            'El ruso expresa las relaciones gramaticales con casos. El español lo hace con preposiciones. No siempre hay correspondencia directa.',
-          rule: 'No omitas la preposición "a" con objeto directo de persona. No uses "en" donde va "a" para destinos. Aprende las preposiciones de cada verbo.',
+          explanation: 'El ruso expresa las relaciones gramaticales con casos. El español lo hace con preposiciones. No siempre hay correspondencia directa.',
+          explanation_ru: 'Русский выражает грамматические отношения через падежи, испанский — через предлоги. Прямого соответствия нет, и типичные ошибки возникают именно здесь.',
+          rule: 'No omitas la preposición "a" con objeto directo de persona. No uses "en" donde va "a" para destinos. Aprende las preposiciones de cada verbo como parte del mismo.',
+          rule_ru: 'Не пропускай предлог "a" при одушевлённом прямом дополнении. Не используй "en" вместо "a" при указании направления. Учи предлог как неотъемлемую часть глагола.',
           examples: [
-            { es: '✗ Veo María. ✓ Veo a María. (a personal)', ru: 'Я вижу Марию — el "a" personal no existe en ruso' },
-            { es: '✗ Voy en Madrid. ✓ Voy a Madrid.', ru: 'Еду в Мадрид — "в" ruso ≠ "en" español para destinos' },
-            { es: '✗ Pienso en ir. ✓ Pienso ir. / Pienso en hacerlo.', ru: 'Думаю поехать — pensar + inf (sin en) vs pensar en + inf (considerar)' },
+            { es: '✗ Veo María. ✓ Veo a María. ("a" personal)', ru: 'Я вижу Марию → "a" перед именем/лицом обязательна' },
+            { es: '✗ Voy en Madrid. ✓ Voy a Madrid.', ru: 'Еду в Мадрид → "в" по-русски, но "a" в испанском (движение)' },
+            { es: '✗ Pienso en ir. ✓ Pienso ir. (намерение)', ru: 'Думаю поехать → pensar + inf (без "en") = намерение' },
           ],
         },
       },

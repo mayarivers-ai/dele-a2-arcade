@@ -4,8 +4,9 @@ import { getLessonById, getAdjacentLessons, theoryBlocks } from '../../data/theo
 
 export function TheoryPage() {
   const { leccion } = useParams<{ bloque: string; leccion: string }>()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const navigate = useNavigate()
+  const isRu = i18n.language === 'ru'
 
   const lesson = leccion ? getLessonById(leccion) : undefined
   const block = lesson ? theoryBlocks.find((b) => b.id === lesson.bloque) : undefined
@@ -48,14 +49,18 @@ export function TheoryPage() {
       </div>
 
       {/* Explanation */}
-      <p className="mb-8 text-gray-600 leading-relaxed">{lesson.content.explanation}</p>
+      <p className="mb-8 text-gray-600 leading-relaxed">
+        {isRu ? lesson.content.explanation_ru : lesson.content.explanation}
+      </p>
 
       {/* Rule */}
       <div className="mb-8 rounded-2xl border border-amber-100 bg-amber-50 p-5">
         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-amber-700">
           {t('theory.rule')}
         </h2>
-        <p className="text-gray-800 leading-relaxed">{lesson.content.rule}</p>
+        <p className="text-gray-800 leading-relaxed">
+          {isRu ? lesson.content.rule_ru : lesson.content.rule}
+        </p>
       </div>
 
       {/* Examples */}
@@ -87,12 +92,16 @@ export function TheoryPage() {
       </div>
 
       {/* Note for Russian speakers */}
-      {lesson.content.note && (
+      {(lesson.content.note_ru || lesson.content.note) && (
         <div className="mb-8 rounded-2xl border border-blue-100 bg-blue-50 p-5">
           <h2 className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-blue-600">
             <span>🇷🇺</span> {t('theory.note_for_russian')}
           </h2>
-          <p className="text-gray-700 leading-relaxed">{lesson.content.note}</p>
+          <p className="text-gray-700 leading-relaxed">
+            {isRu
+              ? (lesson.content.note_ru ?? lesson.content.note)
+              : (lesson.content.note ?? lesson.content.note_ru)}
+          </p>
         </div>
       )}
 
