@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import { supabase } from './lib/supabase'
 import { useUserStore } from './stores/userStore'
 import { useSettingsStore } from './stores/settingsStore'
@@ -37,10 +37,10 @@ function AuthCallbackPage() {
   }, [navigate])
 
   return (
-    <div className="flex min-h-[80svh] items-center justify-center">
-      <div className="text-center">
-        <div className="mb-4 text-4xl">🔐</div>
-        <p className="text-gray-500">Verificando sesión...</p>
+    <div style={{ minHeight: '80svh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: 40, marginBottom: 16 }}>🔐</div>
+        <p style={{ color: 'var(--muted)', fontSize: 14 }}>Verificando sesión…</p>
       </div>
     </div>
   )
@@ -91,7 +91,7 @@ function AppInner() {
           <Route path="/play" element={<CareerHub />} />
           <Route path="/play/:phase" element={<PhaseRunner />} />
           <Route path="/arcade" element={<ArcadeGame />} />
-          <Route path="/vocabulary" element={<VocabularyPage />} />
+          <Route path="/vocabulary" element={<Navigate to="/practica" replace />} />
           <Route path="/practica" element={<PracticaPage />} />
           <Route path="/teoria" element={<TheoryIndex />} />
           <Route path="/teoria/:bloque/:leccion" element={<TheoryPage />} />

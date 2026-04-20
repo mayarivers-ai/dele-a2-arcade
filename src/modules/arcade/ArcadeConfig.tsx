@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useSettingsStore } from '../../stores/settingsStore'
 
@@ -11,6 +12,9 @@ export function ArcadeConfig({ onStart }: ArcadeConfigProps) {
 
   return (
     <div className="flex flex-col items-center gap-8 py-12">
+      <Link to="/" className="self-start font-['Press_Start_2P'] text-xs text-white/40 hover:text-white/70 no-underline transition-colors">
+        ← {t('common.back')}
+      </Link>
       <h1 className="font-['Press_Start_2P'] text-3xl leading-relaxed neon-green text-center">
         DELE A2<br />ARCADE
       </h1>

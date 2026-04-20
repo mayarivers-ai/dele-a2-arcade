@@ -93,8 +93,6 @@ export function CareerHub() {
   return (
     <div style={{ minHeight: '100vh', padding: '32px 24px 80px', background: 'var(--bg)' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-        <Link to="/" style={{ color: 'var(--ink-2)', textDecoration: 'none', fontSize: 13, fontWeight: 600 }}>{copy.home}</Link>
-
         <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 32, marginTop: 20 }}>
           {/* Sidebar */}
           <aside style={{ background: 'var(--bg-card)', borderRadius: 20, padding: 20, border: '1px solid var(--rule)', position: 'sticky', top: 20, alignSelf: 'start' }}>
